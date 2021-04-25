@@ -1,0 +1,15 @@
+# root
+/.yarn/*
+/.vscode/*
+
+# generic
+.pnp.js
+.pnp.cjs
+*/node_modules
+*/cms/.pnp
+
+# cms
+cms/coverage
+cms/.next/
+cms/out/
+cms/build

@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.base.json",
+  "exclude": ["node_modules"],
+  "declaration": true,
+  "emitDeclarationOnly": true,
+  "compilerOptions": {
+    "outFile": "index.d.ts",
+    "jsx": "react",
+    "noEmit": false,
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  }
+}

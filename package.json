@@ -1,0 +1,31 @@
+{
+  "name": "termo-english",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "ui:test": "yarn workspace ui test",
+    "ui:storybook": "yarn workspace ui storybook",
+    "fix": "yarn fix:lint && yarn fix:format",
+    "fix:lint": "yarn eslint --fix",
+    "fix:format": "yarn prettier . --fix -w",
+    "test:lint": "yarn eslint",
+    "test:format": "yarn prettier . -c"
+  },
+  "engines": {
+    "node": "14",
+    "yarn": "3",
+    "npm": "please-use-yarn"
+  },
+  "workspaces": [
+    "ui",
+    "eslint-config"
+  ],
+  "devDependencies": {
+    "@storybook/builder-webpack5": "next"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
