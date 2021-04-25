@@ -19,7 +19,8 @@
   },
   "workspaces": [
     "ui",
-    "eslint-config"
+    "eslint-config",
+    "app"
   ],
   "devDependencies": {
     "@storybook/builder-webpack5": "next"

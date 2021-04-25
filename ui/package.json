@@ -1,9 +1,8 @@
 {
-  "name": "ui-web",
+  "name": "ui",
   "version": "0.1.0",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "typings": "index.d.ts",
+  "main": "components/index.js",
+  "module": "components/index.js",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
