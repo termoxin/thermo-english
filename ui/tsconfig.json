@@ -1,15 +1,19 @@
 {
   "extends": "../tsconfig.base.json",
-  "exclude": ["node_modules"],
   "declaration": true,
   "emitDeclarationOnly": true,
   "compilerOptions": {
-    "outFile": "index.d.ts",
+    "module": "esnext",
     "jsx": "react",
     "noEmit": false,
     "sourceMap": true,
     "declaration": true,
     "moduleResolution": "node",
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "emitDeclarationOnly": true,
+    "outDir": "dist"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*", "**/*.test.ts"]
 }

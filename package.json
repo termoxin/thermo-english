@@ -4,13 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "ui:test": "yarn workspace ui test",
-    "ui:storybook": "yarn workspace ui storybook",
+    "test:test": "yarn workspace ui test",
+    "test:storybook": "yarn workspace ui storybook",
     "fix": "yarn fix:lint && yarn fix:format",
     "fix:lint": "yarn eslint --fix",
     "fix:format": "yarn prettier . --fix -w",
     "test:lint": "yarn eslint",
-    "test:format": "yarn prettier . -c"
+    "test:format": "yarn prettier . -c",
+    "build:ui": "yarn workspace ui build",
+    "clean:ui": "yarn workspace ui clean"
   },
   "engines": {
     "node": "14",
@@ -23,7 +25,8 @@
     "app"
   ],
   "devDependencies": {
-    "@storybook/builder-webpack5": "next"
+    "@storybook/builder-webpack5": "next",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "react": "^17.0.2",
