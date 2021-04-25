@@ -1,1 +1,1 @@
-# termo-english
+# thermo-english
