@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react'
 
-import Button from "../components/Button";
+import { Button } from '../src/components/Button'
 
 export default {
-  title: "Example/Button",
+  title: 'Example/Button',
   component: Button,
-};
+}
 
-const Template = (args): React.ReactElement => <Button {...args} />;
+const Template = (args): React.ReactElement => <Button {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 
 Primary.args = {
-  children: "Button",
-};
+  children: 'Button',
+}
