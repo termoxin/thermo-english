@@ -1,5 +1,27 @@
-import React, { ButtonHTMLAttributes, FC } from 'react'
+import React, { FC } from 'react'
+import { DefaultTheme, StyledComponentBase } from 'styled-components'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+import { ButtonProps, buttonVarients, buttonVarientsEnum } from './Button.types'
+import { PrimaryButton, BaseButton } from './styled'
 
-export const Button: FC<ButtonProps> = ({ ...props }) => <button {...props} />
+const buttonsDictionary: Record<
+  buttonVarients,
+  StyledComponentBase<'button', DefaultTheme, {}, never>
+> = {
+  primary: PrimaryButton,
+}
+
+export const Button: FC<ButtonProps> = ({
+  variant = buttonVarientsEnum.PRIMARY,
+  ...props
+}) => {
+  const varients = Object.values(buttonVarientsEnum) as buttonVarients[]
+
+  if (!varients.includes(variant)) {
+    return <BaseButton {...props} />
+  }
+
+  const ButtonComponent = buttonsDictionary[variant]
+
+  return <ButtonComponent {...props} />
+}

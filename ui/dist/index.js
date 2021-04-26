@@ -1,4 +1,5 @@
 import React from "react";
-export const Button = ({...props}) => /* @__PURE__ */ React.createElement("button", {
+import {BaseButton} from "./styled";
+export const Button = ({children, ...props}) => /* @__PURE__ */ React.createElement(BaseButton, {
   ...props
 });
