@@ -4598,9 +4598,13 @@ __metadata:
   dependencies:
     "@types/node": ^14.14.41
     "@types/react": ^17.0.3
+    "@types/styled-components": ^5.1.9
+    babel-plugin-styled-components: ^1.12.0
     next: 10.1.3
     react: 17.0.2
     react-dom: 17.0.2
+    react-is: ^17.0.2
+    styled-components: ^5.2.3
     typescript: ^4.2.4
     ui: "workspace:ui"
   languageName: unknown
@@ -5109,7 +5113,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-styled-components@npm:>= 1.12.0":
+"babel-plugin-styled-components@npm:>= 1.12.0, babel-plugin-styled-components@npm:^1.12.0":
   version: 1.12.0
   resolution: "babel-plugin-styled-components@npm:1.12.0"
   dependencies:
@@ -8370,6 +8374,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"globalyzer@npm:0.1.0":
+  version: 0.1.0
+  resolution: "globalyzer@npm:0.1.0"
+  checksum: 419a0f95ba542534fac0842964d31b3dc2936a479b2b1a8a62bad7e8b61054faa9b0a06ad9f2e12593396b9b2621cac93358d9b3071d33723fb1778608d358a1
+  languageName: node
+  linkType: hard
+
 "globby@npm:11.0.1":
   version: 11.0.1
   resolution: "globby@npm:11.0.1"
@@ -8397,6 +8408,13 @@ fsevents@^1.2.7:
     pify: ^4.0.1
     slash: ^2.0.0
   checksum: 9b4cb70aa0b43bf89b18cf0e543695185e16d8dd99c17bdc6a1df0a9f88ff9dc8d2467aebace54c3842fc451a564882948c87a3b4fbdb1cacf3e05fd54b6ac5d
+  languageName: node
+  linkType: hard
+
+"globrex@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "globrex@npm:0.1.2"
+  checksum: adca162494a176ce9ecf4dd232f7b802956bb1966b37f60c15e49d2e7d961b66c60826366dc2649093cad5a0d69970cfa8875bd1695b5a1a2f33dcd2aa88da3c
   languageName: node
   linkType: hard
 
@@ -14846,6 +14864,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"tiny-glob@npm:^0.2.8":
+  version: 0.2.8
+  resolution: "tiny-glob@npm:0.2.8"
+  dependencies:
+    globalyzer: 0.1.0
+    globrex: ^0.1.2
+  checksum: 2d800da5731df66b6f84eaa2024ebf7cd0c6e13b8334d5ea4ab902f38eeffa03455f465109cf79a2d4fc324c4a569c3cb83809e3380dac82a7689f5d46ac7dfe
+  languageName: node
+  linkType: hard
+
 "tmpl@npm:1.0.x":
   version: 1.0.4
   resolution: "tmpl@npm:1.0.4"
@@ -15192,6 +15220,7 @@ typescript@^4.2.4:
     react-dom: 17.0.2
     react-is: ^17.0.2
     styled-components: ^5.2.3
+    tiny-glob: ^0.2.8
     ts-jest: ^26.5.5
     typescript: ^4.2.4
   languageName: unknown

@@ -1,9 +1,3 @@
-import { Button } from 'ui'
+const Index = () => <h1>Index</h1>
 
-const Home = () => (
-  <div>
-    <Button>Button</Button>
-  </div>
-)
-
-export default Home
+export default Index
