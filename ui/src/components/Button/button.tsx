@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { DefaultTheme, StyledComponentBase } from 'styled-components'
 
-import { ButtonProps, buttonVarients, buttonVarientsEnum } from './Button.types'
+import { ButtonProps, buttonVarients, buttonVarientsEnum } from './button.types'
 import { PrimaryButton, BaseButton } from './styled'
 
 const buttonsDictionary: Record<

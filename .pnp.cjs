@@ -19258,6 +19258,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["styled-normalize", [
+        ["npm:8.0.7", {
+          "packageLocation": "./.yarn/cache/styled-normalize-npm-8.0.7-76e7b6a203-afdb450407.zip/node_modules/styled-normalize/",
+          "packageDependencies": [
+            ["styled-normalize", "npm:8.0.7"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:8.0.7", {
+          "packageLocation": "./.yarn/__virtual__/styled-normalize-virtual-bdedc77a9c/0/cache/styled-normalize-npm-8.0.7-76e7b6a203-afdb450407.zip/node_modules/styled-normalize/",
+          "packageDependencies": [
+            ["styled-normalize", "virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:8.0.7"],
+            ["@types/styled-components", "npm:5.1.9"],
+            ["styled-components", "virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:5.2.3"]
+          ],
+          "packagePeers": [
+            "@types/styled-components",
+            "styled-components"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["stylis", [
         ["npm:3.5.4", {
           "packageLocation": "./.yarn/cache/stylis-npm-3.5.4-a35153f87b-3673a748ad.zip/node_modules/stylis/",
@@ -20022,6 +20044,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:17.0.2"],
             ["react-is", "npm:17.0.2"],
             ["styled-components", "virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:5.2.3"],
+            ["styled-normalize", "virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:8.0.7"],
             ["tiny-glob", "npm:0.2.8"],
             ["ts-jest", "virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:26.5.5"],
             ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=34ad7d"]

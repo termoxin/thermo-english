@@ -1,9 +1,9 @@
-import { render, screen } from '@testing-library/react'
 import React from 'react'
+import { render, screen } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 
-import { themes } from '../themes'
-import { Button } from './Button'
+import { themes } from '../../themes'
+import { Button } from './button'
 
 describe('Button', () => {
   test('should render correctly', () => {
