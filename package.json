@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test:ui": "yarn workspace ui test",
+    "dev:app": "yarn workspace app dev",
+    "test": "yarn workspace ui test",
     "test:storybook": "yarn workspace ui storybook",
     "fix": "yarn fix:lint && yarn fix:format",
     "fix:lint": "yarn eslint --fix",

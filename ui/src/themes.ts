@@ -8,5 +8,9 @@ export const themes = {
         primary: '#F6F6F9',
       },
     },
+    input: {
+      background: '#fff',
+      color: '#000',
+    },
   },
 }
