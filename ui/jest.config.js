@@ -7,6 +7,9 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleNameMapper: {
+    '\\.svg': '<rootDir>/src/__mocks__/svgrMock.tsx',
+  },
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.json',
