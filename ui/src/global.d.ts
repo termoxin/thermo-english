@@ -5,3 +5,5 @@ declare module '*.svg' {
   export { ReactComponent }
   export default content
 }
+
+declare module '*.mp4'
