@@ -12,5 +12,8 @@ export const themes = {
       background: '#fff',
       color: '#000',
     },
+    card: {
+      border: '#bebab3',
+    },
   },
 }
