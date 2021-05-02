@@ -4,14 +4,17 @@ import { ThemeProvider } from 'styled-components'
 
 import { themes } from '../../themes'
 import { Input } from '.'
+import userEvent from '@testing-library/user-event'
 
 describe('Input', () => {
   test('should render correctly', () => {
     render(
       <ThemeProvider theme={themes.light}>
-        <Input value="Email" aria-label="email" />
+        <Input aria-label="email" />
       </ThemeProvider>,
     )
+
+    userEvent.type(screen.getByLabelText('email'), 'a@gmail.com')
 
     expect(screen.getByLabelText('email')).toBeInTheDocument()
   })

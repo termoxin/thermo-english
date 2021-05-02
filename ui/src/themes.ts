@@ -15,5 +15,8 @@ export const themes = {
     card: {
       border: '#bebab3',
     },
+    postCard: {
+      border: '#FA4A0C',
+    },
   },
 }

@@ -5,14 +5,20 @@ import { VideoPlayerProps } from './video-player.types'
 
 import { ReactComponent as PauseIcon } from '../../icons/pause-icon.svg'
 import { ReactComponent as PlayIcon } from '../../icons/play-icon.svg'
-import { VideoPlayerContainer, Controls, Overlay } from './styled'
+import { VideoPlayerContainer, Controls, Overlay, Preview } from './styled'
 
-export const VideoPlayer: FC<VideoPlayerProps> = ({ src, className }) => {
+export const VideoPlayer: FC<VideoPlayerProps> = ({
+  src,
+  className,
+  previewUrl,
+}) => {
   const [video, state, controls] = useVideo(
     <video src={src} data-testid="video" />,
   )
 
   const [showControls, setShowControls] = useState(false)
+
+  const showPreview = previewUrl && state.time === 0
 
   return (
     <VideoPlayerContainer
@@ -21,6 +27,7 @@ export const VideoPlayer: FC<VideoPlayerProps> = ({ src, className }) => {
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
     >
+      {showPreview && <Preview src={previewUrl} data-testid="preview" />}
       {video}
       {showControls && (
         <>

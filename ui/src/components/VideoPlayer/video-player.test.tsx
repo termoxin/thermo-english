@@ -1,5 +1,5 @@
 import React from 'react'
-import { getByText, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 
 import { themes } from '../../themes'
@@ -9,6 +9,7 @@ import userEvent from '@testing-library/user-event'
 describe('VideoPlayer', () => {
   const props = {
     src: '',
+    previewUrl: 'preview',
   }
 
   test('should render correctly', () => {
@@ -18,7 +19,7 @@ describe('VideoPlayer', () => {
       </ThemeProvider>,
     )
 
-    expect(getByTestId('video')).toBeInTheDocument()
+    expect(getByTestId('preview')).toBeInTheDocument()
     expect(queryByTestId('controls')).not.toBeInTheDocument()
     expect(queryByTestId('play-button')).not.toBeInTheDocument()
   })
