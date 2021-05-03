@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import { VideoPlayer } from '../VideoPlayer'
 
+import { VideoPlayer } from '../VideoPlayer'
 import { PostCardProps } from './post-card.types'
 import { PostContainer, Content, Text, Meaning } from './styled'
 

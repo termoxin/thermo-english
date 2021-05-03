@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const BaseInput = styled.input`
-  font-family: 'Rubik', sans-serif;
   font-weight: 400;
 
   width: 343px;
