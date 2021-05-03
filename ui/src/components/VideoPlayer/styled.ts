@@ -37,3 +37,12 @@ export const Overlay = styled.div`
 
   background: rgba(0, 0, 0, 0.5);
 `
+
+export const Preview = styled.img`
+  position: absolute;
+  width: 375px;
+  height: 211px;
+
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+`
