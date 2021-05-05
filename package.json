@@ -22,6 +22,7 @@
   },
   "workspaces": [
     "ui",
+    "ui-v2",
     "eslint-config",
     "app"
   ],
