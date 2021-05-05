@@ -1,10 +1,7 @@
-import { ThemeProvider } from 'styled-components'
-import { Button, themes } from 'ui'
+import React from 'react'
 
-const Home = () => (
-  <ThemeProvider theme={themes.light}>
-    <Button>Home</Button>
-  </ThemeProvider>
-)
+import { Heading } from 'ui'
+
+const Home = () => <Heading>Home</Heading>
 
 export default Home

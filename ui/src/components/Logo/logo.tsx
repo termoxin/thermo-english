@@ -1,3 +1,3 @@
-import { ReactComponent as LogoComponent } from './Logo.svg'
+import ThermoEnglishLogo from '../../icons/ThermoEnglishLogo'
 
-export const Logo = LogoComponent
+export const Logo = ThermoEnglishLogo
