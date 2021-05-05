@@ -33,9 +33,19 @@ export const VideoPlayer: FC<VideoPlayerProps> = ({
         <>
           <Controls data-testid="controls">
             {state.paused ? (
-              <PlayIcon onClick={controls.play} data-testid="play-button" />
+              <PlayIcon
+                onClick={controls.play}
+                data-testid="play-button"
+                height="72"
+                width="72"
+              />
             ) : (
-              <PauseIcon onClick={controls.pause} data-testid="pause-button" />
+              <PauseIcon
+                onClick={controls.pause}
+                data-testid="pause-button"
+                height="72"
+                width="72"
+              />
             )}
           </Controls>
           <Overlay data-testid="overlay" />
