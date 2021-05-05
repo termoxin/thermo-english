@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react'
 
 import { Input } from '../Input'
-import { ReactComponent as CrossedEye } from '../../icons/crossed-eye.svg'
-import { ReactComponent as Eye } from '../../icons/eye.svg'
+import CrossedEye from '../../icons/CrossedEye'
+import Eye from '../../icons/Eye'
 
 import { InputPasswordProps } from './input-password.types'
 import { VisibilityIconContainer, InputPasswordContainer } from './styled'
@@ -15,6 +15,7 @@ export const InputPassword: FC<InputPasswordProps> = (props) => {
   return (
     <InputPasswordContainer>
       <Input
+        {...props}
         type={inputType}
         data-testid="input-password"
         role="input-password"

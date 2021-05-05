@@ -11,7 +11,9 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "clean": "rm -rf dist",
-    "build": "yarn clean && node scripts/build.js && tsc --project tsconfig.build.json"
+    "build": "yarn clean && yarn build:icons && yarn build:ui",
+    "build:ui": "node scripts/build.js && tsc --project tsconfig.build.json",
+    "build:icons": "node scripts/buildIcons.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
@@ -45,9 +47,11 @@
     "ts-jest": "^26.5.5",
     "typescript": "^4.2.4"
   },
+  "peerDependencies": {
+    "styled-components": "^5.2.3"
+  },
   "dependencies": {
     "react-is": "^17.0.2",
-    "react-use": "^17.2.4",
-    "styled-components": "^5.2.3"
+    "react-use": "^17.2.4"
   }
 }

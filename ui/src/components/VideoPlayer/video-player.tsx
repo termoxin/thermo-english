@@ -3,8 +3,8 @@ import { useVideo } from 'react-use'
 
 import { VideoPlayerProps } from './video-player.types'
 
-import { ReactComponent as PauseIcon } from '../../icons/pause-icon.svg'
-import { ReactComponent as PlayIcon } from '../../icons/play-icon.svg'
+import PauseIcon from '../../icons/Pause'
+import PlayIcon from '../../icons/Play'
 import { VideoPlayerContainer, Controls, Overlay, Preview } from './styled'
 
 export const VideoPlayer: FC<VideoPlayerProps> = ({

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ButtonIcon } from './button-icon'
-import { ReactComponent as GoogleIcon } from '../../icons/google.svg'
+import GoogleIcon from '../../icons/Google'
 
 export default {
   title: 'ButtonIcon',
@@ -9,7 +9,9 @@ export default {
 }
 
 const Template = (): React.ReactElement => (
-  <ButtonIcon icon={<GoogleIcon />}>Sign In with Google</ButtonIcon>
+  <ButtonIcon icon={<GoogleIcon width="29" height="29" />}>
+    Sign In with Google
+  </ButtonIcon>
 )
 
 export const Default = Template.bind({})

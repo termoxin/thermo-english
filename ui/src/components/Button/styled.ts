@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const BaseButton = styled.button`
+  font-family: 'Amaranth', sans-serif;
   width: 300px;
   height: 70px;
   border: none;
