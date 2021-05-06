@@ -1,5 +1,5 @@
-import { Heading } from 'ui'
+import { Button } from 'ui'
 
-const Index = () => <Heading>Index</Heading>
+const Index = () => <Button>Index</Button>
 
 export default Index

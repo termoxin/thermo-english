@@ -1,7 +1,12 @@
 import React from 'react'
 
-import { Heading } from 'ui'
+import { Heading, InputPassword } from 'ui'
 
-const Home = () => <Heading>Home</Heading>
+const Home = () => (
+  <>
+    <Heading>Home</Heading>
+    <InputPassword />
+  </>
+)
 
 export default Home
