@@ -1,10 +1,6 @@
-import { ThemeProvider } from 'styled-components'
-
-import { themes } from '../src/themes'
-import { GlobalStyles } from '../src/GlobalStyles'
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
+  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -12,14 +8,3 @@ export const parameters = {
     },
   },
 }
-
-export const decorators = [
-  (Story) => (
-    <div>
-      <ThemeProvider theme={themes.light}>
-        <Story />
-      </ThemeProvider>
-      <GlobalStyles />
-    </div>
-  ),
-]
