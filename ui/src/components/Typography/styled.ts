@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Heading = styled.h1`
-  color: #130f0f;
+  color: ${({ theme }) => theme.heading.color};
 `
 
 export const Info = styled.p`

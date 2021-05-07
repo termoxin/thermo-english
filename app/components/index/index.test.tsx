@@ -1,16 +1,25 @@
 import { render } from '@testing-library/react'
+import { ThemeProvider } from 'styled-components'
+
+import { themes } from 'ui'
 import { Index } from '.'
 
 describe('Index component', () => {
   test('should render correctly', () => {
-    const { getByText, getByTestId } = render(<Index />)
+    const { getByText, getByTestId } = render(
+      <ThemeProvider theme={themes.light}>
+        <Index />
+      </ThemeProvider>,
+    )
 
-    expect(getByText('WELCOME TO TERMO ENGLISH')).toBeInTheDocument()
-    expect(getByTestId('input-password')).toBeInTheDocument()
-    expect(getByTestId('input-email')).toBeInTheDocument()
+    expect(getByTestId('welcome-heading')).toHaveTextContent(
+      'WELCOME TO TERMO ENGLISH',
+    )
+    expect(getByTestId('password-input')).toBeInTheDocument()
+    expect(getByTestId('email-input')).toBeInTheDocument()
     expect(getByText('Sign In with Google')).toBeInTheDocument()
-    expect(getByText('Sign up')).toBeInTheDocument()
-    expect(getByText('Sign in')).toBeInTheDocument()
+    expect(getByText('Sign Up')).toBeInTheDocument()
+    expect(getByText('Sign In')).toBeInTheDocument()
     expect(getByTestId('logo')).toBeInTheDocument()
 
     expect(
