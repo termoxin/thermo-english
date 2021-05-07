@@ -1,4 +1,4 @@
-import { Index } from '../components'
+import { Index } from '../components/index'
 
 const IndexPage = Index
 
