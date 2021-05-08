@@ -5,6 +5,8 @@ export const VisibilityIconContainer = styled.div`
   left: 90%;
   bottom: 39px;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
 `
 
 export const InputPasswordContainer = styled.div`
