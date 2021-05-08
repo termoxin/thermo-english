@@ -10,7 +10,7 @@ import {
 } from 'ui'
 import GoogleIcon from 'ui/dist/icons/Google'
 
-import { CustomAppProps } from '../../pages/_app'
+import { CustomAppProps } from './../../types/app'
 
 import {
   IndexWrapper,

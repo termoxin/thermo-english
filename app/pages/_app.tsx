@@ -8,10 +8,6 @@ import GlobalStyles from '../styles/GlobalStyles'
 
 import '../styles/globals.css'
 
-export interface CustomAppProps extends AppProps {
-  toggleTheme: () => void
-}
-
 const App = ({ Component, pageProps }: AppProps) => {
   const [theme, switchTheme] = useState(themes.light)
 
