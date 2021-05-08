@@ -1,38 +1,16 @@
+import { css, CSSObject, SimpleInterpolation } from 'styled-components'
+
 import {
-  css,
-  CSSObject,
-  FlattenSimpleInterpolation,
-  SimpleInterpolation,
-} from 'styled-components'
-
-interface BreakpointData {
-  value: number
-}
-
-type deviceBreakbointsType = keyof typeof deviceBreakpoints
-
-type mediaQuaries = {
-  [key in deviceBreakbointsType]: (
-    first: TemplateStringsArray | CSSObject,
-    ...interpolations: SimpleInterpolation[]
-  ) => FlattenSimpleInterpolation
-}
-
-interface Breakpoints {
-  breakpoints: Record<deviceBreakbointsType, BreakpointData>
-  media: mediaQuaries
-}
-
-const deviceBreakpoints = {
-  mobile: { value: 450 },
-  tablet: { value: 600 },
-  desktop: { value: 900 },
-}
+  deviceBreakpoints,
+  deviceBreakpointsType,
+  mediaQueries,
+  Breakpoints,
+} from './../types/breakpoints'
 
 const generateMediaQuariesObject = () => {
-  const keys = Object.keys(deviceBreakpoints) as deviceBreakbointsType[]
+  const keys = Object.keys(deviceBreakpoints) as deviceBreakpointsType[]
 
-  const mediaQueries = keys.reduce((acc, val) => {
+  const queries = keys.reduce((acc, val) => {
     acc[val] = (
       first: TemplateStringsArray | CSSObject,
       ...interpolations: SimpleInterpolation[]
@@ -44,9 +22,9 @@ const generateMediaQuariesObject = () => {
     `
 
     return acc
-  }, {} as mediaQuaries)
+  }, {} as mediaQueries)
 
-  return mediaQueries
+  return queries
 }
 
 export const breakpoints: Breakpoints = {
