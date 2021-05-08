@@ -11,7 +11,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "clean": "rm -rf dist",
-    "build": "npm run clean && yarn build:ui && yarn build:types",
+    "build": "npm run clean && yarn build:icons && yarn build:ui && yarn build:types",
     "build:ui": "NODE_ENV=production babel --config-file ./babel-config.json --out-dir dist ./src --extensions \".ts,.tsx\"",
     "build:types": "tsc --project tsconfig.build.json",
     "build:icons": "node scripts/buildIcons.js"
