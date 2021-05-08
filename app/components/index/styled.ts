@@ -27,6 +27,10 @@ export const IndexWrapper = styled.div`
     ${breakpoints.media.tablet`
       order: 1;
     `}
+
+    svg {
+      cursor: pointer;
+    }
   }
 `
 
