@@ -25,10 +25,10 @@ export const Content = styled.div`
 `
 
 export const Text = styled(Heading)`
-  font-size: 24px;
+  font-size: 2.4rem;
 
   span {
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 400;
   }
 `

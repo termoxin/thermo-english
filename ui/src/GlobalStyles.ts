@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
+  html,
+  body {
+    font-size: 10px;
+  }
 
   *, *:after, *:before {
     padding:0;

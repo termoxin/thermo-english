@@ -11,7 +11,7 @@ export const IndexWrapper = styled.div`
 
   ${Heading} {
     ${breakpoints.media.tablet`
-      font-size: 24px;
+      font-size: 2.4rem;
     `}
 
     span {
