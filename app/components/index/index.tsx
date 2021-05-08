@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import {
   Heading,
   Input,
@@ -10,6 +10,8 @@ import {
 } from 'ui'
 import GoogleIcon from 'ui/dist/icons/Google'
 
+import { CustomAppProps } from '../../pages/_app'
+
 import {
   IndexWrapper,
   LogoContainer,
@@ -17,7 +19,7 @@ import {
   ButtonsContainer,
 } from './styled'
 
-export const Index = () => (
+export const Index: FC<CustomAppProps> = ({ toggleTheme }) => (
   <IndexWrapper>
     <Container>
       <Heading data-testid="welcome-heading">
@@ -35,7 +37,7 @@ export const Index = () => (
       <Info>Terms and Conditions · Privacy Policy</Info>
     </Container>
     <LogoContainer>
-      <Logo data-testid="logo" />
+      <Logo data-testid="logo" width="201" height="125" onClick={toggleTheme} />
     </LogoContainer>
   </IndexWrapper>
 )
