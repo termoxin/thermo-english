@@ -11,7 +11,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "clean": "rm -rf dist",
-    "build": "npm run clean && NODE_ENV=production babel --config-file ./babel-config.json --out-dir dist ./src --extensions \".ts,.tsx\" && yarn build:types",
+    "build": "npm run clean && yarn build:ui && yarn build:types",
+    "build:ui": "NODE_ENV=production babel --config-file ./babel-config.json --out-dir dist ./src --extensions \".ts,.tsx\"",
     "build:types": "tsc --project tsconfig.build.json",
     "build:icons": "node scripts/buildIcons.js"
   },
@@ -54,9 +55,6 @@
     "tiny-glob": "^0.2.8",
     "ts-jest": "^26.5.6",
     "typescript": "^4.2.4"
-  },
-  "peerDependencies": {
-    "styled-components": "^5.2.3"
   },
   "dependencies": {
     "react-is": "^17.0.2",

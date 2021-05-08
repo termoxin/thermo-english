@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import userEvent from '@testing-library/user-event'
 
-import { themes } from '../../styles/themes'
+import { themes } from '../../styles/theme'
 import { InputPassword } from '.'
 
 describe('InputPassword', () => {

@@ -24,13 +24,13 @@ export const IndexWrapper = styled.div`
     margin-top: 20px;
     order: 2;
 
-    ${breakpoints.media.tablet`
-      order: 1;
-    `}
-
     svg {
       cursor: pointer;
     }
+
+    ${breakpoints.media.tablet`
+      order: 1;
+    `}
   }
 `
 
@@ -49,8 +49,8 @@ export const Container = styled.form`
   }
 
   ${breakpoints.media.tablet`
-      order: 2;
-      height: 560px;
+    order: 2;
+    height: 560px;
   `}
 `
 

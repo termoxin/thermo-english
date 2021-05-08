@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 
-import { themes } from '../../styles/themes'
+import { themes } from '../../styles/theme'
 import { Input } from '.'
 import userEvent from '@testing-library/user-event'
 

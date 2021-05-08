@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { themes } from 'ui'
 import { AppProps } from 'next/app'
@@ -6,7 +7,6 @@ import { AppContainer } from '../components/app-container'
 import GlobalStyles from '../styles/GlobalStyles'
 
 import '../styles/globals.css'
-import { useState } from 'react'
 
 export interface CustomAppProps extends AppProps {
   toggleTheme: () => void
