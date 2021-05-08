@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Heading, Info, Button } from 'ui'
+import { Heading, Info, breakpoints } from 'ui'
 
 export const LogoContainer = styled.div``
 
@@ -10,8 +10,9 @@ export const IndexWrapper = styled.div`
   flex-direction: column;
 
   ${Heading} {
-    font-family: 'Rubik', sans-serif;
-    font-weight: bold;
+    ${breakpoints.media.tablet`
+      font-size: 24px;
+    `}
 
     span {
       color: ${({ theme }) => theme.logo.color};
@@ -21,6 +22,11 @@ export const IndexWrapper = styled.div`
   ${LogoContainer} {
     align-self: flex-start;
     margin-top: 20px;
+    order: 2;
+
+    ${breakpoints.media.tablet`
+      order: 1;
+    `}
   }
 `
 
@@ -32,10 +38,16 @@ export const Container = styled.form`
   flex-direction: column;
   justify-content: space-between;
   height: 600px;
+  order: 1;
 
   ${Info} {
     color: #b5b5b5;
   }
+
+  ${breakpoints.media.tablet`
+      order: 2;
+      height: 560px;
+  `}
 `
 
 export const ButtonsContainer = styled.div`

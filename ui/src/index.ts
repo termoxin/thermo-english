@@ -9,4 +9,5 @@ export { PostCard } from './components/PostCard'
 export { Info, Heading, Paragraph } from './components/Typography'
 
 export { themes } from './styles/themes'
+export { breakpoints } from './styles/breakpoints'
 export { ThemeType } from './types/theme'

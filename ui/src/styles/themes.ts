@@ -1,4 +1,5 @@
 const light = {
+  name: 'light',
   body: { background: '#fff' },
   heading: { color: '#130f0f' },
   button: {
@@ -28,6 +29,7 @@ export const themes = {
   light,
   dark: {
     ...light,
+    name: 'dark',
     body: { background: '#191919' },
     heading: { color: '#fff' },
   },
