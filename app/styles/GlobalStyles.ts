@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { ThemeType } from 'ui'
 
 const GlobalStyles = createGlobalStyle`
   html,
@@ -9,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.body.background}
+    background: ${({ theme }) => (theme as ThemeType).body.background}
   }
 
   a {

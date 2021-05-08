@@ -1,3 +1,3 @@
-import { themes } from '../themes'
+import { themes } from '../styles/themes'
 
 export type ThemeType = typeof themes['light']

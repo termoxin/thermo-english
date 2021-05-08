@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 
-import { themes } from '../../themes'
+import { themes } from '../../styles/themes'
 import { PostCard } from '.'
 
 const props = {

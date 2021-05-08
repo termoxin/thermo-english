@@ -8,5 +8,5 @@ export { Logo } from './components/Logo'
 export { PostCard } from './components/PostCard'
 export { Info, Heading, Paragraph } from './components/Typography'
 
-export { themes } from './themes'
+export { themes } from './styles/themes'
 export { ThemeType } from './types/theme'
