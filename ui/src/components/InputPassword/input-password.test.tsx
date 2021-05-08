@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import userEvent from '@testing-library/user-event'
 
-import { themes } from '../../themes'
+import { themes } from '../../styles/theme'
 import { InputPassword } from '.'
 
 describe('InputPassword', () => {
@@ -14,7 +14,7 @@ describe('InputPassword', () => {
       </ThemeProvider>,
     )
 
-    expect(getByRole('input-password')).toBeInTheDocument()
+    expect(getByRole('password-input')).toBeInTheDocument()
   })
 
   test('should able to type a new value', () => {
@@ -24,9 +24,9 @@ describe('InputPassword', () => {
       </ThemeProvider>,
     )
 
-    userEvent.type(getByTestId('input-password'), 'New Text')
+    userEvent.type(getByTestId('password-input'), 'New Text')
 
-    expect((getByTestId('input-password') as HTMLInputElement).value).toBe(
+    expect((getByTestId('password-input') as HTMLInputElement).value).toBe(
       'New Text',
     )
   })
@@ -38,7 +38,7 @@ describe('InputPassword', () => {
       </ThemeProvider>,
     )
 
-    expect((getByTestId('input-password') as HTMLInputElement).type).toBe(
+    expect((getByTestId('password-input') as HTMLInputElement).type).toBe(
       'password',
     )
   })
@@ -54,13 +54,13 @@ describe('InputPassword', () => {
 
     userEvent.click(getByTestId('show-password'))
 
-    expect((getByTestId('input-password') as HTMLInputElement).type).toBe(
+    expect((getByTestId('password-input') as HTMLInputElement).type).toBe(
       'text',
     )
     expect(getByTestId('hide-password')).toBeInTheDocument()
     userEvent.click(getByTestId('hide-password'))
 
-    expect((getByTestId('input-password') as HTMLInputElement).type).toBe(
+    expect((getByTestId('password-input') as HTMLInputElement).type).toBe(
       'password',
     )
   })

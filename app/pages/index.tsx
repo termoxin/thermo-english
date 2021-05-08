@@ -1,5 +1,5 @@
-import { Button } from 'ui'
+import { Index } from '../components/index/index'
 
-const Index = () => <Button>Index</Button>
+const IndexPage = Index
 
-export default Index
+export default IndexPage

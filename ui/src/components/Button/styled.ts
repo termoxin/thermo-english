@@ -12,5 +12,5 @@ export const PrimaryButton = styled(BaseButton)`
   background-color: ${({ theme }) => theme.button.background.red};
   color: ${({ theme }) => theme.button.color.primary};
   border-radius: 30px;
-  font-size: 24px;
+  font-size: 2.4rem;
 `

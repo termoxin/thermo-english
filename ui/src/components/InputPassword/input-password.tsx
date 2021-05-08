@@ -17,8 +17,8 @@ export const InputPassword: FC<InputPasswordProps> = (props) => {
       <Input
         {...props}
         type={inputType}
-        data-testid="input-password"
-        role="input-password"
+        data-testid="password-input"
+        role="password-input"
       />
       <VisibilityIconContainer>
         {showPassword ? (

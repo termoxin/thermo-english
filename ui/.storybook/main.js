@@ -4,15 +4,4 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  webpackFinal: async (config) => {
-    const newWebpackConfig = {
-      ...config,
-      resolve: {
-        ...config.resolve,
-        fallback: { ...config.resolve.fallback, assert: false },
-      },
-    }
-
-    return newWebpackConfig
-  },
 }
