@@ -53,6 +53,13 @@ const buildIcons = async () => {
 
     const plainTextComponent = createIconComponent(componentName, svgContent)
 
+    console.log(
+      '\x1b[36m',
+      `${componentName}`,
+      '\x1b[0m',
+      'icon-component is created',
+    )
+
     await fs.writeFile(
       path.resolve(`src/icons/${componentName}.tsx`),
       plainTextComponent,
