@@ -5,6 +5,7 @@ const light = {
   button: {
     background: {
       red: '#FA4A0C',
+      green: '#53B175',
     },
     color: {
       primary: '#F6F6F9',
