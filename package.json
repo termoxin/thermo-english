@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev:app": "yarn workspace app dev",
-    "test": "yarn workspace ui test",
+    "test": "yarn workspace ui test && yarn workspace app test",
     "fix": "yarn fix:lint && yarn fix:format",
     "fix:lint": "yarn eslint --fix",
     "fix:format": "yarn prettier . --fix -w",
