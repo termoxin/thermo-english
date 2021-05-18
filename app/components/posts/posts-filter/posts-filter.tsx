@@ -2,10 +2,10 @@ import { FC } from 'react'
 import { Input } from 'ui'
 
 import { PostsFilterProps } from './posts-filter.types'
-import { FilterButton } from './styled'
+import { FilterButton, PostsFilterWrapper } from './styled'
 
 const PostsFilter: FC<PostsFilterProps> = ({ filters, onChangeFilter }) => (
-  <div>
+  <PostsFilterWrapper>
     {filters.map((filter) => (
       <FilterButton key={filter.value} onClick={() => onChangeFilter(filter)}>
         {filter.label}
@@ -18,7 +18,7 @@ const PostsFilter: FC<PostsFilterProps> = ({ filters, onChangeFilter }) => (
         onChangeFilter({ label: 'Search', value: event.target.value })
       }
     />
-  </div>
+  </PostsFilterWrapper>
 )
 
 export default PostsFilter
