@@ -6,6 +6,7 @@ const light = {
     background: {
       red: '#FA4A0C',
       green: '#53B175',
+      black: '#000',
     },
     color: {
       primary: '#F6F6F9',
