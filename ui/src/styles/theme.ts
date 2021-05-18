@@ -26,7 +26,7 @@ const light = {
     color: '#FB4F52',
   },
   filterButton: {
-    color: '#FB4F52',
+    background: '#FB4F52',
   },
 }
 
