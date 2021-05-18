@@ -6,4 +6,5 @@ export const PostsWrapper = styled.div`
 `
 export const PostsFilterWrapper = styled.div`
   align-self: flex-end;
+  margin: 10px 0 50px 0;
 `

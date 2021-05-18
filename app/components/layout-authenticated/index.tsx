@@ -6,7 +6,7 @@ import { NavigationContainer, Actions, Dots } from './styled'
 export const LayoutAuthenticated: FC = ({ children }) => (
   <div>
     <NavigationContainer>
-      <Logo />
+      <Logo width="201" height="125" />
       <Actions>
         <Button variant="squared">Request post</Button>
         <Button variant="squared">Admin panel</Button>
