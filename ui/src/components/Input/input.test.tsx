@@ -1,10 +1,10 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
+import userEvent from '@testing-library/user-event'
 
 import { themes } from '../../styles/theme'
 import { Input } from '.'
-import userEvent from '@testing-library/user-event'
 
 describe('Input', () => {
   test('should render correctly', () => {

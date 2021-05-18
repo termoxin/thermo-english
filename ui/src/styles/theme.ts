@@ -25,6 +25,9 @@ const light = {
   logo: {
     color: '#FB4F52',
   },
+  filterButton: {
+    color: '#FB4F52',
+  },
 }
 
 export const themes = {

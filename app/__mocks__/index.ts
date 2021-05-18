@@ -50,3 +50,9 @@ export const posts: PostCardProps[] = [
     previewUrl: './previewSample.png',
   },
 ]
+
+export const postFilters = [
+  { label: 'Popular', value: 'popular' },
+  { label: 'Recent', value: 'recent' },
+  { label: 'Oldest', value: 'oldest' },
+]

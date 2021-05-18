@@ -1,11 +1,8 @@
 import { FC } from 'react'
-import { PostCard, PostCardProps } from 'ui'
+import { PostCard } from 'ui'
 
+import { PostsListProps } from './posts-list.types'
 import { PostsListWrapper } from './styled'
-
-interface PostsListProps {
-  posts: PostCardProps[]
-}
 
 const PostsList: FC<PostsListProps> = ({ posts }) => (
   <PostsListWrapper>
