@@ -41,7 +41,7 @@ export const Container = styled.form`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: 600px;
+  height: 550px;
   order: 1;
 
   ${Info} {
@@ -60,5 +60,12 @@ export const ButtonsContainer = styled.div`
 
   button {
     margin-top: 20px;
+  }
+`
+
+export const StyledHeading = styled(Heading)`
+  &,
+  * {
+    font-weight: 700;
   }
 `

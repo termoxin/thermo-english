@@ -4,7 +4,7 @@ import { Card } from '../Card'
 import { Info, Heading } from '../Typography'
 import { Overlay, VideoPlayerContainer } from '../VideoPlayer/styled'
 
-export const PostContainer = styled(Card)`
+export const PostCardContainer = styled(Card)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;

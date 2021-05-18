@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: 'Rubik', sans-serif;
-    font-size: 10px;
+    font-weight: 500;
   }
 
   html,body {

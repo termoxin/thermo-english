@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { VideoPlayer } from '../VideoPlayer'
 import { PostCardProps } from './post-card.types'
-import { PostContainer, Content, Text, Meaning } from './styled'
+import { PostCardContainer, Content, Text, Meaning } from './styled'
 
 export const PostCard: FC<PostCardProps> = ({
   videoUrl,
@@ -11,7 +11,7 @@ export const PostCard: FC<PostCardProps> = ({
   meaning,
   previewUrl,
 }) => (
-  <PostContainer>
+  <PostCardContainer>
     <VideoPlayer src={videoUrl} previewUrl={previewUrl} />
     <Content>
       <Text>
@@ -20,5 +20,5 @@ export const PostCard: FC<PostCardProps> = ({
       </Text>
       <Meaning>{meaning}</Meaning>
     </Content>
-  </PostContainer>
+  </PostCardContainer>
 )

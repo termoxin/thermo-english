@@ -1,2 +1,3 @@
-export { PostCard } from './post-card'
-export { PostCardProps } from './post-card.types'
+export * from './post-card'
+export * from './post-card.types'
+export * from './styled'

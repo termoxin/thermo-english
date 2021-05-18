@@ -1,13 +1,5 @@
 import React, { FC } from 'react'
-import {
-  Heading,
-  Input,
-  InputPassword,
-  ButtonIcon,
-  Button,
-  Logo,
-  Info,
-} from 'ui'
+import { Input, InputPassword, ButtonIcon, Button, Logo, Info } from 'ui'
 import GoogleIcon from 'ui/dist/icons/Google'
 
 import { CustomAppProps } from './../../types/app'
@@ -17,14 +9,15 @@ import {
   LogoContainer,
   Container,
   ButtonsContainer,
+  StyledHeading,
 } from './styled'
 
 export const Index: FC<CustomAppProps> = ({ toggleTheme }) => (
   <IndexWrapper>
     <Container>
-      <Heading data-testid="welcome-heading">
+      <StyledHeading data-testid="welcome-heading">
         WELCOME TO <span>TERMO ENGLISH</span>
-      </Heading>
+      </StyledHeading>
       <Input type="email" placeholder="Email" data-testid="email-input" />
       <InputPassword placeholder="Password" />
       <ButtonsContainer>

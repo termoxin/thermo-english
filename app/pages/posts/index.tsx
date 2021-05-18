@@ -1,15 +1,16 @@
-import { PostCard } from 'ui'
+import { GetServerSideProps } from 'next'
 
+import Posts from '../../components/posts'
 import { posts } from '../../__mocks__'
 
-const Posts = () => {
-  return (
-    <>
-      {posts.map((post) => (
-        <PostCard {...post} key={post.text} />
-      ))}
-    </>
-  )
+const PostsPage = Posts
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {
+      posts,
+    },
+  }
 }
 
-export default Posts
+export default PostsPage
