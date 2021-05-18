@@ -2,11 +2,15 @@ import { createGlobalStyle } from 'styled-components'
 import { ThemeType } from 'ui'
 
 const GlobalStyles = createGlobalStyle`
-  html,
-  body {
+  *,
+  *:after,*:before {
     padding: 0;
     margin: 0;
     font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+  }
+
+  html,body {
     font-size: 10px;
   }
 

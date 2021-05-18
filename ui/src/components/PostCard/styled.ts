@@ -21,7 +21,7 @@ export const PostContainer = styled(Card)`
 export const Content = styled.div`
   height: 100%;
   width: 375px;
-  padding: 20px 0 0 20px;
+  padding: 20px 10px 10px 20px;
 `
 
 export const Text = styled(Heading)`
