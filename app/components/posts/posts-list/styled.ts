@@ -7,8 +7,12 @@ export const PostsListWrapper = styled.div`
   flex-wrap: wrap;
 
   ${PostCardContainer} {
-    margin: 20px 0 30px 0;
+    margin: 20px 5px 30px 5px;
   }
+
+  ${breakpoints.media.desktop`
+    justify-content: space-around;
+  `}
 
   ${breakpoints.media.smallDesktop`
     justify-content: center;

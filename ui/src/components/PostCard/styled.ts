@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from 'ui'
 
 import { Card } from '../Card'
 import { Info, Heading } from '../Typography'
@@ -9,8 +10,8 @@ export const PostCardContainer = styled(Card)`
   justify-content: space-between;
   flex-direction: column;
 
-  width: 376px;
-  height: 312px;
+  width: 37.1rem;
+  height: 31rem;
 
   ${VideoPlayerContainer}, ${Overlay}, video {
     border-top-left-radius: 8px;
@@ -20,7 +21,7 @@ export const PostCardContainer = styled(Card)`
 
 export const Content = styled.div`
   height: 100%;
-  width: 375px;
+  width: 37rem;
   padding: 20px 10px 10px 20px;
 `
 

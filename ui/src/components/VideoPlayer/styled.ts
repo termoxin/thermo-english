@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const VideoPlayerContainer = styled.div`
   position: relative;
-  width: 375px;
-  height: 211px;
+  width: 37rem;
+  height: 21rem;
 
   video {
     width: 100%;
@@ -40,8 +40,8 @@ export const Overlay = styled.div`
 
 export const Preview = styled.img`
   position: absolute;
-  width: 375px;
-  height: 211px;
+  width: 37rem;
+  height: 21rem;
 
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

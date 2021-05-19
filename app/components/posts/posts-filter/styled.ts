@@ -15,6 +15,11 @@ export const PostsFilterWrapper = styled.div`
   align-items: center;
   width: 100%;
 
+  input {
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+
   ${FilterButton} {
     margin-right: 10px;
   }
@@ -23,20 +28,23 @@ export const PostsFilterWrapper = styled.div`
     flex-direction: column;
 
     input {
-      margin-top: 10px;
+      margin-top: 40px;
+      align-self: center;
     }
   `}
 `
 
 export const FilterButtonsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+
+  ${FilterButton} {
+    margin-top: 10px;
+  }
 
   ${breakpoints.media.tablet`
     justify-content:center;
     flex-wrap: wrap;
-
-    ${FilterButton} {
-      margin-top: 10px;
-    }
   `}
 `

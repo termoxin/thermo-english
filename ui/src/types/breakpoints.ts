@@ -26,4 +26,5 @@ export const deviceBreakpoints = {
   mobile: { value: 450 },
   tablet: { value: 600 },
   smallDesktop: { value: 950 },
+  desktop: { value: 1280 },
 }
