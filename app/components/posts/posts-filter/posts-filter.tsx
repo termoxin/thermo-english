@@ -2,15 +2,21 @@ import { FC } from 'react'
 import { Input } from 'ui'
 
 import { PostsFilterProps } from './posts-filter.types'
-import { FilterButton, PostsFilterWrapper } from './styled'
+import {
+  FilterButton,
+  PostsFilterWrapper,
+  FilterButtonsWrapper,
+} from './styled'
 
 const PostsFilter: FC<PostsFilterProps> = ({ filters, onChangeFilter }) => (
   <PostsFilterWrapper>
-    {filters.map((filter) => (
-      <FilterButton key={filter.value} onClick={() => onChangeFilter(filter)}>
-        {filter.label}
-      </FilterButton>
-    ))}
+    <FilterButtonsWrapper>
+      {filters.map((filter) => (
+        <FilterButton key={filter.value} onClick={() => onChangeFilter(filter)}>
+          {filter.label}
+        </FilterButton>
+      ))}
+    </FilterButtonsWrapper>
     <Input
       data-testid="input-filter"
       placeholder="Search a word"

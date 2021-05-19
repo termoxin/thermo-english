@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { PostCardContainer } from 'ui'
+import { PostCardContainer, breakpoints } from 'ui'
 
 export const PostsListWrapper = styled.div`
   display: flex;
@@ -9,4 +9,12 @@ export const PostsListWrapper = styled.div`
   ${PostCardContainer} {
     margin: 20px 0 30px 0;
   }
+
+  ${breakpoints.media.smallDesktop`
+    justify-content: center;
+  `}
+
+  ${breakpoints.media.tablet`
+    justify-content: center;
+  `}
 `
