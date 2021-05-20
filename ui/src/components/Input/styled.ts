@@ -3,11 +3,11 @@ import styled from 'styled-components'
 export const BaseInput = styled.input`
   font-weight: 400;
 
-  width: 343px;
-  height: 53px;
+  width: 34.3rem;
+  height: 5.3rem;
   box-sizing: border-box;
-  border-radius: 12px;
-  padding-left: 16px;
+  border-radius: 1.2rem;
+  padding-left: 1.6rem;
 
   background: ${({ theme }) => theme.input.background};
   color: ${({ theme }) => theme.input.color};

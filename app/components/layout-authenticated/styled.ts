@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Paragraph, breakpoints } from 'ui'
 
 export const NavigationContainer = styled.div`
@@ -15,7 +15,6 @@ export const Actions = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 550px;
 
   ${Paragraph} {
     font-size: 2.4rem;
@@ -24,16 +23,17 @@ export const Actions = styled.div`
   }
 
   button {
-    width: 240px;
+    width: 24rem;
+    margin-right: 8px;
   }
 
   ${breakpoints.media.smallDesktop`
-    margin-top: 20px;
+    margin-top: 2rem;
   `}
 
   ${breakpoints.media.tablet`
     button:nth-child(2) {
-      margin-top: 10px;
+      margin-top: 1rem;
     }
 
     flex-direction: column;
@@ -42,8 +42,8 @@ export const Actions = styled.div`
 
 export const Dots = styled.span`
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
 
   background-image: radial-gradient(#000 2px, transparent 2px),

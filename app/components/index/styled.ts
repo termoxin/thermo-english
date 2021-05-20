@@ -21,7 +21,7 @@ export const IndexWrapper = styled.div`
 
   ${LogoContainer} {
     align-self: flex-start;
-    margin-top: 20px;
+    margin-top: 2rem;
     order: 2;
 
     svg {
@@ -36,12 +36,12 @@ export const IndexWrapper = styled.div`
 
 export const Container = styled.form`
   position: relative;
-  top: 50px;
+  top: 5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: 550px;
+  height: 55rem;
   order: 1;
 
   ${Info} {
@@ -50,7 +50,7 @@ export const Container = styled.form`
 
   ${breakpoints.media.tablet`
     order: 2;
-    height: 560px;
+    height: 56rem;
   `}
 `
 
@@ -59,7 +59,7 @@ export const ButtonsContainer = styled.div`
   flex-direction: column;
 
   button {
-    margin-top: 20px;
+    margin-top: 2rem;
   }
 `
 

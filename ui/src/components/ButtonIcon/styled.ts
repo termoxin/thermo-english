@@ -8,6 +8,6 @@ export const StyledButton = styled(Button)`
   background: #454d58;
 
   svg {
-    margin-right: 15px;
+    margin-right: 1.5rem;
   }
 `

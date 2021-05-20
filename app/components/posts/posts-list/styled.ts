@@ -7,7 +7,7 @@ export const PostsListWrapper = styled.div`
   flex-wrap: wrap;
 
   ${PostCardContainer} {
-    margin: 20px 5px 30px 5px;
+    margin: 2rem 0.5rem 3rem 0.5rem;
   }
 
   ${breakpoints.media.desktop`
