@@ -55,6 +55,4 @@ export const postFilters = [
   { label: 'Popular', value: 'popular' },
   { label: 'Recent', value: 'recent' },
   { label: 'Oldest', value: 'oldest' },
-  { label: 'Most viewed', value: 'most-viewed' },
-  { label: 'Most liked', value: 'most-liked' },
 ]
