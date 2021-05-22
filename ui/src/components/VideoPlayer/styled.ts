@@ -42,8 +42,8 @@ export const Preview = styled.img`
   height: 21rem;
   width: calc(100% - 1px);
 
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
 `
 
 export const Video = styled.video`
