@@ -9,6 +9,8 @@ export const IndexWrapper = styled.div`
   align-items: center;
   flex-direction: column;
 
+  height: 100%;
+
   ${Heading} {
     ${breakpoints.media.tablet`
       font-size: 2.4rem;
