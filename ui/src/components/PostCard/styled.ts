@@ -4,24 +4,24 @@ import { Card } from '../Card'
 import { Info, Heading } from '../Typography'
 import { Overlay, VideoPlayerContainer } from '../VideoPlayer/styled'
 
-export const PostContainer = styled(Card)`
+export const PostCardContainer = styled(Card)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 
-  width: 376px;
-  height: 312px;
+  width: 37.1rem;
+  height: 31rem;
 
   ${VideoPlayerContainer}, ${Overlay}, video {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
   }
 `
 
 export const Content = styled.div`
   height: 100%;
-  width: 375px;
-  padding: 20px 0 0 20px;
+  width: 37rem;
+  padding: 2rem 1rem 1rem 2rem;
 `
 
 export const Text = styled(Heading)`
@@ -33,7 +33,7 @@ export const Text = styled(Heading)`
   }
 `
 export const Meaning = styled(Info)`
-  margin-top: 7px;
+  margin-top: 0.7rem;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;

@@ -5,7 +5,13 @@ import { VideoPlayerProps } from './video-player.types'
 
 import PauseIcon from '../../icons/Pause'
 import PlayIcon from '../../icons/Play'
-import { VideoPlayerContainer, Controls, Overlay, Preview } from './styled'
+import {
+  VideoPlayerContainer,
+  Controls,
+  Overlay,
+  Preview,
+  Video,
+} from './styled'
 
 export const VideoPlayer: FC<VideoPlayerProps> = ({
   src,
@@ -13,7 +19,7 @@ export const VideoPlayer: FC<VideoPlayerProps> = ({
   previewUrl,
 }) => {
   const [video, state, controls] = useVideo(
-    <video src={src} data-testid="video" />,
+    <Video src={src} data-testid="video" />,
   )
 
   const [showControls, setShowControls] = useState(false)

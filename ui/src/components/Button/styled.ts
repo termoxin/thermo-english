@@ -2,14 +2,14 @@ import styled from 'styled-components'
 
 export const BaseButton = styled.button`
   font-family: 'Amaranth', sans-serif;
-  width: 300px;
-  height: 70px;
+  width: 30rem;
+  height: 7rem;
   border: none;
   cursor: pointer;
 `
 
 export const PrimaryButton = styled(BaseButton)`
-  border-radius: 30px;
+  border-radius: 3rem;
   font-size: 2.4rem;
 
   background-color: ${({ theme }) => theme.button.background.red};
@@ -20,10 +20,10 @@ export const SquaredButton = styled(BaseButton)`
   font-family: 'Rubik';
   font-size: 2.4rem;
   font-weight: 700;
-  height: 52px;
-  padding: 12px 40px;
+  height: 5.2rem
+  padding: 1.2rem 4rem;
 
-  border-radius: 8px;
+  border-radius: 0.8rem;
 
   background: ${({ theme }) => theme.button.background.green};
   color: ${({ theme }) => theme.button.color.primary};

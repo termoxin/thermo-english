@@ -3,13 +3,13 @@ import styled from 'styled-components'
 export const VisibilityIconContainer = styled.div`
   position: relative;
   left: 90%;
-  bottom: 39px;
+  bottom: 3.9rem;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
 `
 
 export const InputPasswordContainer = styled.div`
-  width: 343px;
-  height: 53px;
+  width: 34.3rem;
+  height: 5.3rem;
 `

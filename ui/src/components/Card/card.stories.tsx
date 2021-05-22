@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -9,11 +10,11 @@ export default {
 }
 
 const StyledCard = styled(Card)`
-  height: 275px;
-  width: 343px;
+  height: 27.5rem
+  width: 34.3rem;
 `
 
-const Template = (args): React.ReactElement => <StyledCard {...args} />
+const Template: Story = (args): React.ReactElement => <StyledCard {...args} />
 
 export const Default = Template.bind({})
 

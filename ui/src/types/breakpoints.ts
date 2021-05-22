@@ -25,5 +25,6 @@ export interface Breakpoints {
 export const deviceBreakpoints = {
   mobile: { value: 450 },
   tablet: { value: 600 },
-  desktop: { value: 900 },
+  smallDesktop: { value: 950 },
+  desktop: { value: 1280 },
 }
