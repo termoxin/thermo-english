@@ -7,7 +7,7 @@ export const posts: PostCardProps[] = [
       "an act of directing one's gaze in order to see someone or something",
     transcription: 'lʊk',
     videoUrl: './videoSample.mp4',
-    previewUrl: './previewSample.png',
+    previewUrl: './previewSample.jpeg',
   },
   {
     text: 'see',
@@ -15,7 +15,7 @@ export const posts: PostCardProps[] = [
       "an act of directing one's gaze in order to see someone or something",
     transcription: 'lʊk',
     videoUrl: './videoSample.mp4',
-    previewUrl: './previewSample.png',
+    previewUrl: './previewSample.jpeg',
   },
   {
     text: 'gaze',
@@ -23,7 +23,7 @@ export const posts: PostCardProps[] = [
       "an act of directing one's gaze in order to see someone or something",
     transcription: 'lʊk',
     videoUrl: './videoSample.mp4',
-    previewUrl: './previewSample.png',
+    previewUrl: './previewSample.jpeg',
   },
   {
     text: 'do',
@@ -31,7 +31,7 @@ export const posts: PostCardProps[] = [
       "an act of directing one's gaze in order to see someone or something",
     transcription: 'lʊk',
     videoUrl: './videoSample.mp4',
-    previewUrl: './previewSample.png',
+    previewUrl: './previewSample.jpeg',
   },
   {
     text: 'work',
@@ -39,7 +39,7 @@ export const posts: PostCardProps[] = [
       "an act of directing one's gaze in order to see someone or something",
     transcription: 'lʊk',
     videoUrl: './videoSample.mp4',
-    previewUrl: './previewSample.png',
+    previewUrl: './previewSample.jpeg',
   },
   {
     text: 'perform',
@@ -47,7 +47,7 @@ export const posts: PostCardProps[] = [
       "an act of directing one's gaze in order to see someone or something",
     transcription: 'lʊk',
     videoUrl: './videoSample.mp4',
-    previewUrl: './previewSample.png',
+    previewUrl: './previewSample.jpeg',
   },
 ]
 
