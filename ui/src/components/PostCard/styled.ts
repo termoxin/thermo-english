@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { breakpoints } from '../../styles/breakpoints'
 
 import { Card } from '../Card'
 import { Info, Heading } from '../Typography'
@@ -14,8 +13,8 @@ export const PostCardContainer = styled(Card)`
   height: 31rem;
 
   ${VideoPlayerContainer}, ${Overlay}, video {
-    border-top-left-radius: 0.8rem;
-    border-top-right-radius: 0.8rem
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
   }
 `
 
