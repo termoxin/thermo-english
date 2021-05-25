@@ -4,33 +4,9 @@ import userEvent from '@testing-library/user-event'
 
 import { QuestionReactions, QuestionReactionsProps } from './'
 import { calculateReactionsPercentages } from './question-reactions.util'
+import { props, options } from './question-reactions.mock'
 
 describe('QuestionReactions', () => {
-  const options = [
-    {
-      id: 1,
-      value: 'Yes',
-      peopleAnswered: 160,
-    },
-    {
-      id: 2,
-      value: 'No',
-      peopleAnswered: 30,
-    },
-    {
-      id: 3,
-      value: 'Maybe',
-      peopleAnswered: 10,
-    },
-  ]
-
-  const props: QuestionReactionsProps = {
-    question: 'Do you believe Leela?',
-    previousAnswer: null,
-    totalReactions: 200,
-    options,
-  }
-
   test('should render correctly', () => {
     const { getByText } = render(<QuestionReactions {...props} />)
 
@@ -45,7 +21,7 @@ describe('QuestionReactions', () => {
       <QuestionReactions {...props} previousAnswer="Yes" />,
     )
 
-    expect(getByText('No')).toHaveStyle({ background: 'green' })
+    expect(getByText('Yes')).toHaveStyle({ background: 'green' })
   })
 
   test('should invoke onAnswer callback when question is answered', () => {
@@ -66,14 +42,22 @@ describe('QuestionReactions', () => {
     userEvent.click(getByText('Yes'))
 
     expect(getByText('Yes')).toHaveStyle({ background: 'green' })
+    expect(getByText('No')).not.toHaveStyle({ background: 'green' })
 
     userEvent.click(getByText('No'))
 
+    expect(getByText('Yes')).not.toHaveStyle({ background: 'green' })
     expect(getByText('No')).toHaveStyle({ background: 'green' })
   })
 
   test('should have percentages below answers buttons when question is answered', () => {
-    const { getByText } = render(<QuestionReactions {...props} />)
+    const { queryByText, getByText } = render(<QuestionReactions {...props} />)
+
+    expect(queryByText('80%')).toBeNull()
+    expect(queryByText('15%')).toBeNull()
+    expect(queryByText('5%')).toBeNull()
+
+    userEvent.click(getByText('Yes'))
 
     expect(getByText('80%')).toBeInTheDocument()
     expect(getByText('15%')).toBeInTheDocument()

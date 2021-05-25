@@ -15,10 +15,6 @@ export const QuestionReactions: FC<QuestionReactionsProps> = ({
 }) => {
   const [currentAnswer, setAnswer] = useState(previousAnswer)
 
-  const styles = {
-    background: currentAnswer ? 'green' : undefined,
-  }
-
   const onOptionClick = (option: ReactionOption) => () => {
     if (onAnswer) {
       onAnswer(option)
@@ -29,7 +25,7 @@ export const QuestionReactions: FC<QuestionReactionsProps> = ({
 
   const reactionPercentages = useMemo(
     () => calculateReactionsPercentages(totalReactions, options),
-    [options, previousAnswer],
+    [options, currentAnswer, previousAnswer],
   )
 
   return (
@@ -37,10 +33,15 @@ export const QuestionReactions: FC<QuestionReactionsProps> = ({
       <p>{question}</p>
       {options.map((option) => (
         <div key={option.id}>
-          <button style={styles} onClick={onOptionClick(option)}>
+          <button
+            style={{
+              background: currentAnswer === option.value ? 'green' : undefined,
+            }}
+            onClick={onOptionClick(option)}
+          >
             {option.value}
           </button>
-          <span>{reactionPercentages[option.id]}%</span>
+          {currentAnswer && <span>{reactionPercentages[option.id]}%</span>}
         </div>
       ))}
     </div>
