@@ -10,22 +10,18 @@ export const QuestionReactions: FC<QuestionReactionsProps> = ({
   question,
   options,
   totalReactions,
-  previousAnswer,
+  currentAnswer,
   onAnswer,
 }) => {
-  const [currentAnswer, setAnswer] = useState(previousAnswer)
-
   const onOptionClick = (option: ReactionOption) => () => {
     if (onAnswer) {
       onAnswer(option)
     }
-
-    setAnswer(option.value)
   }
 
   const reactionPercentages = useMemo(
     () => calculateReactionsPercentages(totalReactions, options),
-    [options, currentAnswer, previousAnswer],
+    [options, currentAnswer],
   )
 
   return (

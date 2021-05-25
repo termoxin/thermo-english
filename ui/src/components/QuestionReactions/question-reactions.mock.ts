@@ -23,7 +23,7 @@ export const options: ReactionOption[] = [
 
 export const props: QuestionReactionsProps = {
   question: 'Do you believe Leela?',
-  previousAnswer: null,
+  currentAnswer: null,
   totalReactions: 200,
   options,
 }

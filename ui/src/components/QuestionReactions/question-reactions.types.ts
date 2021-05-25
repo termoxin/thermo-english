@@ -6,7 +6,7 @@ export interface ReactionOption {
 
 export interface QuestionReactionsProps {
   question: string
-  previousAnswer: string | null
+  currentAnswer: string | null
   options: ReactionOption[]
   totalReactions: number
   onAnswer?: (option: ReactionOption) => void
