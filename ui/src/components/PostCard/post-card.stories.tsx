@@ -4,13 +4,15 @@ import videoSample from '../../__mocks__/videoSample.mp4'
 import previewSample from '../../__mocks__/videoPreview.jpeg'
 
 import { PostCard } from './post-card'
+import { Story } from '@storybook/react'
+import { PostCardProps } from './post-card.types'
 
 export default {
   title: 'PostCard',
   component: PostCard,
 }
 
-const Template = (args): React.ReactElement => (
+const Template: Story<PostCardProps> = (args): React.ReactElement => (
   <PostCard {...args} videoUrl={videoSample} previewUrl={previewSample} />
 )
 
