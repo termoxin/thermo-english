@@ -27,7 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         {guestRoutes.includes(router.route) ? (
           <Component {...currentPageProps} />
         ) : (
-          <LayoutAuthenticated>
+          <LayoutAuthenticated toggleTheme={toggleTheme}>
             <Component {...currentPageProps} />
           </LayoutAuthenticated>
         )}
