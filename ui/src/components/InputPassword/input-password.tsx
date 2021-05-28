@@ -23,15 +23,15 @@ export const InputPassword: FC<InputPasswordProps> = (props) => {
       <VisibilityIconContainer>
         {showPassword ? (
           <Eye
-            height="24"
-            width="24"
+            height="20"
+            width="20"
             onClick={() => setShowPassword(false)}
             data-testid="hide-password"
           />
         ) : (
           <CrossedEye
-            height="24"
-            width="24"
+            height="20"
+            width="20"
             onClick={() => setShowPassword(true)}
             data-testid="show-password"
           />
