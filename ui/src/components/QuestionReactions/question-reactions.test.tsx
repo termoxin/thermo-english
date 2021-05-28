@@ -66,9 +66,29 @@ describe('QuestionReactions', () => {
   describe('utils', () => {
     describe('calculateReactionsPercentages', () => {
       test('should return percentages', () => {
-        const output = { 1: 80, 2: 15, 3: 5 }
+        const output = [
+          { 1: 80, 2: 15, 3: 5 },
+          { 1: 11, 2: 2, 3: 1, 4: 27, 5: 60 },
+        ]
 
-        expect(calculateReactionsPercentages(200, options)).toEqual(output)
+        const extendedOptions = [
+          ...options,
+          {
+            id: 4,
+            value: 'Never again',
+            totalPeopleAnswered: 410,
+          },
+          {
+            id: 5,
+            value: 'Are you kidding me?',
+            totalPeopleAnswered: 910,
+          },
+        ]
+
+        expect(calculateReactionsPercentages(options)).toEqual(output[0])
+        expect(calculateReactionsPercentages(extendedOptions)).toEqual(
+          output[1],
+        )
       })
     })
   })

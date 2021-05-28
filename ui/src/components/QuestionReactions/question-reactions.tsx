@@ -17,7 +17,6 @@ import {
 export const QuestionReactions: FC<QuestionReactionsProps> = ({
   question,
   options,
-  totalReactions,
   currentAnswer,
   onAnswer,
 }) => {
@@ -28,7 +27,7 @@ export const QuestionReactions: FC<QuestionReactionsProps> = ({
   }
 
   const reactionPercentages = useMemo(
-    () => calculateReactionsPercentages(totalReactions, options),
+    () => calculateReactionsPercentages(options),
     [options, currentAnswer],
   )
 
