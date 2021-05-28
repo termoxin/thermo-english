@@ -2,13 +2,17 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import { QuestionReactions, QuestionReactionsProps } from './'
+import { QuestionReactions } from './'
 import { calculateReactionsPercentages } from './question-reactions.util'
 import { props, options } from './question-reactions.mock'
+import { wrapIntoTheme } from '../../test-helpers/wrapIntoTheme'
+import { themes } from '../../styles/theme'
 
 describe('QuestionReactions', () => {
   test('should render correctly', () => {
-    const { getByText } = render(<QuestionReactions {...props} />)
+    const { getByText } = render(
+      wrapIntoTheme(<QuestionReactions {...props} />),
+    )
 
     expect(getByText('Do you believe Leela?')).toBeInTheDocument()
     expect(getByText('Yes')).toBeInTheDocument()
@@ -18,17 +22,20 @@ describe('QuestionReactions', () => {
 
   test('should have green button when question is answered', () => {
     const { getByText } = render(
-      <QuestionReactions {...props} currentAnswer="Yes" />,
+      wrapIntoTheme(<QuestionReactions {...props} currentAnswer="Yes" />),
     )
 
-    expect(getByText('Yes')).toHaveStyle({ background: 'green' })
+    expect(getByText('Yes')).toHaveStyle({
+      'background-color':
+        themes.light.questionsReactions.answerButtonBackground,
+    })
   })
 
   test('should invoke onAnswer callback when question is answered', () => {
     const onAnswer = jest.fn()
 
     const { getByText } = render(
-      <QuestionReactions {...props} onAnswer={onAnswer} />,
+      wrapIntoTheme(<QuestionReactions {...props} onAnswer={onAnswer} />),
     )
 
     userEvent.click(getByText('Yes'))
@@ -38,7 +45,7 @@ describe('QuestionReactions', () => {
 
   test('should have percentages below answers buttons when question is answered', () => {
     const { getByText } = render(
-      <QuestionReactions {...props} currentAnswer="Yes" />,
+      wrapIntoTheme(<QuestionReactions {...props} currentAnswer="Yes" />),
     )
 
     expect(getByText('80%')).toBeInTheDocument()
@@ -47,7 +54,9 @@ describe('QuestionReactions', () => {
   })
 
   test('should not have percentages below answers buttons when question not answered', () => {
-    const { queryByText } = render(<QuestionReactions {...props} />)
+    const { queryByText } = render(
+      wrapIntoTheme(<QuestionReactions {...props} />),
+    )
 
     expect(queryByText('80%')).toBeNull()
     expect(queryByText('15%')).toBeNull()
