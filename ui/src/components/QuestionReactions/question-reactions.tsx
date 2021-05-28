@@ -1,10 +1,18 @@
-import React, { FC, useMemo, useState } from 'react'
+import React, { FC, useMemo } from 'react'
 
 import {
   QuestionReactionsProps,
   ReactionOption,
 } from './question-reactions.types'
 import { calculateReactionsPercentages } from './question-reactions.util'
+import {
+  AnswerButton,
+  Percentage,
+  QuestionBlock,
+  QuestionReactionsContainer,
+  AnswerButtonsContainer,
+  AnswerButtonContainer,
+} from './styled'
 
 export const QuestionReactions: FC<QuestionReactionsProps> = ({
   question,
@@ -25,21 +33,23 @@ export const QuestionReactions: FC<QuestionReactionsProps> = ({
   )
 
   return (
-    <div>
-      <p>{question}</p>
-      {options.map((option) => (
-        <div key={option.id}>
-          <button
-            style={{
-              background: currentAnswer === option.value ? 'green' : undefined,
-            }}
-            onClick={onOptionClick(option)}
-          >
-            {option.value}
-          </button>
-          {currentAnswer && <span>{reactionPercentages[option.id]}%</span>}
-        </div>
-      ))}
-    </div>
+    <QuestionReactionsContainer>
+      <QuestionBlock>{question}</QuestionBlock>
+      <AnswerButtonsContainer>
+        {options.map((option) => (
+          <AnswerButtonContainer key={option.id}>
+            <AnswerButton
+              isSelected={currentAnswer === option.value}
+              onClick={onOptionClick(option)}
+            >
+              {option.value}
+            </AnswerButton>
+            {currentAnswer && (
+              <Percentage>{reactionPercentages[option.id]}%</Percentage>
+            )}
+          </AnswerButtonContainer>
+        ))}
+      </AnswerButtonsContainer>
+    </QuestionReactionsContainer>
   )
 }

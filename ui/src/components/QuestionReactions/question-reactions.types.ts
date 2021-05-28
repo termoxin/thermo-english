@@ -1,3 +1,5 @@
+import { ButtonProps } from '../Button'
+
 export interface ReactionOption {
   id: number
   value: string
@@ -10,4 +12,8 @@ export interface QuestionReactionsProps {
   options: ReactionOption[]
   totalReactions: number
   onAnswer?: (option: ReactionOption) => void
+}
+
+export interface AnswerButtonStyleProps extends ButtonProps {
+  isSelected: boolean
 }

@@ -2,6 +2,9 @@ const light = {
   name: 'light',
   body: { background: '#fff' },
   heading: { color: '#130f0f' },
+  typographyColor: {
+    info: '#78746d;',
+  },
   button: {
     background: {
       red: '#FA4A0C',
@@ -27,6 +30,11 @@ const light = {
   },
   filterButton: {
     background: '#FB4F52',
+  },
+  questionsReactions: {
+    answerButtonBackground: '#53B175',
+    questionBackground: '#454D58',
+    textColor: '#fff',
   },
 }
 

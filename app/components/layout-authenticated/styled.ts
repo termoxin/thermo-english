@@ -24,7 +24,7 @@ export const Actions = styled.div`
 
   button {
     width: 24rem;
-    margin-right: 8px;
+    margin-right: 0.8rem;
   }
 
   ${breakpoints.media.smallDesktop`
