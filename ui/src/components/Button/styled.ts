@@ -20,7 +20,7 @@ export const SquaredButton = styled(BaseButton)`
   font-family: 'Rubik';
   font-size: 2.4rem;
   font-weight: 700;
-  height: 5.2rem
+  height: 5.2rem;
   padding: 1.2rem 4rem;
 
   border-radius: 0.8rem;

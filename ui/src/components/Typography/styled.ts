@@ -7,7 +7,7 @@ export const Heading = styled.h1`
 
 export const Info = styled.p`
   font-size: 1.4rem;
-  color: #78746d;
+  color: ${({ theme }) => theme.typographyColor.info};
 `
 
 export const Paragraph = styled.p`

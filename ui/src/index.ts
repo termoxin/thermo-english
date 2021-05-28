@@ -7,8 +7,9 @@ export { VideoPlayer } from './components/VideoPlayer'
 export { Logo } from './components/Logo'
 export { Info, Heading, Paragraph } from './components/Typography'
 export { NotFoundBanner } from './components/NotFoundBanner'
+export * from './components/PostCard'
+export * from './components/QuestionReactions'
+
 export { themes } from './styles/theme'
 export { breakpoints } from './styles/breakpoints'
 export { ThemeType } from './types/theme'
-
-export * from './components/PostCard'
