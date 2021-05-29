@@ -9,7 +9,7 @@ export const QuestionReactionsContainer = styled.div`
   max-width: 300px;
 `
 
-export const AnswerButtonsContainer = styled.div`
+export const ReactionButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   margin: 4rem 1rem 1rem 0;
@@ -33,7 +33,7 @@ export const QuestionBlock = styled.div`
   color: ${({ theme }) => theme.questionsReactions.textColor};
 `
 
-export const AnswerButton = styled<ComponentType<AnswerButtonStyleProps>>(
+export const ReactionButton = styled<ComponentType<AnswerButtonStyleProps>>(
   Button,
 )`
   height: auto;
@@ -53,6 +53,6 @@ export const Percentage = styled(Info)`
   margin-top: 8px;
 `
 
-export const AnswerButtonContainer = styled.div`
+export const ReactionButtonContainer = styled.div`
   text-align: center;
 `
