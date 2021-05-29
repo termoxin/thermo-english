@@ -81,6 +81,22 @@ describe('QuestionsBuilder', () => {
     )
   })
 
+  test('should not create an empty reaction', () => {
+    const onChangeReactions = jest.fn()
+
+    const { getByText } = render(
+      <QuestionsBuilder {...props} onChangeReactions={onChangeReactions} />,
+    )
+
+    userEvent.click(getByText('Add'))
+
+    expect(onChangeReactions).toBeCalledTimes(0)
+
+    expect(getByText('Yes')).toBeInTheDocument()
+    expect(getByText('No')).toBeInTheDocument()
+    expect(getByText('Maybe')).toBeInTheDocument()
+  })
+
   test('should create a new reaction', () => {
     const onChangeReactions = jest.fn()
 

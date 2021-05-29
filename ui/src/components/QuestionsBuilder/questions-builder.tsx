@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC, useState } from 'react'
-import { lensProp, propEq, reject } from 'ramda'
+import { propEq, reject } from 'ramda'
 
 import { QuestionsBuilderProps } from './questions-builder.types'
 
@@ -30,19 +30,21 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
   }
 
   const onAddHandler = () => {
-    const newReaction = { id: Date.now(), value: newQuestion }
+    if (newQuestion) {
+      const newReaction = { id: Date.now(), value: newQuestion }
 
-    setReactions((reactions) => {
-      const newReactions = [...reactions, newReaction]
+      setReactions((reactions) => {
+        const newReactions = [...reactions, newReaction]
 
-      if (onChangeReactions) {
-        onChangeReactions(newReactions)
-      }
+        if (onChangeReactions) {
+          onChangeReactions(newReactions)
+        }
 
-      return newReactions
-    })
+        return newReactions
+      })
 
-    changeNewQuestion('')
+      changeNewQuestion('')
+    }
   }
 
   const onReactionDblClick = (id: number) => () =>
@@ -60,7 +62,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
           <button
             key={id}
             data-testid={`question-${id}`}
-            onClick={onReactionDblClick(id)}
+            onDoubleClick={onReactionDblClick(id)}
           >
             {value}
           </button>
