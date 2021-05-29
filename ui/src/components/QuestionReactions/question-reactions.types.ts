@@ -14,5 +14,5 @@ export interface QuestionReactionsProps {
 }
 
 export interface AnswerButtonStyleProps extends ButtonProps {
-  isSelected: boolean
+  isSelected?: boolean
 }

@@ -2,6 +2,13 @@ import React, { ChangeEvent, FC, useState } from 'react'
 import { propEq, reject } from 'ramda'
 
 import { QuestionsBuilderProps } from './questions-builder.types'
+import { Input } from '../Input'
+import { ReactionButton } from '../QuestionReactions/styled'
+import {
+  QuestionsBuilderContainer,
+  ReactionsContainer,
+  StyledButton,
+} from './styled'
 
 export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
   questionText,
@@ -51,29 +58,32 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
     setReactions(reject(propEq('id', id)))
 
   return (
-    <div>
-      <input
+    <QuestionsBuilderContainer>
+      <Input
         data-testid="input-question"
         value={question}
         onChange={onChangeQuestionHandler}
       />
-      <div>
+      <ReactionsContainer>
         {currentReactions.map(({ id, value }) => (
-          <button
+          <ReactionButton
             key={id}
             data-testid={`question-${id}`}
             onDoubleClick={onReactionDblClick(id)}
           >
             {value}
-          </button>
+          </ReactionButton>
         ))}
-      </div>
-      <input
+      </ReactionsContainer>
+      <Input
         data-testid="input-new-reaction"
         value={newQuestion}
         onChange={onChangeNewQuestionHandler}
+        placeholder="Enter reaction"
       />
-      <button onClick={onAddHandler}>Add</button>
-    </div>
+      <StyledButton variant="squared" onClick={onAddHandler}>
+        Add
+      </StyledButton>
+    </QuestionsBuilderContainer>
   )
 }
