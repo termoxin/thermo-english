@@ -1,9 +1,9 @@
 import React from 'react'
-import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { QuestionsBuilder } from './questions-builder'
 import { props } from './questions-builder.mock'
+import { renderWithTheme as render } from '../../test-helpers/renderWithTheme'
 
 describe('QuestionsBuilder', () => {
   let dateNowSpy: jest.SpyInstance<number, []>
