@@ -6,7 +6,7 @@ import { Button } from './../Button/button'
 import { AnswerButtonStyleProps } from './question-reactions.types'
 
 export const QuestionReactionsContainer = styled.div`
-  max-width: 300px;
+  max-width: 30rem;
 `
 
 export const ReactionButtonsContainer = styled.div`
