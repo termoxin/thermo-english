@@ -9,6 +9,7 @@ import {
   ReactionsContainer,
   StyledButton,
 } from './styled'
+import { Info } from '../Typography'
 
 export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
   questionText,
@@ -64,6 +65,11 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
         value={question}
         onChange={onChangeQuestionHandler}
       />
+      {!currentReactions.length && (
+        <Info>
+          No reactions. Please, type a reaction and click on ADD button
+        </Info>
+      )}
       <ReactionsContainer>
         {currentReactions.map(({ id, value }) => (
           <ReactionButton

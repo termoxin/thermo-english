@@ -142,4 +142,16 @@ describe('QuestionsBuilder', () => {
     expect(queryByText('No')).not.toBeInTheDocument()
     expect(queryByText('Maybe')).not.toBeInTheDocument()
   })
+
+  test('should show info text about how to create a reaction where no reactions', () => {
+    const { getByText } = render(
+      <QuestionsBuilder {...{ ...props, reactions: [] }} />,
+    )
+
+    expect(
+      getByText(
+        'No reactions. Please, type a reaction and click on ADD button',
+      ),
+    )
+  })
 })
