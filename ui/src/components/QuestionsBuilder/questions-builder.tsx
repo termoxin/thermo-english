@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react'
+import React, { ChangeEvent, FC, KeyboardEventHandler, useState } from 'react'
 import { propEq, reject } from 'ramda'
 
 import { QuestionsBuilderProps } from './questions-builder.types'
@@ -10,6 +10,7 @@ import {
   StyledButton,
 } from './styled'
 import { Info } from '../Typography'
+import { KEYBOARD } from '../../constants/keyboard'
 
 export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
   questionText,
@@ -37,9 +38,11 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
     changeNewQuestion(value)
   }
 
+  const createNewReaction = () => ({ id: Date.now(), value: newQuestion })
+
   const onAddHandler = () => {
     if (newQuestion) {
-      const newReaction = { id: Date.now(), value: newQuestion }
+      const newReaction = createNewReaction()
 
       setReactions((reactions) => {
         const newReactions = [...reactions, newReaction]
@@ -55,8 +58,24 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
     }
   }
 
-  const onReactionDblClick = (id: number) => () =>
+  const onReactionDblClickHandler = (id: number) => () =>
     setReactions(reject(propEq('id', id)))
+
+  const onKeyUpHandler: KeyboardEventHandler<HTMLInputElement> = (event) => {
+    if (event.key === KEYBOARD.ENTER) {
+      setReactions((reactions) => {
+        const newReactions = [...reactions, createNewReaction()]
+
+        if (onChangeReactions) {
+          onChangeReactions(newReactions)
+        }
+
+        return newReactions
+      })
+
+      changeNewQuestion('')
+    }
+  }
 
   return (
     <QuestionsBuilderContainer>
@@ -75,7 +94,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
           <ReactionButton
             key={id}
             data-testid={`question-${id}`}
-            onDoubleClick={onReactionDblClick(id)}
+            onDoubleClick={onReactionDblClickHandler(id)}
           >
             {value}
           </ReactionButton>
@@ -85,6 +104,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
         data-testid="input-new-reaction"
         value={newQuestion}
         onChange={onChangeNewQuestionHandler}
+        onKeyUp={onKeyUpHandler}
         placeholder="Enter reaction"
       />
       <StyledButton variant="squared" onClick={onAddHandler}>
