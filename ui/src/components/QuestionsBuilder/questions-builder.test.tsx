@@ -1,4 +1,5 @@
 import React from 'react'
+import { fireEvent } from '@testing-library/dom'
 import userEvent from '@testing-library/user-event'
 
 import { QuestionsBuilder } from './questions-builder'
@@ -111,6 +112,39 @@ describe('QuestionsBuilder', () => {
     )
 
     userEvent.click(getByText('Add'))
+
+    expect(onChangeReactions.mock.calls[0][0]).toEqual([
+      { id: 12345, value: 'Yes' },
+      { id: 12346, value: 'No' },
+      { id: 12347, value: 'Maybe' },
+      { id: 538, value: 'Never' },
+    ])
+
+    expect(onChangeReactions).toBeCalledTimes(1)
+
+    expect(getByText('Yes')).toBeInTheDocument()
+    expect(getByText('No')).toBeInTheDocument()
+    expect(getByText('Maybe')).toBeInTheDocument()
+    expect(getByText('Never')).toBeInTheDocument()
+  })
+
+  test('should create a new reaction by pressing Enter key', () => {
+    const onChangeReactions = jest.fn()
+
+    const { getByText, getByTestId } = render(
+      <QuestionsBuilder {...props} onChangeReactions={onChangeReactions} />,
+    )
+
+    userEvent.type(getByTestId('input-new-reaction'), 'Never')
+
+    expect((getByTestId('input-new-reaction') as HTMLInputElement).value).toBe(
+      'Never',
+    )
+
+    fireEvent.keyUp(getByTestId('input-new-reaction'), {
+      key: 'Enter',
+      code: 'Enter',
+    })
 
     expect(onChangeReactions.mock.calls[0][0]).toEqual([
       { id: 12345, value: 'Yes' },
