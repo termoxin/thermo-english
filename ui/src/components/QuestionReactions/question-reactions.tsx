@@ -6,12 +6,12 @@ import {
 } from './question-reactions.types'
 import { calculateReactionsPercentages } from './question-reactions.util'
 import {
-  AnswerButton,
+  ReactionButton,
   Percentage,
   QuestionBlock,
   QuestionReactionsContainer,
-  AnswerButtonsContainer,
-  AnswerButtonContainer,
+  ReactionButtonsContainer,
+  ReactionButtonContainer,
 } from './styled'
 
 export const QuestionReactions: FC<QuestionReactionsProps> = ({
@@ -34,21 +34,21 @@ export const QuestionReactions: FC<QuestionReactionsProps> = ({
   return (
     <QuestionReactionsContainer>
       <QuestionBlock>{question}</QuestionBlock>
-      <AnswerButtonsContainer>
+      <ReactionButtonsContainer>
         {options.map((option) => (
-          <AnswerButtonContainer key={option.id}>
-            <AnswerButton
+          <ReactionButtonContainer key={option.id}>
+            <ReactionButton
               isSelected={currentAnswer === option.value}
               onClick={onOptionClick(option)}
             >
               {option.value}
-            </AnswerButton>
+            </ReactionButton>
             {currentAnswer && (
               <Percentage>{reactionPercentages[option.id]}%</Percentage>
             )}
-          </AnswerButtonContainer>
+          </ReactionButtonContainer>
         ))}
-      </AnswerButtonsContainer>
+      </ReactionButtonsContainer>
     </QuestionReactionsContainer>
   )
 }

@@ -3775,6 +3775,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/ramda@npm:^0.27.40":
+  version: 0.27.40
+  resolution: "@types/ramda@npm:0.27.40"
+  dependencies:
+    ts-toolbelt: ^6.15.1
+  checksum: 25254f007a0b3715eb76f2e47e249559358d7fdd518943ef4f57506638db937a17745e42bd8cdaab4f8341dd1cbeae162d623e1ddf2ed46ecff4028b48f5afae
+  languageName: node
+  linkType: hard
+
 "@types/reach__router@npm:^1.3.7":
   version: 1.3.7
   resolution: "@types/reach__router@npm:1.3.7"
@@ -12923,6 +12932,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"ramda@npm:^0.27.1":
+  version: 0.27.1
+  resolution: "ramda@npm:0.27.1"
+  checksum: 31a0c0ef739b2525d7615f84cbb5d3cb89ee0c795469b711f729ea1d8df0dccc3cd75d3717a1e9742d42315ce86435680b7c87743eb7618111c60c144a5b8059
+  languageName: node
+  linkType: hard
+
 "randombytes@npm:^2.0.0, randombytes@npm:^2.0.1, randombytes@npm:^2.0.5, randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -15430,6 +15446,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"ts-toolbelt@npm:^6.15.1":
+  version: 6.15.5
+  resolution: "ts-toolbelt@npm:6.15.5"
+  checksum: 24ad00cfd9ce735c76c873a9b1347eac475b94e39ebbdf100c9019dce88dd5f4babed52884cf82bb456a38c28edd0099ab6f704b84b2e5e034852b618472c1f3
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.13.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -15588,6 +15611,7 @@ typescript@^4.2.4:
     "@types/jest": ^26.0.22
     "@types/node": ^14.14.41
     "@types/prop-types": ^15.7.3
+    "@types/ramda": ^0.27.40
     "@types/react": ^17.0.3
     "@types/react-dom": 17.0.2
     "@types/styled-components": ^5.1.9
@@ -15600,6 +15624,7 @@ typescript@^4.2.4:
     esbuild: ^0.11.13
     jest: ^26.6.3
     prop-types: ^15.7.2
+    ramda: ^0.27.1
     react: 17.0.2
     react-dom: 17.0.2
     react-is: ^17.0.2

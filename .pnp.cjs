@@ -6763,6 +6763,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/ramda", [
+        ["npm:0.27.40", {
+          "packageLocation": "./.yarn/cache/@types-ramda-npm-0.27.40-74cd6fc0d7-25254f007a.zip/node_modules/@types/ramda/",
+          "packageDependencies": [
+            ["@types/ramda", "npm:0.27.40"],
+            ["ts-toolbelt", "npm:6.15.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/reach__router", [
         ["npm:1.3.7", {
           "packageLocation": "./.yarn/cache/@types-reach__router-npm-1.3.7-6023df92b3-061dc348de.zip/node_modules/@types/reach__router/",
@@ -17756,6 +17766,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ramda", "npm:0.21.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:0.27.1", {
+          "packageLocation": "./.yarn/cache/ramda-npm-0.27.1-5818f2cb83-31a0c0ef73.zip/node_modules/ramda/",
+          "packageDependencies": [
+            ["ramda", "npm:0.27.1"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["randombytes", [
@@ -20976,6 +20993,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["ts-toolbelt", [
+        ["npm:6.15.5", {
+          "packageLocation": "./.yarn/cache/ts-toolbelt-npm-6.15.5-e42f89942f-24ad00cfd9.zip/node_modules/ts-toolbelt/",
+          "packageDependencies": [
+            ["ts-toolbelt", "npm:6.15.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["tslib", [
         ["npm:1.14.1", {
           "packageLocation": "./.yarn/cache/tslib-npm-1.14.1-102499115e-dbe628ef87.zip/node_modules/tslib/",
@@ -21140,6 +21166,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:26.0.23"],
             ["@types/node", "npm:14.14.45"],
             ["@types/prop-types", "npm:15.7.3"],
+            ["@types/ramda", "npm:0.27.40"],
             ["@types/react", "npm:17.0.5"],
             ["@types/react-dom", "npm:17.0.2"],
             ["@types/styled-components", "npm:5.1.9"],
@@ -21152,6 +21179,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["esbuild", "npm:0.11.23"],
             ["jest", "npm:26.6.3"],
             ["prop-types", "npm:15.7.2"],
+            ["ramda", "npm:0.27.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:17.0.2"],
             ["react-is", "npm:17.0.2"],
@@ -21191,6 +21219,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:26.0.23"],
             ["@types/node", "npm:14.14.45"],
             ["@types/prop-types", "npm:15.7.3"],
+            ["@types/ramda", "npm:0.27.40"],
             ["@types/react", "npm:17.0.5"],
             ["@types/react-dom", "npm:17.0.2"],
             ["@types/styled-components", "npm:5.1.9"],
@@ -21203,6 +21232,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["esbuild", "npm:0.11.23"],
             ["jest", "npm:26.6.3"],
             ["prop-types", "npm:15.7.2"],
+            ["ramda", "npm:0.27.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:17.0.2"],
             ["react-is", "npm:17.0.2"],
