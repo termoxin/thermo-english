@@ -56,3 +56,46 @@ export const postFilters = [
   { label: 'Recent', value: 'recent' },
   { label: 'Oldest', value: 'oldest' },
 ]
+
+export const options = [
+  {
+    id: 1,
+    value: 'Yes',
+    totalPeopleAnswered: 160,
+  },
+  {
+    id: 2,
+    value: 'No',
+    totalPeopleAnswered: 30,
+  },
+  {
+    id: 3,
+    value: 'Maybe',
+    totalPeopleAnswered: 10,
+  },
+]
+
+export const expandedPosts = [
+  {
+    state: 'draft',
+    videoUrl: '/videoSample.mp4',
+    previewUrl: '/previewSample.jpeg',
+    transcript: ['Hello, my name is Leela!', 'Привет, меня зовут Лила!'],
+    question: {
+      text: 'Do you believe Leela?',
+      reactions: options,
+    },
+    likes: 431,
+  },
+  {
+    state: 'published',
+    videoUrl: '/videoSample.mp4',
+    previewUrl: '/previewSample.jpeg',
+    transcript: ['Hello, my name is Leela!', 'Привет, меня зовут Лила!'],
+    question: {
+      text: 'Do you know Leela?',
+      reactions: options,
+    },
+    likes: 941,
+  },
+]
