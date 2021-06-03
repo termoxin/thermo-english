@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { VideoPlayer, Card } from 'ui'
+
+import { VideoPlayer, Card, Label } from 'ui'
 
 export const StyledVideoPlayer = styled(VideoPlayer)`
   margin-top: 5rem;
@@ -16,10 +17,19 @@ export const StyledVideoPlayer = styled(VideoPlayer)`
   }
 `
 
-export const PostPageContainer = styled.div`
+export const PostPageContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+`
+
+export const StyledLabel = styled(Label)`
+  align-self: flex-end;
+`
+
+export const PostPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 export const LeftSection = styled.div`

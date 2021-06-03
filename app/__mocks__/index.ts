@@ -85,7 +85,6 @@ export const expandedPosts = [
       text: 'Do you believe Leela?',
       reactions: options,
     },
-    likes: 431,
   },
   {
     state: 'published',
@@ -97,5 +96,15 @@ export const expandedPosts = [
       reactions: options,
     },
     likes: 941,
+  },
+  {
+    state: 'requested',
+    videoUrl: '/videoSample.mp4',
+    previewUrl: '/previewSample.jpeg',
+    transcript: ['Hello, my name is Leela!', 'Привет, меня зовут Лила!'],
+    question: {
+      text: "What's going on with Leela?",
+      reactions: options,
+    },
   },
 ]

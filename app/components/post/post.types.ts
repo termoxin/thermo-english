@@ -6,7 +6,7 @@ export interface Post {
   videoUrl: string
   previewUrl: string
   transcript: string[]
-  likes: number
+  likes?: number
   question: {
     text: string
     reactions: ReactionOption[]

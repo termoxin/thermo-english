@@ -9,6 +9,7 @@ export { Info, Heading, Paragraph } from './components/Typography'
 export { NotFoundBanner } from './components/NotFoundBanner'
 export * from './components/PostCard'
 export * from './components/QuestionReactions'
+export * from './components/Label'
 
 export { themes } from './styles/theme'
 export { breakpoints } from './styles/breakpoints'
