@@ -36,6 +36,14 @@ const light = {
     questionBackground: '#454D58',
     textColor: '#fff',
   },
+  label: {
+    color: '#fff',
+    states: {
+      requested: '#F85156',
+      draft: '#FFC24E',
+      published: '#5EA595',
+    },
+  },
 }
 
 export const themes = {
