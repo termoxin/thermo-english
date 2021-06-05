@@ -19,7 +19,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
   onChangeReactions,
 }) => {
   const [question, changeQuestion] = useState(questionText)
-  const [newQuestion, changeNewQuestion] = useState('')
+  const [newReaction, changeNewReaction] = useState('')
   const [currentReactions, setReactions] = useState(reactions)
 
   const onChangeQuestionHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -35,13 +35,13 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
   const onChangeNewQuestionHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
 
-    changeNewQuestion(value)
+    changeNewReaction(value)
   }
 
-  const createNewReaction = () => ({ id: Date.now(), value: newQuestion })
+  const createNewReaction = () => ({ id: Date.now(), value: newReaction })
 
   const onAddHandler = () => {
-    if (newQuestion) {
+    if (newReaction) {
       const newReaction = createNewReaction()
 
       setReactions((reactions) => {
@@ -54,7 +54,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
         return newReactions
       })
 
-      changeNewQuestion('')
+      changeNewReaction('')
     }
   }
 
@@ -62,7 +62,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
     setReactions(reject(propEq('id', id)))
 
   const onKeyUpHandler: KeyboardEventHandler<HTMLInputElement> = (event) => {
-    if (event.key === KEYBOARD.ENTER) {
+    if (event.key === KEYBOARD.ENTER && newReaction) {
       setReactions((reactions) => {
         const newReactions = [...reactions, createNewReaction()]
 
@@ -73,7 +73,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
         return newReactions
       })
 
-      changeNewQuestion('')
+      changeNewReaction('')
     }
   }
 
@@ -102,7 +102,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
       </ReactionsContainer>
       <Input
         data-testid="input-new-reaction"
-        value={newQuestion}
+        value={newReaction}
         onChange={onChangeNewQuestionHandler}
         onKeyUp={onKeyUpHandler}
         placeholder="Enter reaction"

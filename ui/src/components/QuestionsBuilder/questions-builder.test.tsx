@@ -161,6 +161,27 @@ describe('QuestionsBuilder', () => {
     expect(getByText('Never')).toBeInTheDocument()
   })
 
+  test('should not create an empty reaction by pressing Enter key', () => {
+    const onChangeReactions = jest.fn()
+
+    const { getByText, getByTestId } = render(
+      <QuestionsBuilder {...props} onChangeReactions={onChangeReactions} />,
+    )
+
+    userEvent.clear(getByTestId('input-new-reaction'))
+
+    fireEvent.keyUp(getByTestId('input-new-reaction'), {
+      key: 'Enter',
+      code: 'Enter',
+    })
+
+    expect(onChangeReactions).toBeCalledTimes(0)
+
+    expect(getByText('Yes')).toBeInTheDocument()
+    expect(getByText('No')).toBeInTheDocument()
+    expect(getByText('Maybe')).toBeInTheDocument()
+  })
+
   test('should delete a reaction by double-clicking on it', () => {
     const onChangeReactions = jest.fn()
 
