@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-import { VideoPlayer, Card, Label } from 'ui'
+import { VideoPlayer, Card, Label, breakpoints } from 'ui'
 
 export const StyledVideoPlayer = styled(VideoPlayer)`
   margin-top: 5rem;
-  width: 93rem;
-  height: 55rem;
+  width: 100%;
+  height: auto;
 
   img {
     height: auto;
@@ -18,9 +18,14 @@ export const StyledVideoPlayer = styled(VideoPlayer)`
 `
 
 export const PostPageContentContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
-  flex-wrap: wrap;
+  column-gap: 6rem;
+
+  ${breakpoints.media.smallDesktop`
+    grid-template-columns: repeat(1, 1fr);
+  `}
 `
 
 export const StyledLabel = styled(Label)`
@@ -32,14 +37,10 @@ export const PostPageContainer = styled.div`
   flex-direction: column;
 `
 
-export const LeftSection = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
 export const Transcript = styled(Card)`
-  height: 52.5rem;
-  width: 66rem;
+  width: 100%;
+  height: 100%;
+
   background: #f8f8f8;
   font-size: 3rem;
   padding: 2rem;
@@ -49,13 +50,19 @@ export const Transcript = styled(Card)`
 export const TranscriptContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+`
+
+export const InteractionsBlock = styled.div`
+  display: flex;
   justify-content: space-between;
-  height: 100%;
+  margin: 5rem 0 5rem 0;
+  width: 100%;
 
   svg {
     transition: 0.3s all;
-    align-self: flex-end;
-    margin-top: 50px;
+    align-self: start;
     cursor: pointer;
 
     &:hover {
