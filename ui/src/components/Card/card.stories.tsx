@@ -10,8 +10,8 @@ export default {
 }
 
 const StyledCard = styled(Card)`
-  height: 27.5rem
-  width: 34.3rem;
+  height: 27.5rem;
+  width: 60rem;
 `
 
 const Template: Story = (args): React.ReactElement => <StyledCard {...args} />

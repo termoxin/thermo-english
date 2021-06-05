@@ -6,12 +6,15 @@ import { ReactionButton } from './../QuestionReactions/styled'
 export const QuestionsBuilderContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 60rem;
 
   & > * {
     margin: 1rem;
   }
 
-  width: 37rem;
+  input {
+    width: auto;
+  }
 
   ${ReactionButton} {
     transition: 0.3s all;
