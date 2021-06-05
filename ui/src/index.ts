@@ -10,6 +10,7 @@ export * from './components/PostCard'
 export * from './components/QuestionReactions'
 export * from './components/Label'
 export * from './components/VideoPlayer'
+export * from './components/QuestionsBuilder'
 
 export { themes } from './styles/theme'
 export { breakpoints } from './styles/breakpoints'

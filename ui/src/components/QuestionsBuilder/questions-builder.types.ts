@@ -1,11 +1,11 @@
-export interface ReactionOption {
+export interface QuestionBuilderReactionOption {
   id: number
   value: string
 }
 
 export interface QuestionsBuilderProps {
   questionText: string
-  reactions: ReactionOption[]
+  reactions: QuestionBuilderReactionOption[]
   onChangeQuestion?: (value: string) => void
-  onChangeReactions?: (reactions: ReactionOption[]) => void
+  onChangeReactions?: (reactions: QuestionBuilderReactionOption[]) => void
 }
