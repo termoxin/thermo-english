@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const BaseButton = styled.button`
   font-family: 'Amaranth', sans-serif;
-  width: 30rem;
+  width: max-content;
   height: 7rem;
   border: none;
   cursor: pointer;
