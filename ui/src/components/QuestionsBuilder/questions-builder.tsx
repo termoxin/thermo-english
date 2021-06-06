@@ -109,7 +109,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
         placeholder="Enter reaction"
       />
       <StyledButton variant="squared" onClick={onAddHandler}>
-        Add
+        Add reaction
       </StyledButton>
     </QuestionsBuilderContainer>
   )

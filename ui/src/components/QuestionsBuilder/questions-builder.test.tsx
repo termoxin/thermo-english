@@ -38,7 +38,7 @@ describe('QuestionsBuilder', () => {
 
     expect(getByTestId('input-new-reaction')).toBeInTheDocument()
 
-    expect(getByText('Add')).toBeInTheDocument()
+    expect(getByText('Add reaction')).toBeInTheDocument()
   })
 
   test('should change input question', () => {
@@ -89,7 +89,7 @@ describe('QuestionsBuilder', () => {
       <QuestionsBuilder {...props} onChangeReactions={onChangeReactions} />,
     )
 
-    userEvent.click(getByText('Add'))
+    userEvent.click(getByText('Add reaction'))
 
     expect(onChangeReactions).toBeCalledTimes(0)
 
@@ -111,7 +111,7 @@ describe('QuestionsBuilder', () => {
       'Never',
     )
 
-    userEvent.click(getByText('Add'))
+    userEvent.click(getByText('Add reaction'))
 
     expect(onChangeReactions.mock.calls[0][0]).toEqual([
       { id: 12345, value: 'Yes' },
