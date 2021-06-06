@@ -8,8 +8,10 @@ import {
   TextareasContainer,
   StyledVideoPlayer,
   QuestionsBuilderContainer,
-  UploadingCard,
   ActionButtons,
+  FileUploaderContainer,
+  UploadingCard,
+  TranscriptAndTextareasContainer,
 } from './styled'
 import { QuestionsBuilder, Input, FileUploader } from 'ui'
 
@@ -31,8 +33,6 @@ export const EditingPostLayout: FC<PostPageProps> = ({ post }) => {
   const onSubmitVideo = (data: FileList) => {
     const reader = new FileReader()
 
-    console.log(data)
-
     reader.readAsDataURL(data[0])
 
     reader.onloadend = (data) => {
@@ -46,14 +46,20 @@ export const EditingPostLayout: FC<PostPageProps> = ({ post }) => {
 
   return (
     <VideoAndQuestionsBuilderContainer>
-      <div>
+      <TranscriptAndTextareasContainer>
         {videoPlayerProps.src ? (
-          <StyledVideoPlayer {...videoPlayerProps} autoPlay />
+          <>
+            <StyledVideoPlayer {...videoPlayerProps} autoPlay />
+            <FileUploaderContainer>
+              <FileUploader onSubmit={onSubmitVideo} acceptFiles="video/mp4" />
+            </FileUploaderContainer>
+          </>
         ) : (
           <UploadingCard>
             <FileUploader onSubmit={onSubmitVideo} acceptFiles="video/mp4" />
           </UploadingCard>
         )}
+
         <TextareasContainer>
           <Input
             as="textarea"
@@ -66,7 +72,7 @@ export const EditingPostLayout: FC<PostPageProps> = ({ post }) => {
             value={secondLanguageTranscript}
           />
         </TextareasContainer>
-      </div>
+      </TranscriptAndTextareasContainer>
       <QuestionsBuilderContainer>
         <QuestionsBuilder {...questionsBuilderProps} />
         <ActionButtons>

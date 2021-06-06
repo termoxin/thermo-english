@@ -55,7 +55,7 @@ export const TextareasContainer = styled(Card)`
   textarea {
     padding: 1.5rem;
     width: 100%;
-    height: 11rem;
+    height: 12.5rem;
   }
 
   textarea:last-child {
@@ -92,4 +92,15 @@ export const UploadingCard = styled(Card)`
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+export const FileUploaderContainer = styled.div`
+  margin-top: 20px;
+`
+
+export const TranscriptAndTextareasContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
