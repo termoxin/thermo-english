@@ -33,7 +33,7 @@ export const StyledVideoPlayer = styled(VideoPlayer)`
   width: 100%;
 
   img {
-    height: auto;
+    height: 100%;
   }
 
   video,
@@ -81,6 +81,15 @@ export const ActionButtons = styled.div`
   flex-wrap: wrap;
 
   button {
-    margin: 5rem 1rem 0 1rem;
+    margin: 5rem 1rem 0 0;
   }
+`
+
+export const UploadingCard = styled(Card)`
+  height: auto;
+  padding: 10rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

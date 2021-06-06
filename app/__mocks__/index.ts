@@ -1,4 +1,5 @@
-import { PostCardProps } from './../../ui/src/components/PostCard/post-card.types'
+import { PostCardProps } from 'ui'
+import { PostPageProps } from '../components/post/post.types'
 
 export const posts: PostCardProps[] = [
   {
@@ -117,3 +118,14 @@ export const expandedPosts = [
     },
   },
 ]
+
+export const postPagePropsMock: PostPageProps['post'] = {
+  state: 'draft',
+  videoUrl: '/videoSample.mp4',
+  previewUrl: '/previewSample.jpeg',
+  question: {
+    text: 'Do you think magic exists?',
+    reactions: [{ id: 1, value: 'yes', totalPeopleAnswered: 0 }],
+  },
+  transcript: ['Here', 'Здесь'],
+}
