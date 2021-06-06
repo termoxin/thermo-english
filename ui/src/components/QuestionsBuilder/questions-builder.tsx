@@ -82,7 +82,7 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
       <Input
         data-testid="input-question"
         value={question}
-        placeholder="Enter your question (e.g. What do you think?)"
+        placeholder="Enter question (e.g. What do you think?)"
         onChange={onChangeQuestionHandler}
       />
       {!currentReactions.length && (

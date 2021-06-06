@@ -107,4 +107,13 @@ export const expandedPosts = [
       reactions: options,
     },
   },
+  {
+    state: 'draft',
+    videoUrl: '/videoSample.mp4',
+    previewUrl: '/previewSample.jpeg',
+    question: {
+      text: '',
+      reactions: [],
+    },
+  },
 ]

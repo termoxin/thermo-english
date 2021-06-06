@@ -1,5 +1,6 @@
 import { ReactionOption } from 'ui'
-import { ServerSideProps } from '../../pages/posts/[id]'
+
+import { ServerSideProps } from '../../pages/post/[id]'
 
 export interface Post {
   state: string
