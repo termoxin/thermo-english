@@ -16,27 +16,30 @@ export type createPostActionTypes = ReturnType<
 >
 
 export interface CreatePostPageState {
-  video: VideoPlayerProps
-  questionText: string
-  reactions: ReactionOption[]
-  transcripts: [string, string]
+  previewUrl: string
+  videoUrl: string
+  transcript: [string, string]
+  question: {
+    text: string
+    reactions: ReactionOption[]
+  }
 }
 
-export const createPostReducer: Reducer<CreatePostPageState, createPostActionTypes> = (
-  state,
-  action,
-): CreatePostPageState => {
+export const createPostReducer: Reducer<
+  CreatePostPageState,
+  createPostActionTypes
+> = (state, action): CreatePostPageState => {
   switch (action.type) {
     case SET_SRC:
-      return set(lensPath(['video', 'src']), action.payload)(state)
+      return set(lensPath(['videoUrl']), action.payload)(state)
     case SET_PREVIEW:
-      return set(lensPath(['video', 'previewUrl']), action.payload)(state)
+      return set(lensPath(['previewUrl']), action.payload)(state)
     case SET_QUESTION_TEXT:
-      return set(lensPath(['questionText']), action.payload)(state)
+      return set(lensPath(['question', 'text']), action.payload)(state)
     case SET_REACTIONS:
-      return set(lensPath(['reactions']), action.payload)(state)
+      return set(lensPath(['question', 'reactions']), action.payload)(state)
     case SET_TRANSCRIPTS:
-      return set(lensPath(['transcripts']), action.payload)(state)
+      return set(lensPath(['transcript']), action.payload)(state)
     default:
       return state
   }

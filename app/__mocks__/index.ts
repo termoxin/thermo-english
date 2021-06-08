@@ -121,8 +121,8 @@ export const expandedPosts = [
 
 export const postPagePropsMock: PostPageProps['post'] = {
   state: 'draft',
-  videoUrl: '/videoSample.mp4',
-  previewUrl: '/previewSample.jpeg',
+  videoUrl: '',
+  previewUrl: '',
   question: {
     text: 'Do you think magic exists?',
     reactions: [{ id: 1, value: 'yes', totalPeopleAnswered: 0 }],

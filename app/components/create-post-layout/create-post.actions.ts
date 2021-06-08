@@ -31,8 +31,8 @@ export const setReactions = (reactions: ReactionOption[]) =>
     payload: reactions,
   } as const)
 
-export const setTranscripts = (transcripts: [string, string]) =>
+export const setTranscript = (transcript: [string, string]) =>
   ({
     type: SET_TRANSCRIPTS,
-    payload: transcripts,
+    payload: transcript,
   } as const)

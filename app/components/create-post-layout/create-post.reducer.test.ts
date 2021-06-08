@@ -3,7 +3,7 @@ import {
   setQuestionText,
   setReactions,
   setSrc,
-  setTranscripts,
+  setTranscript,
 } from './create-post.actions'
 import { initialCreatePostState } from './create-post.mock'
 import { createPostReducer } from './create-post.reducer'
@@ -16,13 +16,13 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
-      video: {
-        src: '/video.mp4',
-        previewUrl: '',
+      videoUrl: '/video.mp4',
+      previewUrl: '',
+      transcript: ['', ''],
+      question: {
+        text: '',
+        reactions: [],
       },
-      questionText: '',
-      reactions: [],
-      transcripts: ['', ''],
     })
   })
 
@@ -33,13 +33,13 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
-      video: {
-        src: '',
-        previewUrl: '/videoPreview.jpg',
+      videoUrl: '',
+      previewUrl: '/videoPreview.jpg',
+      transcript: ['', ''],
+      question: {
+        text: '',
+        reactions: [],
       },
-      questionText: '',
-      reactions: [],
-      transcripts: ['', ''],
     })
   })
 
@@ -50,13 +50,13 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
-      video: {
-        src: '',
-        previewUrl: '',
+      videoUrl: '',
+      previewUrl: '',
+      transcript: ['', ''],
+      question: {
+        text: 'What do you think?',
+        reactions: [],
       },
-      questionText: 'What do you think?',
-      reactions: [],
-      transcripts: ['', ''],
     })
   })
 
@@ -69,30 +69,30 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
-      video: {
-        src: '',
-        previewUrl: '',
+      videoUrl: '',
+      previewUrl: '',
+      transcript: ['', ''],
+      question: {
+        text: '',
+        reactions: newReactions,
       },
-      questionText: '',
-      reactions: newReactions,
-      transcripts: ['', ''],
     })
   })
 
-  test('should set transcript ', () => {
+  test('should set transcript', () => {
     const newState = createPostReducer(
       initialCreatePostState,
-      setTranscripts(['hello', 'привет']),
+      setTranscript(['hello', 'привет']),
     )
 
     expect(newState).toEqual({
-      video: {
-        src: '',
-        previewUrl: '',
+      videoUrl: '',
+      previewUrl: '',
+      transcript: ['hello', 'привет'],
+      question: {
+        text: '',
+        reactions: [],
       },
-      questionText: '',
-      reactions: [],
-      transcripts: ['hello', 'привет'],
     })
   })
 })

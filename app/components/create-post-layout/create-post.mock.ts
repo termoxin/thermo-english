@@ -1,11 +1,11 @@
 import { CreatePostPageState } from './create-post.reducer'
 
 export const initialCreatePostState: CreatePostPageState = {
-  video: {
-    src: '',
-    previewUrl: '',
+  videoUrl: '',
+  previewUrl: '',
+  transcript: ['', ''],
+  question: {
+    text: '',
+    reactions: [],
   },
-  questionText: '',
-  reactions: [],
-  transcripts: ['', ''],
 }
