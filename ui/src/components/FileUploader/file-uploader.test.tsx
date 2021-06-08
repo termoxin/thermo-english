@@ -9,7 +9,7 @@ describe('FileUploader', () => {
     const onSubmit = jest.fn()
 
     const { getByTestId, getByRole } = render(
-      <FileUploader onSubmit={onSubmit} />,
+      <FileUploader onSubmit={onSubmit} acceptFiles="image/png" />,
     )
 
     expect(getByTestId('file-uploader')).toBeInTheDocument()
@@ -21,7 +21,10 @@ describe('FileUploader', () => {
     const file = new File(['hello'], 'hello.png', { type: 'image/png' })
 
     const { getByTestId } = render(
-      <FileUploader onSubmit={(data) => onSubmit(data)} />,
+      <FileUploader
+        onSubmit={(data) => onSubmit(data)}
+        acceptFiles="image/png"
+      />,
     )
 
     userEvent.upload(getByTestId('file-uploader'), file)
