@@ -1,0 +1,5 @@
+export const SET_SRC = 'SET_SRC'
+export const SET_PREVIEW = 'SET_PREVIEW'
+export const SET_QUESTION_TEXT = 'SET_QUESTION_TEXT'
+export const SET_REACTIONS = 'SET_REACTIONS'
+export const SET_TRANSCRIPTS = 'SET_TRANSCRIPTS'

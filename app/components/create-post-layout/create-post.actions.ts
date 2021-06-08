@@ -1,10 +1,11 @@
 import { ReactionOption } from 'ui'
-
-const SET_SRC = 'SET_SRC'
-const SET_PREVIEW = 'SET_PREVIEW'
-const SET_QUESTION_TEXT = 'SET_PREVIEW'
-const SET_REACTIONS = 'SET_REACTIONS'
-const SET_TRANSCRIPTS = 'SET_TRANSCRIPTS'
+import {
+  SET_SRC,
+  SET_PREVIEW,
+  SET_QUESTION_TEXT,
+  SET_REACTIONS,
+  SET_TRANSCRIPTS,
+} from './create-post-action-names'
 
 export const setSrc = (src: string) =>
   ({
