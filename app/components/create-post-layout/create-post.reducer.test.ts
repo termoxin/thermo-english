@@ -5,21 +5,15 @@ import {
   setSrc,
   setTranscripts,
 } from './create-post.actions'
-import { CreatePostPageState, createPostReducer } from './create-post.reducer'
+import { initialCreatePostState } from './create-post.mock'
+import { createPostReducer } from './create-post.reducer'
 
 describe('create post reducer', () => {
-  const initialState: CreatePostPageState = {
-    video: {
-      src: '',
-      previewUrl: '',
-    },
-    questionText: '',
-    reactions: [],
-    transcripts: ['', ''],
-  }
-
   test('should set video src', () => {
-    const newState = createPostReducer(setSrc('/video.mp4'), initialState)
+    const newState = createPostReducer(
+      setSrc('/video.mp4'),
+      initialCreatePostState,
+    )
 
     expect(newState).toEqual({
       video: {
@@ -35,7 +29,7 @@ describe('create post reducer', () => {
   test('should set video preview url', () => {
     const newState = createPostReducer(
       setPreviewUrl('/videoPreview.jpg'),
-      initialState,
+      initialCreatePostState,
     )
 
     expect(newState).toEqual({
@@ -52,7 +46,7 @@ describe('create post reducer', () => {
   test('should set question text', () => {
     const newState = createPostReducer(
       setQuestionText('What do you think?'),
-      initialState,
+      initialCreatePostState,
     )
 
     expect(newState).toEqual({
@@ -69,7 +63,10 @@ describe('create post reducer', () => {
   test('should set reactions', () => {
     const newReactions = [{ id: 1, value: 'Yes', totalPeopleAnswered: 100 }]
 
-    const newState = createPostReducer(setReactions(newReactions), initialState)
+    const newState = createPostReducer(
+      setReactions(newReactions),
+      initialCreatePostState,
+    )
 
     expect(newState).toEqual({
       video: {
@@ -85,7 +82,7 @@ describe('create post reducer', () => {
   test('should set transcript ', () => {
     const newState = createPostReducer(
       setTranscripts(['hello', 'привет']),
-      initialState,
+      initialCreatePostState,
     )
 
     expect(newState).toEqual({
