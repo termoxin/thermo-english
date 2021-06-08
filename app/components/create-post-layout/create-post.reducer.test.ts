@@ -1,4 +1,4 @@
-import { setPreviewUrl, setSrc } from './create-post.actions'
+import { setPreviewUrl, setQuestionText, setSrc } from './create-post.actions'
 import { CreatePostPageState, createPostReducer } from './create-post.reducer'
 
 describe('create post reducer', () => {
@@ -38,6 +38,23 @@ describe('create post reducer', () => {
         previewUrl: '/videoPreview.jpg',
       },
       questionText: '',
+      reactions: [],
+      transcripts: ['', ''],
+    })
+  })
+
+  test('should set question text', () => {
+    const newState = createPostReducer(
+      setQuestionText('What do you think?'),
+      initialState,
+    )
+
+    expect(newState).toEqual({
+      video: {
+        src: '',
+        previewUrl: '',
+      },
+      questionText: 'What do you think?',
       reactions: [],
       transcripts: ['', ''],
     })
