@@ -3,6 +3,7 @@ import {
   setQuestionText,
   setReactions,
   setSrc,
+  setTranscripts,
 } from './create-post.actions'
 import { CreatePostPageState, createPostReducer } from './create-post.reducer'
 
@@ -65,7 +66,7 @@ describe('create post reducer', () => {
     })
   })
 
-  test('should set reactinos', () => {
+  test('should set reactions', () => {
     const newReactions = [{ id: 1, value: 'Yes', totalPeopleAnswered: 100 }]
 
     const newState = createPostReducer(setReactions(newReactions), initialState)
@@ -78,6 +79,23 @@ describe('create post reducer', () => {
       questionText: '',
       reactions: newReactions,
       transcripts: ['', ''],
+    })
+  })
+
+  test('should set transcript ', () => {
+    const newState = createPostReducer(
+      setTranscripts(['hello', 'привет']),
+      initialState,
+    )
+
+    expect(newState).toEqual({
+      video: {
+        src: '',
+        previewUrl: '',
+      },
+      questionText: '',
+      reactions: [],
+      transcripts: ['hello', 'привет'],
     })
   })
 })

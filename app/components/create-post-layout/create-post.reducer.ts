@@ -6,6 +6,7 @@ import {
   SET_QUESTION_TEXT,
   SET_REACTIONS,
   SET_SRC,
+  SET_TRANSCRIPTS,
 } from './create-post-action-names'
 import * as actions from './create-post.actions'
 
@@ -31,6 +32,8 @@ export const createPostReducer = (
       return set(lensPath(['questionText']), action.payload)(state)
     case SET_REACTIONS:
       return set(lensPath(['reactions']), action.payload)(state)
+    case SET_TRANSCRIPTS:
+      return set(lensPath(['transcripts']), action.payload)(state)
     default:
       return state
   }
