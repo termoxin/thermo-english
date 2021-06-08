@@ -9,8 +9,11 @@ import {
   SET_TRANSCRIPTS,
 } from './create-post-action-names'
 import * as actions from './create-post.actions'
+import { Reducer } from 'react'
 
-type actionTypes = ReturnType<typeof actions[keyof typeof actions]>
+export type createPostActionTypes = ReturnType<
+  typeof actions[keyof typeof actions]
+>
 
 export interface CreatePostPageState {
   video: VideoPlayerProps
@@ -19,9 +22,9 @@ export interface CreatePostPageState {
   transcripts: [string, string]
 }
 
-export const createPostReducer = (
-  action: actionTypes,
-  state: CreatePostPageState,
+export const createPostReducer: Reducer<CreatePostPageState, createPostActionTypes> = (
+  state,
+  action,
 ): CreatePostPageState => {
   switch (action.type) {
     case SET_SRC:

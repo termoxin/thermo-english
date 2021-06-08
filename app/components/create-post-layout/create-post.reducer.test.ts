@@ -11,8 +11,8 @@ import { createPostReducer } from './create-post.reducer'
 describe('create post reducer', () => {
   test('should set video src', () => {
     const newState = createPostReducer(
-      setSrc('/video.mp4'),
       initialCreatePostState,
+      setSrc('/video.mp4'),
     )
 
     expect(newState).toEqual({
@@ -28,8 +28,8 @@ describe('create post reducer', () => {
 
   test('should set video preview url', () => {
     const newState = createPostReducer(
-      setPreviewUrl('/videoPreview.jpg'),
       initialCreatePostState,
+      setPreviewUrl('/videoPreview.jpg'),
     )
 
     expect(newState).toEqual({
@@ -45,8 +45,8 @@ describe('create post reducer', () => {
 
   test('should set question text', () => {
     const newState = createPostReducer(
-      setQuestionText('What do you think?'),
       initialCreatePostState,
+      setQuestionText('What do you think?'),
     )
 
     expect(newState).toEqual({
@@ -64,8 +64,8 @@ describe('create post reducer', () => {
     const newReactions = [{ id: 1, value: 'Yes', totalPeopleAnswered: 100 }]
 
     const newState = createPostReducer(
-      setReactions(newReactions),
       initialCreatePostState,
+      setReactions(newReactions),
     )
 
     expect(newState).toEqual({
@@ -81,8 +81,8 @@ describe('create post reducer', () => {
 
   test('should set transcript ', () => {
     const newState = createPostReducer(
-      setTranscripts(['hello', 'привет']),
       initialCreatePostState,
+      setTranscripts(['hello', 'привет']),
     )
 
     expect(newState).toEqual({
