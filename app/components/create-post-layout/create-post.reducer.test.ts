@@ -1,4 +1,9 @@
-import { setPreviewUrl, setQuestionText, setSrc } from './create-post.actions'
+import {
+  setPreviewUrl,
+  setQuestionText,
+  setReactions,
+  setSrc,
+} from './create-post.actions'
 import { CreatePostPageState, createPostReducer } from './create-post.reducer'
 
 describe('create post reducer', () => {
@@ -56,6 +61,22 @@ describe('create post reducer', () => {
       },
       questionText: 'What do you think?',
       reactions: [],
+      transcripts: ['', ''],
+    })
+  })
+
+  test('should set reactinos', () => {
+    const newReactions = [{ id: 1, value: 'Yes', totalPeopleAnswered: 100 }]
+
+    const newState = createPostReducer(setReactions(newReactions), initialState)
+
+    expect(newState).toEqual({
+      video: {
+        src: '',
+        previewUrl: '',
+      },
+      questionText: '',
+      reactions: newReactions,
       transcripts: ['', ''],
     })
   })

@@ -4,6 +4,7 @@ import { lensPath, set } from 'ramda'
 import {
   SET_PREVIEW,
   SET_QUESTION_TEXT,
+  SET_REACTIONS,
   SET_SRC,
 } from './create-post-action-names'
 import * as actions from './create-post.actions'
@@ -28,6 +29,8 @@ export const createPostReducer = (
       return set(lensPath(['video', 'previewUrl']), action.payload)(state)
     case SET_QUESTION_TEXT:
       return set(lensPath(['questionText']), action.payload)(state)
+    case SET_REACTIONS:
+      return set(lensPath(['reactions']), action.payload)(state)
     default:
       return state
   }
