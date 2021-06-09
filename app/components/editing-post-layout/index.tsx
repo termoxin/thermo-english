@@ -103,9 +103,11 @@ export const EditingPostLayout: FC<PostPageProps> = ({
       <QuestionsBuilderContainer>
         <QuestionsBuilder {...questionsBuilderProps} />
         <ActionButtons>
-          <SaveButton onClick={() => onSave()}>Save</SaveButton>
-          <CancelButton onClick={() => onCancel()}>Cancel</CancelButton>
-          <SaveAsDraftButton onClick={() => onSaveAsDraft()}>
+          <SaveButton onClick={() => onSave && onSave()}>Save</SaveButton>
+          <CancelButton onClick={() => onCancel && onCancel()}>
+            Cancel
+          </CancelButton>
+          <SaveAsDraftButton onClick={() => onSaveAsDraft && onSaveAsDraft()}>
             Save as draft
           </SaveAsDraftButton>
         </ActionButtons>
