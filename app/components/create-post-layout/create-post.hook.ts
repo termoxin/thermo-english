@@ -3,6 +3,7 @@ import {
   setQuestionText,
   setReactions as changeReactions,
   setTranscript,
+  setVideoUrl as changeVideoUrl,
 } from './create-post.actions'
 import {
   createPostActionTypes,
@@ -42,12 +43,15 @@ export const useCreatePost = (initialState?: CreatePostPageState) => {
       ),
     )
 
+  const setVideoUrl = (base64: string) => dispatch(changeVideoUrl(base64))
+
   const actions = {
     setQuestion,
     setReactions,
     deleteReaction,
     setFirstTranscript,
     setSecondTranscript,
+    setVideoUrl,
   }
 
   return { actions, state }

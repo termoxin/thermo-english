@@ -21,4 +21,5 @@ export interface PostPageProps extends ServerSideProps {
   onDeleteReaction?: (id: number) => void
   onChangeFirstTranscript?: (value: string) => void
   onChangeSecondTranscript?: (value: string) => void
+  onUploadVideo?: (base64: string) => void
 }

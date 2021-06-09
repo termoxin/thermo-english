@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FC, useState } from 'react'
+import React, { FC, ChangeEventHandler, useState } from 'react'
 import { PostPageProps } from '../post/post.types'
 import {
   SaveButton,
@@ -22,9 +22,8 @@ export const EditingPostLayout: FC<PostPageProps> = ({
   onDeleteReaction,
   onChangeFirstTranscript,
   onChangeSecondTranscript,
+  onUploadVideo,
 }) => {
-  const [videoPreview, setVideoPreview] = useState('')
-
   const onSubmitVideo = (data: FileList) => {
     const reader = new FileReader()
 
@@ -33,8 +32,8 @@ export const EditingPostLayout: FC<PostPageProps> = ({
     reader.onloadend = (data) => {
       const result = data?.target?.result as string
 
-      if (result) {
-        setVideoPreview(result)
+      if (onUploadVideo && result) {
+        onUploadVideo(result)
       }
     }
   }
@@ -54,7 +53,7 @@ export const EditingPostLayout: FC<PostPageProps> = ({
     }
 
   const videoPlayerProps = {
-    src: videoPreview || post.videoUrl,
+    src: post.videoUrl,
     previewUrl: post.previewUrl,
   }
 

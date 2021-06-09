@@ -14,6 +14,7 @@ export const CreatePostPage: FC<PostPageProps> = () => {
     onDeleteReaction: actions.deleteReaction,
     onChangeFirstTranscript: actions.setFirstTranscript,
     onChangeSecondTranscript: actions.setSecondTranscript,
+    onUploadVideo: actions.setVideoUrl,
   }
 
   return (
