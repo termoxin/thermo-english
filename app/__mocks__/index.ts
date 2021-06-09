@@ -112,7 +112,7 @@ export const expandedPosts: PostPageProps['post'][] = [
     state: 'draft',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
-    transcript: ['', ''],
+    transcript: ['Something is here', ''],
     question: {
       text: '',
       reactions: [],

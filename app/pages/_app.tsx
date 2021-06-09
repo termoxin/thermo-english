@@ -4,8 +4,8 @@ import { themes } from 'ui'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
-import { AppContainer } from '../components/app-container'
-import { LayoutAuthenticated } from '../components/layout-authenticated'
+import { AppContainer } from '../components/common-components/app-container'
+import { LayoutAuthenticated } from '../components/common-components/layout-authenticated'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import '../styles/globals.css'

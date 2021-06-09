@@ -6,7 +6,7 @@ import {
   SET_REACTIONS,
   SET_TRANSCRIPTS,
   SET_VIDEO_URL,
-} from './create-post-action-names'
+} from './edit-post-layout.action-names'
 
 export const setSrc = (src: string) =>
   ({
