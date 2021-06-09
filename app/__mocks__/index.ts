@@ -1,5 +1,5 @@
 import { PostCardProps } from 'ui'
-import { PostPageProps } from '../components/post/post.types'
+import { PostPageProps } from '../components/pages/post/post.types'
 
 export const posts: PostCardProps[] = [
   {

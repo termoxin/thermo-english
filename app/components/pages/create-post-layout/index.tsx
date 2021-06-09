@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import { PostPageProps } from '../post/post.types'
-import { EditingPostLayout } from '../editing-post-layout'
+import { EditingPostLayout } from '../../editing-post-layout'
 import { useCreatePost } from './create-post.hook'
 
 export const CreatePostPage: FC<PostPageProps> = () => {

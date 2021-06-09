@@ -1,5 +1,5 @@
 import React, { FC, ChangeEventHandler, useState } from 'react'
-import { PostPageProps } from '../post/post.types'
+import { PostPageProps } from '../pages/post/post.types'
 import {
   SaveButton,
   CancelButton,

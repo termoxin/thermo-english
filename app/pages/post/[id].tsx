@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
-import { PostPage as Post } from '../../components/post'
-import { Post as PostType } from '../../components/post/post.types'
+import { PostPage as Post } from '../../components/pages/post'
+import { Post as PostType } from '../../components/pages/post/post.types'
 
 import { expandedPosts } from '../../__mocks__'
 
