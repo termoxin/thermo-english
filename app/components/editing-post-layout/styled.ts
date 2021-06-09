@@ -29,7 +29,7 @@ export const VideoAndQuestionsBuilderContainer = styled.div`
 `
 
 export const StyledVideoPlayer = styled(VideoPlayer)`
-  height: auto;
+  height: 100%;
   width: 100%;
 
   img {
@@ -86,7 +86,7 @@ export const ActionButtons = styled.div`
 `
 
 export const UploadingCard = styled(Card)`
-  height: auto;
+  height: 100%;
   padding: 10rem;
   width: 100%;
   display: flex;
@@ -102,5 +102,5 @@ export const TranscriptAndTextareasContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: stretch;
 `
