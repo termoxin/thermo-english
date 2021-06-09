@@ -1,7 +1,7 @@
 import { Reducer, useReducer } from 'react'
 import {
   setQuestionText,
-  setReactions,
+  setReactions as changeReactions,
   setTranscript,
 } from './create-post.actions'
 import {
@@ -18,32 +18,36 @@ export const useCreatePost = (initialState?: CreatePostPageState) => {
     Reducer<CreatePostPageState, createPostActionTypes>
   >(createPostReducer, initialState || initialCreatePostState)
 
+  const setQuestion = (text: string) => dispatch(setQuestionText(text))
+
+  const setReactions = (reactions: ReactionOption[]) =>
+    dispatch(changeReactions(reactions))
+
+  const deleteReaction = (id: number) =>
+    dispatch(
+      changeReactions(reject(propEq('id', id))(state.question.reactions)),
+    )
+
+  const setFirstTranscript = (value: string) =>
+    dispatch(
+      setTranscript(
+        set(lensIndex<string>(0), value)(state.transcript) as [string, string],
+      ),
+    )
+
+  const setSecondTranscript = (value: string) =>
+    dispatch(
+      setTranscript(
+        set(lensIndex<string>(1), value)(state.transcript) as [string, string],
+      ),
+    )
+
   const actions = {
-    setQuestion: (text: string) => dispatch(setQuestionText(text)),
-    setReactions: (reactions: ReactionOption[]) =>
-      dispatch(setReactions(reactions)),
-    deleteReaction: (id: number) =>
-      dispatch(
-        setReactions(reject(propEq('id', id))(state.question.reactions)),
-      ),
-    setFirstTranscript: (value: string) =>
-      dispatch(
-        setTranscript(
-          set(lensIndex<string>(0), value)(state.transcript) as [
-            string,
-            string,
-          ],
-        ),
-      ),
-    setSecondTranscript: (value: string) =>
-      dispatch(
-        setTranscript(
-          set(lensIndex<string>(1), value)(state.transcript) as [
-            string,
-            string,
-          ],
-        ),
-      ),
+    setQuestion,
+    setReactions,
+    deleteReaction,
+    setFirstTranscript,
+    setSecondTranscript,
   }
 
   return { actions, state }

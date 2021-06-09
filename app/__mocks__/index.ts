@@ -76,7 +76,7 @@ export const options = [
   },
 ]
 
-export const expandedPosts = [
+export const expandedPosts: PostPageProps['post'][] = [
   {
     state: 'draft',
     videoUrl: '/videoSample.mp4',
@@ -112,6 +112,7 @@ export const expandedPosts = [
     state: 'draft',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
+    transcript: ['', ''],
     question: {
       text: '',
       reactions: [],
