@@ -5,14 +5,14 @@ import {
   setSrc,
   setTranscript,
   setVideoUrl,
-} from './create-post.actions'
-import { initialCreatePostState } from './create-post.mock'
-import { createPostReducer } from './create-post.reducer'
+} from './edit-post-layout.actions'
+import { initialEditPostState } from './create-post-layout.mock'
+import { createPostReducer } from './create-post-layout.reducer'
 
 describe('create post reducer', () => {
   test('should set video src', () => {
     const newState = createPostReducer(
-      initialCreatePostState,
+      initialEditPostState,
       setSrc('/video.mp4'),
     )
 
@@ -29,7 +29,7 @@ describe('create post reducer', () => {
 
   test('should set video preview url', () => {
     const newState = createPostReducer(
-      initialCreatePostState,
+      initialEditPostState,
       setPreviewUrl('/videoPreview.jpg'),
     )
 
@@ -46,7 +46,7 @@ describe('create post reducer', () => {
 
   test('should set question text', () => {
     const newState = createPostReducer(
-      initialCreatePostState,
+      initialEditPostState,
       setQuestionText('What do you think?'),
     )
 
@@ -65,7 +65,7 @@ describe('create post reducer', () => {
     const newReactions = [{ id: 1, value: 'Yes', totalPeopleAnswered: 100 }]
 
     const newState = createPostReducer(
-      initialCreatePostState,
+      initialEditPostState,
       setReactions(newReactions),
     )
 
@@ -82,7 +82,7 @@ describe('create post reducer', () => {
 
   test('should set transcript', () => {
     const newState = createPostReducer(
-      initialCreatePostState,
+      initialEditPostState,
       setTranscript(['hello', 'привет']),
     )
 
@@ -99,7 +99,7 @@ describe('create post reducer', () => {
 
   test('should set video url', () => {
     const newState = createPostReducer(
-      initialCreatePostState,
+      initialEditPostState,
       setVideoUrl('/video.mp4'),
     )
 

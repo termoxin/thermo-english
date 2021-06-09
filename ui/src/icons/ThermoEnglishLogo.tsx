@@ -4,7 +4,7 @@
   const ThermoEnglishLogoIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) =>
     React.createElement('svg', {
       ...props,
-      dangerouslySetInnerHTML: { __html: `<svg width="201" height="125" viewBox="0 0 201 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+      dangerouslySetInnerHTML: { __html: `<svg width="160" height="100" viewBox="0 0 201 125" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d)">
 <path d="M22.5873 23.6168C25.7078 18.5188 33.1133 18.5188 36.2337 23.6168L47.4274 41.904C50.6904 47.2347 46.8542 54.0805 40.6042 54.0805H18.2168C11.9668 54.0805 8.13065 47.2346 11.3936 41.904L22.5873 23.6168Z" fill="url(#paint0_linear)"/>
 </g>

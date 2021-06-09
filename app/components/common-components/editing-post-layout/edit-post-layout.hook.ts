@@ -4,20 +4,20 @@ import {
   setReactions as changeReactions,
   setTranscript,
   setVideoUrl as changeVideoUrl,
-} from './create-post.actions'
+} from './edit-post-layout.actions'
 import {
-  createPostActionTypes,
-  CreatePostPageState,
+  editPostActionTypes,
+  EditPostPageState,
   createPostReducer,
-} from './create-post.reducer'
+} from './create-post-layout.reducer'
 import { ReactionOption } from 'ui'
 import { lensIndex, propEq, reject, set } from 'ramda'
-import { initialCreatePostState } from './create-post.mock'
+import { initialEditPostState } from './create-post-layout.mock'
 
-export const useCreatePost = (initialState?: CreatePostPageState) => {
+export const useEditPost = (initialState?: EditPostPageState) => {
   const [state, dispatch] = useReducer<
-    Reducer<CreatePostPageState, createPostActionTypes>
-  >(createPostReducer, initialState || initialCreatePostState)
+    Reducer<EditPostPageState, editPostActionTypes>
+  >(createPostReducer, initialState || initialEditPostState)
 
   const setQuestion = (text: string) => dispatch(setQuestionText(text))
 

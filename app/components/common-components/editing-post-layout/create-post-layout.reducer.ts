@@ -8,15 +8,15 @@ import {
   SET_SRC,
   SET_TRANSCRIPTS,
   SET_VIDEO_URL,
-} from './create-post-action-names'
-import * as actions from './create-post.actions'
+} from './edit-post-layout.action-names'
+import * as actions from './edit-post-layout.actions'
 import { Reducer } from 'react'
 
-export type createPostActionTypes = ReturnType<
+export type editPostActionTypes = ReturnType<
   typeof actions[keyof typeof actions]
 >
 
-export interface CreatePostPageState {
+export interface EditPostPageState {
   previewUrl: string
   videoUrl: string
   transcript: [string, string]
@@ -27,9 +27,9 @@ export interface CreatePostPageState {
 }
 
 export const createPostReducer: Reducer<
-  CreatePostPageState,
-  createPostActionTypes
-> = (state, action): CreatePostPageState => {
+  EditPostPageState,
+  editPostActionTypes
+> = (state, action): EditPostPageState => {
   switch (action.type) {
     case SET_SRC:
       return set(lensPath(['videoUrl']), action.payload)(state)

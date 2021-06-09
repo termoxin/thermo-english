@@ -10,7 +10,7 @@ export const LayoutAuthenticated: FC<LayoutAuthenticatedProps> = ({
 }) => (
   <div>
     <NavigationContainer>
-      <Logo width="201" height="125" onClick={toggleTheme} />
+      <Logo width="160" height="100" onClick={toggleTheme} />
       <Actions>
         <Button variant="squared">Request post</Button>
         <Button variant="squared">Admin panel</Button>
