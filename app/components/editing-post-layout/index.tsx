@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { ChangeEventHandler, FC, useState } from 'react'
 import { PostPageProps } from '../post/post.types'
 import {
   SaveButton,
@@ -20,21 +20,10 @@ export const EditingPostLayout: FC<PostPageProps> = ({
   onChangeQuestion,
   onChangeReactions,
   onDeleteReaction,
+  onChangeFirstTranscript,
+  onChangeSecondTranscript,
 }) => {
   const [videoPreview, setVideoPreview] = useState('')
-
-  const videoPlayerProps = {
-    src: videoPreview || post.videoUrl,
-    previewUrl: post.previewUrl,
-  }
-
-  const questionsBuilderProps = {
-    questionText: post.question.text,
-    reactions: post.question.reactions,
-    onChangeQuestion,
-    onChangeReactions,
-    onDeleteReaction,
-  }
 
   const onSubmitVideo = (data: FileList) => {
     const reader = new FileReader()
@@ -48,6 +37,33 @@ export const EditingPostLayout: FC<PostPageProps> = ({
         setVideoPreview(result)
       }
     }
+  }
+
+  const onChangeFirstTranscriptHandler: ChangeEventHandler<HTMLInputElement> =
+    ({ target }) => {
+      if (onChangeFirstTranscript) {
+        onChangeFirstTranscript(target.value)
+      }
+    }
+
+  const onChangeSecondTranscriptHandler: ChangeEventHandler<HTMLInputElement> =
+    ({ target }) => {
+      if (onChangeSecondTranscript) {
+        onChangeSecondTranscript(target.value)
+      }
+    }
+
+  const videoPlayerProps = {
+    src: videoPreview || post.videoUrl,
+    previewUrl: post.previewUrl,
+  }
+
+  const questionsBuilderProps = {
+    questionText: post.question.text,
+    reactions: post.question.reactions,
+    onChangeQuestion,
+    onChangeReactions,
+    onDeleteReaction,
   }
 
   const [firstLanguageTranscript, secondLanguageTranscript] = post.transcript
@@ -72,11 +88,13 @@ export const EditingPostLayout: FC<PostPageProps> = ({
             as="textarea"
             placeholder="Enter first transcript (e.g. I'm here)"
             value={firstLanguageTranscript}
+            onChange={onChangeFirstTranscriptHandler}
           />
           <Input
             as="textarea"
             placeholder="Enter second transcript (e.g. Я здесь)"
             value={secondLanguageTranscript}
+            onChange={onChangeSecondTranscriptHandler}
           />
         </TextareasContainer>
       </TranscriptAndTextareasContainer>
