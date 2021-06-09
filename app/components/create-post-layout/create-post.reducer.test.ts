@@ -4,6 +4,7 @@ import {
   setReactions,
   setSrc,
   setTranscript,
+  setVideoUrl,
 } from './create-post.actions'
 import { initialCreatePostState } from './create-post.mock'
 import { createPostReducer } from './create-post.reducer'
@@ -89,6 +90,23 @@ describe('create post reducer', () => {
       videoUrl: '',
       previewUrl: '',
       transcript: ['hello', 'привет'],
+      question: {
+        text: '',
+        reactions: [],
+      },
+    })
+  })
+
+  test('should set video url', () => {
+    const newState = createPostReducer(
+      initialCreatePostState,
+      setVideoUrl('/video.mp4'),
+    )
+
+    expect(newState).toEqual({
+      videoUrl: '/video.mp4',
+      previewUrl: '',
+      transcript: ['', ''],
       question: {
         text: '',
         reactions: [],

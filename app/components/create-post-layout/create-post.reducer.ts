@@ -1,4 +1,4 @@
-import { VideoPlayerProps, ReactionOption } from 'ui'
+import { ReactionOption } from 'ui'
 import { lensPath, set } from 'ramda'
 
 import {
@@ -7,6 +7,7 @@ import {
   SET_REACTIONS,
   SET_SRC,
   SET_TRANSCRIPTS,
+  SET_VIDEO_URL,
 } from './create-post-action-names'
 import * as actions from './create-post.actions'
 import { Reducer } from 'react'
@@ -34,6 +35,8 @@ export const createPostReducer: Reducer<
       return set(lensPath(['videoUrl']), action.payload)(state)
     case SET_PREVIEW:
       return set(lensPath(['previewUrl']), action.payload)(state)
+    case SET_VIDEO_URL:
+      return set(lensPath(['videoUrl']), action.payload)(state)
     case SET_QUESTION_TEXT:
       return set(lensPath(['question', 'text']), action.payload)(state)
     case SET_REACTIONS:

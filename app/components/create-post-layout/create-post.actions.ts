@@ -5,6 +5,7 @@ import {
   SET_QUESTION_TEXT,
   SET_REACTIONS,
   SET_TRANSCRIPTS,
+  SET_VIDEO_URL,
 } from './create-post-action-names'
 
 export const setSrc = (src: string) =>
@@ -17,6 +18,12 @@ export const setPreviewUrl = (previewUrl: string) =>
   ({
     type: SET_PREVIEW,
     payload: previewUrl,
+  } as const)
+
+export const setVideoUrl = (videoUrl: string) =>
+  ({
+    type: SET_VIDEO_URL,
+    payload: videoUrl,
   } as const)
 
 export const setQuestionText = (text: string) =>
