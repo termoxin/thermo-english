@@ -1,11 +1,9 @@
-export interface QuestionBuilderReactionOption {
-  id: number
-  value: string
-}
+import { ReactionOption } from '../QuestionReactions'
 
 export interface QuestionsBuilderProps {
   questionText: string
-  reactions: QuestionBuilderReactionOption[]
+  reactions: ReactionOption[]
   onChangeQuestion?: (value: string) => void
-  onChangeReactions?: (reactions: QuestionBuilderReactionOption[]) => void
+  onChangeReactions?: (reactions: ReactionOption[]) => void
+  onDeleteReaction?: (id: number) => void
 }

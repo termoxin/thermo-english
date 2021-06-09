@@ -1,5 +1,4 @@
 import React, { ChangeEvent, FC, KeyboardEventHandler, useState } from 'react'
-import { propEq, reject } from 'ramda'
 
 import { QuestionsBuilderProps } from './questions-builder.types'
 import { Input } from '../Input'
@@ -17,15 +16,12 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
   reactions,
   onChangeQuestion,
   onChangeReactions,
+  onDeleteReaction,
 }) => {
-  const [question, changeQuestion] = useState(questionText)
   const [newReaction, changeNewReaction] = useState('')
-  const [currentReactions, setReactions] = useState(reactions)
 
   const onChangeQuestionHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
-
-    changeQuestion(value)
 
     if (onChangeQuestion) {
       onChangeQuestion(value)
@@ -44,36 +40,28 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
     if (newReaction) {
       const newReaction = createNewReaction()
 
-      setReactions((reactions) => {
-        const newReactions = [...reactions, newReaction]
-
-        if (onChangeReactions) {
-          onChangeReactions(newReactions)
-        }
-
-        return newReactions
-      })
+      if (onChangeReactions) {
+        onChangeReactions([...reactions, newReaction])
+      }
 
       changeNewReaction('')
     }
   }
 
-  const onReactionDblClickHandler = (id: number) => () =>
-    setReactions(reject(propEq('id', id)))
+  const onReactionDblClickHandler = (id: number) => () => {
+    if (onDeleteReaction) {
+      onDeleteReaction(id)
+    }
+  }
 
   const onKeyUpHandler: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (event.key === KEYBOARD.ENTER && newReaction) {
-      setReactions((reactions) => {
-        const newReactions = [...reactions, createNewReaction()]
+      const newReactions = [...reactions, createNewReaction()]
 
-        if (onChangeReactions) {
-          onChangeReactions(newReactions)
-        }
-
-        return newReactions
-      })
-
-      changeNewReaction('')
+      if (onChangeReactions) {
+        onChangeReactions(newReactions)
+        changeNewReaction('')
+      }
     }
   }
 
@@ -81,17 +69,17 @@ export const QuestionsBuilder: FC<QuestionsBuilderProps> = ({
     <QuestionsBuilderContainer>
       <Input
         data-testid="input-question"
-        value={question}
+        value={questionText}
         placeholder="Enter question (e.g. What do you think?)"
         onChange={onChangeQuestionHandler}
       />
-      {!currentReactions.length && (
+      {!reactions.length && (
         <Info>
           No reactions. Please, type a reaction and click on ADD button
         </Info>
       )}
       <ReactionsContainer>
-        {currentReactions.map(({ id, value }) => (
+        {reactions.map(({ id, value }) => (
           <ReactionButton
             key={id}
             data-testid={`question-${id}`}

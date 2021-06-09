@@ -45,31 +45,27 @@ describe('QuestionsBuilder', () => {
     const onChangeQuestion = jest.fn()
 
     const { getByTestId } = render(
-      <QuestionsBuilder {...props} onChangeQuestion={onChangeQuestion} />,
+      <QuestionsBuilder
+        {...{ ...props, questionText: '' }}
+        onChangeQuestion={onChangeQuestion}
+      />,
     )
 
-    expect((getByTestId('input-question') as HTMLInputElement).value).toBe(
-      props.questionText,
-    )
-
-    userEvent.clear(getByTestId('input-question'))
+    expect((getByTestId('input-question') as HTMLInputElement).value).toBe('')
 
     userEvent.type(getByTestId('input-question'), 'Hello')
 
-    expect((getByTestId('input-question') as HTMLInputElement).value).toBe(
-      'Hello',
-    )
+    expect((getByTestId('input-question') as HTMLInputElement).value).toBe('')
 
     expect(onChangeQuestion.mock.calls).toEqual([
-      [''],
       ['H'],
-      ['He'],
-      ['Hel'],
-      ['Hell'],
-      ['Hello'],
+      ['e'],
+      ['l'],
+      ['l'],
+      ['o'],
     ])
 
-    expect(onChangeQuestion).toBeCalledTimes(6)
+    expect(onChangeQuestion).toBeCalledTimes(5)
   })
 
   test('should change input new reaction', () => {
@@ -125,7 +121,6 @@ describe('QuestionsBuilder', () => {
     expect(getByText('Yes')).toBeInTheDocument()
     expect(getByText('No')).toBeInTheDocument()
     expect(getByText('Maybe')).toBeInTheDocument()
-    expect(getByText('Never')).toBeInTheDocument()
   })
 
   test('should create a new reaction by pressing Enter key', () => {
@@ -158,7 +153,6 @@ describe('QuestionsBuilder', () => {
     expect(getByText('Yes')).toBeInTheDocument()
     expect(getByText('No')).toBeInTheDocument()
     expect(getByText('Maybe')).toBeInTheDocument()
-    expect(getByText('Never')).toBeInTheDocument()
   })
 
   test('should not create an empty reaction by pressing Enter key', () => {
@@ -183,19 +177,19 @@ describe('QuestionsBuilder', () => {
   })
 
   test('should delete a reaction by double-clicking on it', () => {
-    const onChangeReactions = jest.fn()
+    const onDeleteReaction = jest.fn()
 
     const { getByText, queryByText } = render(
-      <QuestionsBuilder {...props} onChangeReactions={onChangeReactions} />,
+      <QuestionsBuilder {...props} onDeleteReaction={onDeleteReaction} />,
     )
 
     userEvent.dblClick(getByText('No'))
     userEvent.dblClick(getByText('Maybe'))
 
+    expect(onDeleteReaction.mock.calls).toEqual([[12346], [12347]])
     expect(getByText('Yes')).toBeInTheDocument()
-
-    expect(queryByText('No')).not.toBeInTheDocument()
-    expect(queryByText('Maybe')).not.toBeInTheDocument()
+    expect(queryByText('No')).toBeInTheDocument()
+    expect(queryByText('Maybe')).toBeInTheDocument()
   })
 
   test('should show info text about how to create a reaction where no reactions', () => {

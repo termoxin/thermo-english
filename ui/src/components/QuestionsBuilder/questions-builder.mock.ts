@@ -1,7 +1,7 @@
 import { QuestionsBuilderProps } from './questions-builder.types'
 
 export const props: QuestionsBuilderProps = {
-  questionText: 'Do you believe Leela',
+  questionText: 'Do you believe Leela?',
   reactions: [
     {
       id: 12345,

@@ -16,4 +16,7 @@ export interface Post {
 
 export interface PostPageProps extends ServerSideProps {
   post: Post
+  onChangeQuestion?: (value: string) => void
+  onChangeReactions?: (reactions: ReactionOption[]) => void
+  onDeleteReaction?: (id: number) => void
 }

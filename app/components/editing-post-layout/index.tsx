@@ -15,7 +15,12 @@ import {
 } from './styled'
 import { QuestionsBuilder, Input, FileUploader } from 'ui'
 
-export const EditingPostLayout: FC<PostPageProps> = ({ post }) => {
+export const EditingPostLayout: FC<PostPageProps> = ({
+  post,
+  onChangeQuestion,
+  onChangeReactions,
+  onDeleteReaction,
+}) => {
   const [videoPreview, setVideoPreview] = useState('')
 
   const videoPlayerProps = {
@@ -26,9 +31,10 @@ export const EditingPostLayout: FC<PostPageProps> = ({ post }) => {
   const questionsBuilderProps = {
     questionText: post.question.text,
     reactions: post.question.reactions,
+    onChangeQuestion,
+    onChangeReactions,
+    onDeleteReaction,
   }
-
-  const [firstLanguageTranscript, secondLanguageTranscript] = post.transcript
 
   const onSubmitVideo = (data: FileList) => {
     const reader = new FileReader()
@@ -43,6 +49,8 @@ export const EditingPostLayout: FC<PostPageProps> = ({ post }) => {
       }
     }
   }
+
+  const [firstLanguageTranscript, secondLanguageTranscript] = post.transcript
 
   return (
     <VideoAndQuestionsBuilderContainer>
@@ -59,7 +67,6 @@ export const EditingPostLayout: FC<PostPageProps> = ({ post }) => {
             <FileUploader onSubmit={onSubmitVideo} acceptFiles="video/mp4" />
           </UploadingCard>
         )}
-
         <TextareasContainer>
           <Input
             as="textarea"
