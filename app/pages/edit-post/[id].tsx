@@ -1,8 +1,8 @@
 import { GetServerSideProps } from 'next'
 
 import { Post } from '../../components/pages-components/post/post.types'
-import { expandedPosts } from '../../__mocks__'
 import { EditPostPage } from '../../components/pages-components/edit-post'
+import { expandedPosts } from '../../__mocks__'
 
 export default EditPostPage
 

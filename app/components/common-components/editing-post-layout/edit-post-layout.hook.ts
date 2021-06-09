@@ -8,7 +8,7 @@ import {
   setTranscript,
   setVideoUrl as changeVideoUrl,
 } from './edit-post-layout.actions'
-import { createPostReducer } from './edit-post-layout.reducer'
+import { editPostReducer } from './edit-post-layout.reducer'
 import {
   editPostActionTypes,
   EditPostPageState,
@@ -19,7 +19,7 @@ import { initialEditPostState } from './edit-post-layout.mock'
 export const useEditPost = (initialState?: EditPostPageState) => {
   const [state, dispatch] = useReducer<
     Reducer<EditPostPageState, editPostActionTypes>
-  >(createPostReducer, initialState || initialEditPostState)
+  >(editPostReducer, initialState || initialEditPostState)
 
   const setQuestion = (text: string) => dispatch(setQuestionText(text))
 
