@@ -1,4 +1,4 @@
-import { EditPostPageState } from './create-post-layout.reducer'
+import { EditPostPageState } from './edit-post-layout.types'
 
 export const initialEditPostState: EditPostPageState = {
   videoUrl: '',

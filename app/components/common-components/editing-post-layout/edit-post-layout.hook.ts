@@ -1,18 +1,20 @@
 import { Reducer, useReducer } from 'react'
+import { ReactionOption } from 'ui'
+import { lensIndex, propEq, reject, set } from 'ramda'
+
 import {
   setQuestionText,
   setReactions as changeReactions,
   setTranscript,
   setVideoUrl as changeVideoUrl,
 } from './edit-post-layout.actions'
+import { createPostReducer } from './edit-post-layout.reducer'
 import {
   editPostActionTypes,
   EditPostPageState,
-  createPostReducer,
-} from './create-post-layout.reducer'
-import { ReactionOption } from 'ui'
-import { lensIndex, propEq, reject, set } from 'ramda'
-import { initialEditPostState } from './create-post-layout.mock'
+} from './edit-post-layout.types'
+
+import { initialEditPostState } from './edit-post-layout.mock'
 
 export const useEditPost = (initialState?: EditPostPageState) => {
   const [state, dispatch] = useReducer<

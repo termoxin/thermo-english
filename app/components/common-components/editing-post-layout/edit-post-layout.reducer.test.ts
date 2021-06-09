@@ -6,8 +6,8 @@ import {
   setTranscript,
   setVideoUrl,
 } from './edit-post-layout.actions'
-import { initialEditPostState } from './create-post-layout.mock'
-import { createPostReducer } from './create-post-layout.reducer'
+import { initialEditPostState } from './edit-post-layout.mock'
+import { createPostReducer } from './edit-post-layout.reducer'
 
 describe('create post reducer', () => {
   test('should set video src', () => {

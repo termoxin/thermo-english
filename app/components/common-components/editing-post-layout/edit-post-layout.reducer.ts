@@ -1,4 +1,3 @@
-import { ReactionOption } from 'ui'
 import { lensPath, set } from 'ramda'
 
 import {
@@ -9,22 +8,11 @@ import {
   SET_TRANSCRIPTS,
   SET_VIDEO_URL,
 } from './edit-post-layout.action-names'
-import * as actions from './edit-post-layout.actions'
 import { Reducer } from 'react'
-
-export type editPostActionTypes = ReturnType<
-  typeof actions[keyof typeof actions]
->
-
-export interface EditPostPageState {
-  previewUrl: string
-  videoUrl: string
-  transcript: [string, string]
-  question: {
-    text: string
-    reactions: ReactionOption[]
-  }
-}
+import {
+  EditPostPageState,
+  editPostActionTypes,
+} from './edit-post-layout.types'
 
 export const createPostReducer: Reducer<
   EditPostPageState,
