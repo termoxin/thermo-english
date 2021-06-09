@@ -5,6 +5,11 @@ const light = {
   typographyColor: {
     info: '#78746d;',
   },
+  colors: {
+    red: '#F85156',
+    dark: '#535353',
+    orange: '#FFC24E',
+  },
   button: {
     background: {
       red: '#FA4A0C',

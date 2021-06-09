@@ -6,13 +6,17 @@ export const calculateReactionsPercentages = (
   const percentagesById: Record<number, number> = {}
 
   const totalReactions = options.reduce(
-    (totalReactions, option) => totalReactions + option.totalPeopleAnswered,
+    (totalReactions, option) =>
+      option.totalPeopleAnswered
+        ? totalReactions + option.totalPeopleAnswered
+        : totalReactions,
     0,
   )
 
   options.forEach((option) => {
-    percentagesById[option.id] =
-      +(option.totalPeopleAnswered / totalReactions).toFixed(2) * 100
+    percentagesById[option.id] = option.totalPeopleAnswered
+      ? +(option.totalPeopleAnswered / totalReactions).toFixed(2) * 100
+      : totalReactions
   })
 
   return percentagesById

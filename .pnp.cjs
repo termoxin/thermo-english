@@ -7711,6 +7711,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/user-event", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:13.1.9"],
             ["@types/jest", "npm:26.0.23"],
             ["@types/node", "npm:15.3.0"],
+            ["@types/ramda", "npm:0.27.40"],
             ["@types/react", "npm:17.0.5"],
             ["@types/styled-components", "npm:5.1.9"],
             ["@types/testing-library__jest-dom", "npm:5.9.5"],
@@ -7719,6 +7720,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "npm:26.6.3"],
             ["jest-dom", "npm:4.0.0"],
             ["next", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:10.2.0"],
+            ["ramda", "npm:0.27.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:17.0.2"],
             ["react-is", "npm:17.0.2"],
@@ -18169,6 +18171,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react-hook-form", [
+        ["npm:7.8.1", {
+          "packageLocation": "./.yarn/cache/react-hook-form-npm-7.8.1-b1aa11f082-8eb67a49c2.zip/node_modules/react-hook-form/",
+          "packageDependencies": [
+            ["react-hook-form", "npm:7.8.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:7.8.1", {
+          "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-c561973123/0/cache/react-hook-form-npm-7.8.1-b1aa11f082-8eb67a49c2.zip/node_modules/react-hook-form/",
+          "packageDependencies": [
+            ["react-hook-form", "virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:7.8.1"],
+            ["@types/react", "npm:17.0.5"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["react-inspector", [
         ["npm:5.1.1", {
           "packageLocation": "./.yarn/cache/react-inspector-npm-5.1.1-20c125b3fd-ca9e4c1fed.zip/node_modules/react-inspector/",
@@ -21182,6 +21206,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ramda", "npm:0.27.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:17.0.2"],
+            ["react-hook-form", "virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:7.8.1"],
             ["react-is", "npm:17.0.2"],
             ["react-use", "virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:17.2.4"],
             ["styled-components", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:5.3.0"],
@@ -21235,6 +21260,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ramda", "npm:0.27.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:17.0.2"],
+            ["react-hook-form", "virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:7.8.1"],
             ["react-is", "npm:17.0.2"],
             ["react-use", "virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:17.2.4"],
             ["styled-components", "virtual:c2672affeb36cf7db9b9649600982f3a7c585c0a82e5be6f6ea12b0debcb6bc0696dc56e24b1ce3550034b9f071e63a76b0beab80e1f2d910d2a8bd4411e73ac#npm:5.3.0"],

@@ -17,9 +17,10 @@ export const VideoPlayer: FC<VideoPlayerProps> = ({
   src,
   className,
   previewUrl,
+  autoPlay = false,
 }) => {
   const [video, state, controls] = useVideo(
-    <Video src={src} data-testid="video" />,
+    <Video src={src} data-testid="video" autoPlay={autoPlay} />,
   )
 
   const [showControls, setShowControls] = useState(false)
@@ -33,7 +34,9 @@ export const VideoPlayer: FC<VideoPlayerProps> = ({
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
     >
-      {showPreview && <Preview src={previewUrl} data-testid="preview" />}
+      {showPreview && !autoPlay && (
+        <Preview src={previewUrl} data-testid="preview" />
+      )}
       {video}
       {showControls && (
         <>

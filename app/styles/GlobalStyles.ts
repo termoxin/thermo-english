@@ -10,7 +10,11 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 500;
   }
 
-  html,body {
+  html {
+  }
+
+  html, body, #__next {
+    height: 100%;
     font-size: 8px;
   }
 

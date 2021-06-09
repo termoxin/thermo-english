@@ -3,7 +3,7 @@ import { ButtonProps } from '../Button'
 export interface ReactionOption {
   id: number
   value: string
-  totalPeopleAnswered: number
+  totalPeopleAnswered?: number
 }
 
 export interface QuestionReactionsProps {

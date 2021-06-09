@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Input, InputPassword, ButtonIcon, Button, Logo, Info } from 'ui'
 import GoogleIcon from 'ui/dist/icons/Google'
 
-import { CustomAppProps } from './../../types/app'
+import { CustomAppProps } from '../../../types/app'
 
 import {
   IndexWrapper,

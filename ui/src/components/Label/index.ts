@@ -1,2 +1,2 @@
-export { Label } from './label'
-export { LabelProps } from './label.types'
+export * from './label'
+export * from './label.types'
