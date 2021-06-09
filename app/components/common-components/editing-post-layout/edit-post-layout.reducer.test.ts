@@ -5,16 +5,13 @@ import {
   setSrc,
   setTranscript,
   setVideoUrl,
-} from './create-post.actions'
-import { initialCreatePostState } from './create-post.mock'
-import { createPostReducer } from './create-post.reducer'
+} from './edit-post-layout.actions'
+import { initialEditPostState } from './edit-post-layout.mock'
+import { editPostReducer } from './edit-post-layout.reducer'
 
 describe('create post reducer', () => {
   test('should set video src', () => {
-    const newState = createPostReducer(
-      initialCreatePostState,
-      setSrc('/video.mp4'),
-    )
+    const newState = editPostReducer(initialEditPostState, setSrc('/video.mp4'))
 
     expect(newState).toEqual({
       videoUrl: '/video.mp4',
@@ -28,8 +25,8 @@ describe('create post reducer', () => {
   })
 
   test('should set video preview url', () => {
-    const newState = createPostReducer(
-      initialCreatePostState,
+    const newState = editPostReducer(
+      initialEditPostState,
       setPreviewUrl('/videoPreview.jpg'),
     )
 
@@ -45,8 +42,8 @@ describe('create post reducer', () => {
   })
 
   test('should set question text', () => {
-    const newState = createPostReducer(
-      initialCreatePostState,
+    const newState = editPostReducer(
+      initialEditPostState,
       setQuestionText('What do you think?'),
     )
 
@@ -64,8 +61,8 @@ describe('create post reducer', () => {
   test('should set reactions', () => {
     const newReactions = [{ id: 1, value: 'Yes', totalPeopleAnswered: 100 }]
 
-    const newState = createPostReducer(
-      initialCreatePostState,
+    const newState = editPostReducer(
+      initialEditPostState,
       setReactions(newReactions),
     )
 
@@ -81,8 +78,8 @@ describe('create post reducer', () => {
   })
 
   test('should set transcript', () => {
-    const newState = createPostReducer(
-      initialCreatePostState,
+    const newState = editPostReducer(
+      initialEditPostState,
       setTranscript(['hello', 'привет']),
     )
 
@@ -98,8 +95,8 @@ describe('create post reducer', () => {
   })
 
   test('should set video url', () => {
-    const newState = createPostReducer(
-      initialCreatePostState,
+    const newState = editPostReducer(
+      initialEditPostState,
       setVideoUrl('/video.mp4'),
     )
 

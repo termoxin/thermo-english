@@ -47,15 +47,15 @@ export const TextareasContainer = styled(Card)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2.3rem;
+  padding: 1.5rem;
   height: auto;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   textarea {
     padding: 1.5rem;
     width: 100%;
-    height: 12.5rem;
+    height: 10rem;
   }
 
   textarea:last-child {
