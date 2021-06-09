@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
 
-import Posts from '../../components/pages/posts'
+import Posts from '../../components/pages-components/posts'
 import { posts, postFilters } from '../../__mocks__'
 
 const PostsPage = Posts

@@ -1,3 +1,3 @@
-import { CreatePostPage } from '../../components/pages/create-post-layout'
+import { CreatePostPage } from '../../components/pages-components/create-post-layout'
 
 export default CreatePostPage
