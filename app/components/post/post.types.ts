@@ -22,4 +22,7 @@ export interface PostPageProps extends ServerSideProps {
   onChangeFirstTranscript?: (value: string) => void
   onChangeSecondTranscript?: (value: string) => void
   onUploadVideo?: (base64: string) => void
+  onSave?: () => void
+  onCancel?: () => void
+  onSaveAsDraft?: () => void
 }

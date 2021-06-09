@@ -23,6 +23,9 @@ export const EditingPostLayout: FC<PostPageProps> = ({
   onChangeFirstTranscript,
   onChangeSecondTranscript,
   onUploadVideo,
+  onSave,
+  onSaveAsDraft,
+  onCancel,
 }) => {
   const onSubmitVideo = (data: FileList) => {
     const reader = new FileReader()
@@ -100,9 +103,11 @@ export const EditingPostLayout: FC<PostPageProps> = ({
       <QuestionsBuilderContainer>
         <QuestionsBuilder {...questionsBuilderProps} />
         <ActionButtons>
-          <SaveButton>Save</SaveButton>
-          <CancelButton>Cancel</CancelButton>
-          <SaveAsDraftButton>Save as draft</SaveAsDraftButton>
+          <SaveButton onClick={() => onSave()}>Save</SaveButton>
+          <CancelButton onClick={() => onCancel()}>Cancel</CancelButton>
+          <SaveAsDraftButton onClick={() => onSaveAsDraft()}>
+            Save as draft
+          </SaveAsDraftButton>
         </ActionButtons>
       </QuestionsBuilderContainer>
     </VideoAndQuestionsBuilderContainer>
