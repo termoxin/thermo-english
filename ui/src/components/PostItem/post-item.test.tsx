@@ -82,15 +82,15 @@ describe('PostItem', () => {
     expect(onEditPost).toBeCalledTimes(1)
   })
 
-  test('should have likes in post item', () => {
+  test('should not have likes in draft post item', () => {
     const draftPostItemProps = {
       ...commonProps,
       state: 'draft' as labelStates,
       likes: 10,
     }
 
-    const { getByText } = render(<PostItem {...draftPostItemProps} />)
+    const { queryByText } = render(<PostItem {...draftPostItemProps} />)
 
-    expect(getByText('10 likes')).toBeInTheDocument()
+    expect(queryByText('10 likes')).not.toBeInTheDocument()
   })
 })
