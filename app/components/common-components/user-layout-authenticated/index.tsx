@@ -14,7 +14,7 @@ export const LayoutAuthenticated: FC<LayoutAuthenticatedProps> = ({
       <Actions>
         <Button variant="squared">Request post</Button>
         <Button variant="squared">Admin panel</Button>
-        <Dots></Dots>
+        <Dots />
       </Actions>
     </NavigationContainer>
     {children}
