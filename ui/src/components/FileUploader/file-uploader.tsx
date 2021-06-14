@@ -19,7 +19,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
         data-testid="file-uploader"
         accept={acceptFiles}
       />
-      <button>Load video preview</button>
+      <button>Load</button>
     </form>
   )
 }
