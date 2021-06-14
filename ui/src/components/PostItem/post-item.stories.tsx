@@ -1,8 +1,9 @@
 import React from 'react'
+import { Story } from '@storybook/react'
 
 import { PostItem } from './post-item'
-import { Story } from '@storybook/react'
 import { PostItemProps } from './post-item.types'
+import previewSample from '../../__mocks__/videoPreview.jpeg'
 
 export default {
   title: 'PostItem',
@@ -15,4 +16,9 @@ const Template: Story<PostItemProps> = (args): React.ReactElement => (
 
 export const Default = Template.bind({})
 
-Default.args = {}
+Default.args = {
+  text: 'look',
+  state: 'requested',
+  previewUrl: previewSample,
+  likes: 10,
+}
