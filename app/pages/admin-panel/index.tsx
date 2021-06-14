@@ -1,5 +1,34 @@
-import React from 'react'
+import { GetServerSideProps } from 'next'
 
-const AdminPanel = () => <h1>Hello. This is admin panel</h1>
+import { AdminPanel } from '../../components/pages-components/admin-panel'
+import { Post } from '../../components/pages-components/post/post.types'
+import { expandedPosts } from '../../__mocks__'
 
 export default AdminPanel
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const posts = expandedPosts.reduce(
+    (accumulator: Record<string, Post[]>, value) => {
+      const state = value.state
+
+      if (state && !accumulator[state]) {
+        accumulator[state] = [value]
+        return accumulator
+      }
+
+      if (state) {
+        accumulator[state] = [...accumulator[state], value]
+        return accumulator
+      }
+
+      return accumulator
+    },
+    {},
+  )
+
+  return {
+    props: {
+      posts,
+    },
+  }
+}
