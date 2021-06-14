@@ -49,6 +49,14 @@ const light = {
       published: '#5EA595',
     },
   },
+  postItem: {
+    color: '#fff',
+    background: '#454D58',
+    likesBlock: {
+      color: '#7C809E',
+      background: '#fff',
+    },
+  },
 }
 
 export const themes = {
