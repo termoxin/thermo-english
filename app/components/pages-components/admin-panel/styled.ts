@@ -27,8 +27,13 @@ export const PostsColumn = styled.div`
   }
 `
 
+export const ItemsColumn = styled.div`
+  margin: 2.5rem;
+`
+
 export const AdminPanelContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 6rem;
 `

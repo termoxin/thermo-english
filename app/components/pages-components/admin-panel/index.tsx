@@ -10,6 +10,7 @@ import {
   AdminPanelContainer,
   PostItemWrapper,
   PostsColumn,
+  ItemsColumn,
 } from './styled'
 
 const buildPostItemPropsFromPost = (post: Post) => ({
@@ -21,7 +22,7 @@ const buildPostItemPropsFromPost = (post: Post) => ({
 
 export const AdminPanel: FC<AdminPanelProps> = ({ posts }) => (
   <AdminPanelContainer>
-    <div>
+    <ItemsColumn>
       <RequestedHeading>Requested</RequestedHeading>
       <PostsColumn>
         {posts.requested.map((post) => (
@@ -30,8 +31,8 @@ export const AdminPanel: FC<AdminPanelProps> = ({ posts }) => (
           </PostItemWrapper>
         ))}
       </PostsColumn>
-    </div>
-    <div>
+    </ItemsColumn>
+    <ItemsColumn>
       <DraftHeading>Draft</DraftHeading>
       <PostsColumn>
         {posts.draft.map((post) => (
@@ -40,8 +41,8 @@ export const AdminPanel: FC<AdminPanelProps> = ({ posts }) => (
           </PostItemWrapper>
         ))}
       </PostsColumn>
-    </div>
-    <div>
+    </ItemsColumn>
+    <ItemsColumn>
       <PublishedHeading>Published</PublishedHeading>
       <PostsColumn>
         {posts.published.map((post) => (
@@ -50,6 +51,6 @@ export const AdminPanel: FC<AdminPanelProps> = ({ posts }) => (
           </PostItemWrapper>
         ))}
       </PostsColumn>
-    </div>
+    </ItemsColumn>
   </AdminPanelContainer>
 )
