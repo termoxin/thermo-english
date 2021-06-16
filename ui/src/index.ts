@@ -12,6 +12,7 @@ export * from './components/Label'
 export * from './components/VideoPlayer'
 export * from './components/QuestionsBuilder'
 export * from './components/FileUploader'
+export * from './components/PostItem'
 
 export { themes } from './styles/theme'
 export { breakpoints } from './styles/breakpoints'

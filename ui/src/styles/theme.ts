@@ -8,6 +8,7 @@ const light = {
   colors: {
     red: '#F85156',
     dark: '#535353',
+    green: '#5EA595',
     orange: '#FFC24E',
   },
   button: {
