@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { QuestionReactions, labelStates } from 'ui'
+import { QuestionReactions, labelStates, WordDetails } from 'ui'
 import LikeEyeIcon from 'ui/dist/icons/LikeEye'
 
 import { PostPageProps } from './post.types'
@@ -11,6 +11,7 @@ import {
   TranscriptContainer,
   StyledLabel as Label,
   InteractionsBlock,
+  Transcripts,
 } from './styled'
 
 export const PostPage: FC<PostPageProps> = ({ post }) => {
@@ -18,6 +19,7 @@ export const PostPage: FC<PostPageProps> = ({ post }) => {
 
   const label = post?.state?.toUpperCase()
   const [firstLanguage, secondLanguage] = post.transcript
+  const { transcription, wordText, meaning } = post
 
   return (
     <PostPageContainer>
@@ -26,8 +28,15 @@ export const PostPage: FC<PostPageProps> = ({ post }) => {
         <StyledVideoPlayer src={post.videoUrl} previewUrl={post.previewUrl} />
         <TranscriptContainer>
           <Transcript>
-            <p>{firstLanguage}</p>
-            <p>{secondLanguage}</p>
+            <WordDetails
+              transcription={transcription}
+              text={wordText}
+              meaning={meaning}
+            />
+            <Transcripts>
+              <pre>{firstLanguage}</pre>
+              <pre>{secondLanguage}</pre>
+            </Transcripts>
           </Transcript>
         </TranscriptContainer>
       </PostPageContentContainer>

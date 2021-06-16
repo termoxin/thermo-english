@@ -69,3 +69,15 @@ export const InteractionsBlock = styled.div`
     }
   }
 `
+
+export const Transcripts = styled.div`
+  padding: 2rem 1rem 1rem 2rem;
+
+  pre {
+    font-size: 2.4rem;
+  }
+
+  pre:last-child {
+    margin-top: 3rem;
+  }
+`

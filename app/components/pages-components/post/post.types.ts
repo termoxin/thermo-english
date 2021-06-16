@@ -7,6 +7,8 @@ export interface Post {
   videoUrl: string
   previewUrl: string
   wordText: string
+  meaning: string
+  transcription: string
   transcript: [string, string]
   likes?: number
   question: {

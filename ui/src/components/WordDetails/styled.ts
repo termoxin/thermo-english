@@ -3,8 +3,7 @@ import styled from 'styled-components'
 import { Heading, Info } from '../Typography'
 
 export const Content = styled.div`
-  height: 100%;
-  width: 37rem;
+  width: max-content;
   padding: 2rem 1rem 1rem 2rem;
 `
 
