@@ -12,11 +12,13 @@ import {
   FileUploaderContainer,
   UploadingCard,
   TranscriptAndTextareasContainer,
+  WordInput,
 } from './styled'
 import { QuestionsBuilder, Input, FileUploader } from 'ui'
 
 export const EditingPostLayout: FC<PostPageProps> = ({
   post,
+  onChangeWord,
   onChangeQuestion,
   onChangeReactions,
   onDeleteReaction,
@@ -54,6 +56,14 @@ export const EditingPostLayout: FC<PostPageProps> = ({
         onChangeSecondTranscript(target.value)
       }
     }
+
+  const onChangeWordHandler: ChangeEventHandler<HTMLInputElement> = ({
+    target,
+  }) => {
+    if (onChangeWord) {
+      onChangeWord(target.value)
+    }
+  }
 
   const videoPlayerProps = {
     src: post.videoUrl,
@@ -101,6 +111,11 @@ export const EditingPostLayout: FC<PostPageProps> = ({
         </TextareasContainer>
       </TranscriptAndTextareasContainer>
       <QuestionsBuilderContainer>
+        <WordInput
+          placeholder="Enter word or phrase (e.g. get, look at)"
+          value={post.wordText}
+          onChange={onChangeWordHandler}
+        />
         <QuestionsBuilder {...questionsBuilderProps} />
         <ActionButtons>
           <SaveButton onClick={() => onSave && onSave()}>Save</SaveButton>

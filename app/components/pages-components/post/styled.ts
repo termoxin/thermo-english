@@ -40,8 +40,6 @@ export const PostPageContainer = styled.div`
 export const Transcript = styled(Card)`
   width: 100%;
   height: 100%;
-
-  background: #f8f8f8;
   font-size: 3rem;
   padding: 2rem;
   margin-top: 5rem;
@@ -69,5 +67,18 @@ export const InteractionsBlock = styled.div`
       transition: 0.3s all;
       transform: scale(1.2);
     }
+  }
+`
+
+export const Transcripts = styled.div`
+  padding: 2rem 1rem 1rem 2rem;
+
+  pre {
+    font-size: 2.4rem;
+    color: ${({ theme }) => theme.body.color};
+  }
+
+  pre:last-child {
+    margin-top: 3rem;
   }
 `

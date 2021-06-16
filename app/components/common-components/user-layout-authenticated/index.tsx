@@ -2,13 +2,18 @@ import { FC } from 'react'
 import { Logo, Button } from 'ui'
 import { LayoutAuthenticatedProps } from './layout-authenticated.types'
 
-import { NavigationContainer, Actions, Dots } from './styled'
+import {
+  NavigationContainer,
+  Actions,
+  Dots,
+  LayoutAuthenticatedContainer,
+} from './styled'
 
 export const LayoutAuthenticated: FC<LayoutAuthenticatedProps> = ({
   children,
   toggleTheme,
 }) => (
-  <div>
+  <LayoutAuthenticatedContainer>
     <NavigationContainer>
       <Logo width="160" height="100" onClick={toggleTheme} />
       <Actions>
@@ -18,5 +23,5 @@ export const LayoutAuthenticated: FC<LayoutAuthenticatedProps> = ({
       </Actions>
     </NavigationContainer>
     {children}
-  </div>
+  </LayoutAuthenticatedContainer>
 )

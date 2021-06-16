@@ -4,9 +4,10 @@ import { lensIndex, propEq, reject, set } from 'ramda'
 
 import {
   setQuestionText,
-  setReactions as changeReactions,
   setTranscript,
   setVideoUrl as changeVideoUrl,
+  setReactions as changeReactions,
+  setWordText as changeWordText,
 } from './edit-post-layout.actions'
 import { editPostReducer } from './edit-post-layout.reducer'
 import {
@@ -47,6 +48,8 @@ export const useEditPost = (initialState?: EditPostPageState) => {
 
   const setVideoUrl = (base64: string) => dispatch(changeVideoUrl(base64))
 
+  const setWordText = (wordText: string) => dispatch(changeWordText(wordText))
+
   const actions = {
     setQuestion,
     setReactions,
@@ -54,6 +57,7 @@ export const useEditPost = (initialState?: EditPostPageState) => {
     setFirstTranscript,
     setSecondTranscript,
     setVideoUrl,
+    setWordText,
   }
 
   return { actions, state }

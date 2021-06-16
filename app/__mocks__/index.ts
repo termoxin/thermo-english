@@ -1,5 +1,5 @@
 import { PostCardProps } from 'ui'
-import { PostPageProps } from '../components/pages-components/post/post.types'
+import { Post } from '../components/pages-components/post/post.types'
 
 export const posts: PostCardProps[] = [
   {
@@ -76,21 +76,38 @@ export const options = [
   },
 ]
 
-export const expandedPosts: PostPageProps['post'][] = [
+export const expandedPosts: Post[] = [
   {
-    text: 'look',
+    wordText: '​​horrendous',
     state: 'draft',
+    meaning:
+      "an act of directing one's gaze in order to see someone or something",
+    transcription: 'hɒˈrendəs',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
-    transcript: ['Hello, my name is Leela!', 'Привет, меня зовут Лила!'],
+    transcript: [
+      `Never have a baby in your 60s.
+Don't follow behind.
+She's farted. It's horrendous.
+Oh, God.
+`,
+      `Не вздумай заводить ребенка после 60.
+И не иди за мной.
+Она пукнула. Вонь ужасная.
+Господи.
+`,
+    ],
     question: {
-      text: 'Do you believe Leela?',
+      text: `Are you the kind of person who can fart and don't get burned?`,
       reactions: options,
     },
   },
   {
-    text: 'nonsense',
+    wordText: 'nonsense',
     state: 'published',
+    meaning:
+      "an act of directing one's gaze in order to see someone or something",
+    transcription: 'lʊk',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
     transcript: ['Hello, my name is Leela!', 'Привет, меня зовут Лила!'],
@@ -101,8 +118,11 @@ export const expandedPosts: PostPageProps['post'][] = [
     likes: 941,
   },
   {
-    text: 'morbid',
+    wordText: 'morbid',
     state: 'requested',
+    meaning:
+      "an act of directing one's gaze in order to see someone or something",
+    transcription: 'lʊk',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
     transcript: ['Hello, my name is Leela!', 'Привет, меня зовут Лила!'],
@@ -112,8 +132,11 @@ export const expandedPosts: PostPageProps['post'][] = [
     },
   },
   {
-    text: 'gorgeous',
+    wordText: 'gorgeous',
     state: 'draft',
+    meaning:
+      "an act of directing one's gaze in order to see someone or something",
+    transcription: 'lʊk',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
     transcript: ['Something is here', ''],
@@ -124,10 +147,13 @@ export const expandedPosts: PostPageProps['post'][] = [
   },
 ]
 
-export const postPagePropsMock: PostPageProps['post'] = {
+export const postPagePropsMock: Post = {
   state: 'draft',
   videoUrl: '',
-  text: 'magic',
+  wordText: 'magic',
+  meaning:
+    "an act of directing one's gaze in order to see someone or something",
+  transcription: 'lʊk',
   previewUrl: '',
   question: {
     text: 'Do you think magic exists?',

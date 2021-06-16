@@ -5,6 +5,7 @@ import {
   setSrc,
   setTranscript,
   setVideoUrl,
+  setWordText,
 } from './edit-post-layout.actions'
 import { initialEditPostState } from './edit-post-layout.mock'
 import { editPostReducer } from './edit-post-layout.reducer'
@@ -14,6 +15,7 @@ describe('create post reducer', () => {
     const newState = editPostReducer(initialEditPostState, setSrc('/video.mp4'))
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '/video.mp4',
       previewUrl: '',
       transcript: ['', ''],
@@ -31,6 +33,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '/videoPreview.jpg',
       transcript: ['', ''],
@@ -48,6 +51,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '',
       transcript: ['', ''],
@@ -67,6 +71,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '',
       transcript: ['', ''],
@@ -84,6 +89,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '',
       transcript: ['hello', 'привет'],
@@ -101,7 +107,23 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '/video.mp4',
+      previewUrl: '',
+      transcript: ['', ''],
+      question: {
+        text: '',
+        reactions: [],
+      },
+    })
+  })
+
+  test('should set word text', () => {
+    const newState = editPostReducer(initialEditPostState, setWordText('get'))
+
+    expect(newState).toEqual({
+      wordText: 'get',
+      videoUrl: '',
       previewUrl: '',
       transcript: ['', ''],
       question: {

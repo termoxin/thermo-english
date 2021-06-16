@@ -6,6 +6,7 @@ import {
   SET_REACTIONS,
   SET_TRANSCRIPTS,
   SET_VIDEO_URL,
+  SET_WORD_TEXT,
 } from './edit-post-layout.action-names'
 
 export const setSrc = (src: string) =>
@@ -42,4 +43,10 @@ export const setTranscript = (transcript: [string, string]) =>
   ({
     type: SET_TRANSCRIPTS,
     payload: transcript,
+  } as const)
+
+export const setWordText = (wordText: string) =>
+  ({
+    type: SET_WORD_TEXT,
+    payload: wordText,
   } as const)

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Button, Card, VideoPlayer, breakpoints } from 'ui'
+import { Button, Card, VideoPlayer, Input, breakpoints } from 'ui'
 
 export const SaveButton = styled(Button).attrs({ variant: 'squared' })`
   width: max-content;
@@ -29,7 +29,7 @@ export const VideoAndQuestionsBuilderContainer = styled.div`
 `
 
 export const StyledVideoPlayer = styled(VideoPlayer)`
-  height: 100%;
+  height: auto;
   width: 100%;
 
   img {
@@ -71,7 +71,7 @@ export const QuestionsBuilderContainer = styled(Card)`
 
   ${breakpoints.media.smallDesktop`
     padding: 5rem 5rem 3rem 5rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
   `}
 `
 
@@ -95,7 +95,7 @@ export const UploadingCard = styled(Card)`
 `
 
 export const FileUploaderContainer = styled.div`
-  margin-top: 20px;
+  margin-top: 2rem;
 `
 
 export const TranscriptAndTextareasContainer = styled.div`
@@ -103,4 +103,8 @@ export const TranscriptAndTextareasContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+`
+
+export const WordInput = styled(Input)`
+  margin-bottom: 4rem;
 `

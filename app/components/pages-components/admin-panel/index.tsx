@@ -15,7 +15,7 @@ import {
 
 const buildPostItemPropsFromPost = (post: Post) => ({
   state: post.state as labelStates,
-  text: post.text,
+  text: post.wordText,
   previewUrl: post.previewUrl,
   likes: post.likes,
 })

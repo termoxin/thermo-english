@@ -55,3 +55,7 @@ export const Dots = styled.span`
     display:none;
   `}
 `
+
+export const LayoutAuthenticatedContainer = styled.div`
+  padding-bottom: 3rem;
+`

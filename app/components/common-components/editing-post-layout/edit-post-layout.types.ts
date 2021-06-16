@@ -6,6 +6,7 @@ export type editPostActionTypes = ReturnType<
 >
 
 export interface EditPostPageState {
+  wordText: string
   previewUrl: string
   videoUrl: string
   transcript: [string, string]
