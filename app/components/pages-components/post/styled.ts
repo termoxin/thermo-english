@@ -40,8 +40,6 @@ export const PostPageContainer = styled.div`
 export const Transcript = styled(Card)`
   width: 100%;
   height: 100%;
-
-  background: #f8f8f8;
   font-size: 3rem;
   padding: 2rem;
   margin-top: 5rem;
