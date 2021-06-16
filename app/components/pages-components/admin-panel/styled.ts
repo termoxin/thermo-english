@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Heading, PostItem } from 'ui'
+import { Heading, breakpoints } from 'ui'
 
 export const BaseStatusHeading = styled(Heading)`
   font-size: 3.2rem;
@@ -28,7 +28,10 @@ export const PostsColumn = styled.div`
 `
 
 export const ItemsColumn = styled.div`
-  margin: 2.5rem;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem 0 1rem;
 `
 
 export const AdminPanelContainer = styled.div`
@@ -36,4 +39,14 @@ export const AdminPanelContainer = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 6rem;
+
+  ${breakpoints.media.bigTablet`
+    ${ItemsColumn}:not(first-child) {
+      margin-top: 5rem;
+    }
+
+    ${ItemsColumn} {
+      width: 100%;
+    }
+  `}
 `

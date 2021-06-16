@@ -7,7 +7,7 @@ import { expandedPosts } from '../../__mocks__'
 export default AdminPanel
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = expandedPosts.reduce(
+  const posts = [...expandedPosts, ...expandedPosts, ...expandedPosts].reduce(
     (accumulator: Record<string, Post[]>, value) => {
       const state = value.state
 
