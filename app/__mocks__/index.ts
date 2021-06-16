@@ -82,7 +82,7 @@ export const expandedPosts: Post[] = [
     state: 'draft',
     meaning:
       "an act of directing one's gaze in order to see someone or something",
-    transcription: 'extremely unpleasant, horrifying, or terrible',
+    transcription: 'hɒˈrendəs',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
     transcript: [
@@ -98,7 +98,7 @@ Oh, God.
 `,
     ],
     question: {
-      text: 'Do you believe Leela?',
+      text: `Are you the kind of person who can fart and don't get burned?`,
       reactions: options,
     },
   },
