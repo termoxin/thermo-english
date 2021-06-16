@@ -16,12 +16,12 @@ import {
 export const PostPage: FC<PostPageProps> = ({ post }) => {
   const [currentAnswer, setCurrentAnswer] = useState<string | null>(null)
 
-  const label = post.state.toUpperCase()
+  const label = post?.state?.toUpperCase()
   const [firstLanguage, secondLanguage] = post.transcript
 
   return (
     <PostPageContainer>
-      <Label state={post.state as labelStates}>{label}</Label>
+      {post.state && <Label state={post.state as labelStates}>{label}</Label>}
       <PostPageContentContainer>
         <StyledVideoPlayer src={post.videoUrl} previewUrl={post.previewUrl} />
         <TranscriptContainer>
