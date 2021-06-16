@@ -15,6 +15,7 @@ describe('create post reducer', () => {
     const newState = editPostReducer(initialEditPostState, setSrc('/video.mp4'))
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '/video.mp4',
       previewUrl: '',
       transcript: ['', ''],
@@ -32,6 +33,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '/videoPreview.jpg',
       transcript: ['', ''],
@@ -49,6 +51,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '',
       transcript: ['', ''],
@@ -68,6 +71,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '',
       transcript: ['', ''],
@@ -85,6 +89,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '',
       previewUrl: '',
       transcript: ['hello', 'привет'],
@@ -102,6 +107,7 @@ describe('create post reducer', () => {
     )
 
     expect(newState).toEqual({
+      wordText: '',
       videoUrl: '/video.mp4',
       previewUrl: '',
       transcript: ['', ''],
