@@ -1,6 +1,6 @@
 const light = {
   name: 'light',
-  body: { background: '#fff' },
+  body: { background: '#fff', color: '#000' },
   heading: { color: '#130f0f' },
   typographyColor: {
     info: '#78746d;',
@@ -65,7 +65,7 @@ export const themes = {
   dark: {
     ...light,
     name: 'dark',
-    body: { background: '#191919' },
+    body: { background: '#191919', color: '#fff' },
     heading: { color: '#fff' },
   },
 }

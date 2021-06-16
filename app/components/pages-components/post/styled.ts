@@ -75,6 +75,7 @@ export const Transcripts = styled.div`
 
   pre {
     font-size: 2.4rem;
+    color: ${({ theme }) => theme.body.color};
   }
 
   pre:last-child {
