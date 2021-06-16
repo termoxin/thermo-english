@@ -7,6 +7,7 @@ import {
   SET_SRC,
   SET_TRANSCRIPTS,
   SET_VIDEO_URL,
+  SET_WORD_TEXT,
 } from './edit-post-layout.action-names'
 import { Reducer } from 'react'
 import {
@@ -29,6 +30,8 @@ export const editPostReducer: Reducer<EditPostPageState, editPostActionTypes> =
         return set(lensPath(['question', 'reactions']), action.payload)(state)
       case SET_TRANSCRIPTS:
         return set(lensPath(['transcript']), action.payload)(state)
+      case SET_WORD_TEXT:
+        return set(lensPath(['wordText']), action.payload)(state)
       default:
         return state
     }

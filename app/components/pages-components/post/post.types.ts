@@ -6,7 +6,7 @@ export interface Post {
   state?: string
   videoUrl: string
   previewUrl: string
-  text: string
+  wordText: string
   transcript: [string, string]
   likes?: number
   question: {
@@ -17,11 +17,12 @@ export interface Post {
 
 export interface PostPageProps extends ServerSideProps {
   post: Post
-  onChangeQuestion?: (value: string) => void
+  onChangeWord?: (wordText: string) => void
+  onChangeQuestion?: (questionText: string) => void
   onChangeReactions?: (reactions: ReactionOption[]) => void
   onDeleteReaction?: (id: number) => void
-  onChangeFirstTranscript?: (value: string) => void
-  onChangeSecondTranscript?: (value: string) => void
+  onChangeFirstTranscript?: (firstTranscript: string) => void
+  onChangeSecondTranscript?: (secondTranscript: string) => void
   onUploadVideo?: (base64: string) => void
   onSave?: () => void
   onCancel?: () => void

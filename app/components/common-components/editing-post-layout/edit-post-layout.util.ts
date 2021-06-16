@@ -12,4 +12,5 @@ export const buildEditPostLayoutProps = ({
   onChangeFirstTranscript: actions.setFirstTranscript,
   onChangeSecondTranscript: actions.setSecondTranscript,
   onUploadVideo: actions.setVideoUrl,
+  onChangeWord: actions.setWordText,
 })

@@ -78,7 +78,7 @@ export const options = [
 
 export const expandedPosts: PostPageProps['post'][] = [
   {
-    text: 'look',
+    wordText: 'look',
     state: 'draft',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
@@ -89,7 +89,7 @@ export const expandedPosts: PostPageProps['post'][] = [
     },
   },
   {
-    text: 'nonsense',
+    wordText: 'nonsense',
     state: 'published',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
@@ -101,7 +101,7 @@ export const expandedPosts: PostPageProps['post'][] = [
     likes: 941,
   },
   {
-    text: 'morbid',
+    wordText: 'morbid',
     state: 'requested',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
@@ -112,7 +112,7 @@ export const expandedPosts: PostPageProps['post'][] = [
     },
   },
   {
-    text: 'gorgeous',
+    wordText: 'gorgeous',
     state: 'draft',
     videoUrl: '/videoSample.mp4',
     previewUrl: '/previewSample.jpeg',
@@ -127,7 +127,7 @@ export const expandedPosts: PostPageProps['post'][] = [
 export const postPagePropsMock: PostPageProps['post'] = {
   state: 'draft',
   videoUrl: '',
-  text: 'magic',
+  wordText: 'magic',
   previewUrl: '',
   question: {
     text: 'Do you think magic exists?',
