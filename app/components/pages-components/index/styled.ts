@@ -8,8 +8,11 @@ export const IndexWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-
   height: 100%;
+
+  ${breakpoints.media.tablet`
+    height: auto;
+  `}
 
   ${Heading} {
     ${breakpoints.media.tablet`
