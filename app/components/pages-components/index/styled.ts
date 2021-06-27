@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Heading, Info, breakpoints } from 'ui'
+import { Heading, Info, BaseLabel, breakpoints } from 'ui'
 
 export const LogoContainer = styled.div``
 
@@ -73,4 +73,9 @@ export const StyledHeading = styled(Heading)`
   * {
     font-weight: 700;
   }
+`
+
+export const FieldError = styled(BaseLabel)`
+  background: ${({ theme }) => theme.colors.red};
+  color: #fff;
 `
