@@ -11,6 +11,7 @@ import {
   Container,
   ButtonsContainer,
   StyledHeading,
+  FieldError,
 } from './styled'
 
 import { CustomAppProps } from '../../../types/app'
@@ -26,18 +27,21 @@ export const Index: FC<CustomAppProps> = ({ toggleTheme }) => {
 
   const onSubmit = (data: AuthenticationFormFields) => {}
 
+  const { email, password } = errors
+
   return (
     <IndexWrapper>
       <Container onSubmit={handleSubmit(onSubmit)}>
         <StyledHeading data-testid="welcome-heading">
           WELCOME TO <span>TERMO ENGLISH</span>
         </StyledHeading>
+        {email && <FieldError>{email.message}</FieldError>}
         <Input
-          type="email"
           placeholder="Email"
           data-testid="email-input"
           {...register('email', { required: true })}
         />
+        {password && <FieldError>{password.message}</FieldError>}
         <InputPassword
           placeholder="Password"
           {...register('password', { min: 6, max: 99 })}
