@@ -7723,6 +7723,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ramda", "npm:0.27.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:17.0.2"],
+            ["react-hook-form", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:7.9.0"],
             ["react-is", "npm:17.0.2"],
             ["styled-components", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:5.3.0"],
             ["tslib", "npm:2.2.0"],
@@ -18179,10 +18180,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["npm:7.9.0", {
+          "packageLocation": "./.yarn/cache/react-hook-form-npm-7.9.0-e2b0fc1f7c-5a41180ba1.zip/node_modules/react-hook-form/",
+          "packageDependencies": [
+            ["react-hook-form", "npm:7.9.0"]
+          ],
+          "linkType": "SOFT",
+        }],
         ["virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:7.8.1", {
           "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-c561973123/0/cache/react-hook-form-npm-7.8.1-b1aa11f082-8eb67a49c2.zip/node_modules/react-hook-form/",
           "packageDependencies": [
             ["react-hook-form", "virtual:aa1c189a9a98282698e79fc4dddd79f495cf1e42d15b1eeec49e85f70b0cf4233679c015784b7a2633140f8e104a436c0a9d3a1656532d7bb186e68b4ca7fb86#npm:7.8.1"],
+            ["@types/react", "npm:17.0.5"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:7.9.0", {
+          "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-7e55fb5cf0/0/cache/react-hook-form-npm-7.9.0-e2b0fc1f7c-5a41180ba1.zip/node_modules/react-hook-form/",
+          "packageDependencies": [
+            ["react-hook-form", "virtual:e75651e5332acab272a999511ceb1d590bce71b23805da845e95013f64713cb0d6d5ff642e55e6f52cfffa4aa82d52a8d58226a538b5d6f9574fab8068ba54d2#npm:7.9.0"],
             ["@types/react", "npm:17.0.5"],
             ["react", "npm:17.0.2"]
           ],

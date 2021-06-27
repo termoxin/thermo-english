@@ -4626,6 +4626,7 @@ __metadata:
     ramda: ^0.27.1
     react: 17.0.2
     react-dom: 17.0.2
+    react-hook-form: ^7.9.0
     react-is: ^17.0.2
     styled-components: ^5.3.0
     tslib: ^2.2.0
@@ -13161,6 +13162,15 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ^16.8.0 || ^17
   checksum: 8eb67a49c2a27853397f55b51c18d1640ed65236cd4b53d630f1428625016fb6d51928652d420dd654eef5ff4e8467b37859a8ca410969243ec2ce484807bb92
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.9.0":
+  version: 7.9.0
+  resolution: "react-hook-form@npm:7.9.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17
+  checksum: 5a41180ba17bdb1732552e8554e59e9633ae865807859106ab74117d81986d02b3479005e585e5259b2a5b0a131fc11ca7ba5816eba2214ac6d5dbce23f03ea1
   languageName: node
   linkType: hard
 
