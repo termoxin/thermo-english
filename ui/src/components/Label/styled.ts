@@ -20,6 +20,7 @@ export const BaseLabel = styled.div`
 `
 
 export const LabelContainer = styled.div<LabelContainerStyleProps>`
+  ${baseLabelStyles}
   background: ${({ theme, state }) => theme.label.states[state]};
   color: ${({ theme }) => theme.label.color};
 `
