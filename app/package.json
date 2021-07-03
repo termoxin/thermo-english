@@ -10,7 +10,9 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "@firebase/app": "^0.6.28",
     "@hookform/resolvers": "^2.6.0",
+    "firebase": "^8.7.0",
     "next": "10.2.0",
     "ramda": "^0.27.1",
     "react": "17.0.2",
@@ -27,6 +29,7 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.9",
+    "@types/firebase": "^3.2.1",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.2",
     "@types/ramda": "^0.27.40",
