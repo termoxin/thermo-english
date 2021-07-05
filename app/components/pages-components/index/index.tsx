@@ -2,13 +2,14 @@ import React, { FC } from 'react'
 import { Input, InputPassword, ButtonIcon, Button, Logo, Info } from 'ui'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import firebase from 'firebase'
 
 import GoogleIcon from 'ui/dist/icons/Google'
 
 import {
   IndexWrapper,
   LogoContainer,
-  Container,
+  Form,
   ButtonsContainer,
   StyledHeading,
   FieldError,
@@ -21,17 +22,36 @@ import { schema } from './schema'
 export const Index: FC<CustomAppProps> = ({ toggleTheme }) => {
   const {
     register,
+    getValues,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) })
+  } = useForm<AuthenticationFormFields>({ resolver: yupResolver(schema) })
 
-  const onSubmit = (data: AuthenticationFormFields) => {}
+  // const onSubmit = async ({ email, password }: AuthenticationFormFields) => {
+  //   const auth = firebase.auth()
+
+  //   console.log(await auth.signInWithEmailAndPassword(email, password))
+  // }
+
+  const onSignIn = async () => {
+    const { email, password } = getValues()
+    const auth = firebase.auth()
+
+    await auth.signInWithEmailAndPassword(email, password)
+  }
+
+  const onSignUp = async () => {
+    const { email, password } = getValues()
+    const auth = firebase.auth()
+
+    await auth.createUserWithEmailAndPassword(email, password)
+  }
 
   const { email, password } = errors
 
   return (
     <IndexWrapper>
-      <Container onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(() => {})}>
         <StyledHeading data-testid="welcome-heading">
           WELCOME TO <span>TERMO ENGLISH</span>
         </StyledHeading>
@@ -50,11 +70,11 @@ export const Index: FC<CustomAppProps> = ({ toggleTheme }) => {
           <ButtonIcon icon={<GoogleIcon width="29" height="29" />}>
             Sign In with Google
           </ButtonIcon>
-          <Button>Sign Up</Button>
-          <Button>Sign In</Button>
+          <Button onClick={onSignUp}>Sign Up</Button>
+          <Button onClick={onSignIn}>Sign In</Button>
         </ButtonsContainer>
         <Info>Terms and Conditions · Privacy Policy</Info>
-      </Container>
+      </Form>
       <LogoContainer>
         <Logo
           data-testid="logo"
