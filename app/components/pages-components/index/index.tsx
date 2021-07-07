@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { Input, InputPassword, ButtonIcon, Button, Logo, Info } from 'ui'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -18,6 +18,7 @@ import {
 import { CustomAppProps } from '../../../types/app'
 import { AuthenticationFormFields } from './index.types'
 import { schema } from './schema'
+import { useRouter } from 'next/router'
 
 export const Index: FC<CustomAppProps> = ({ toggleTheme }) => {
   const {
@@ -27,24 +28,38 @@ export const Index: FC<CustomAppProps> = ({ toggleTheme }) => {
     formState: { errors },
   } = useForm<AuthenticationFormFields>({ resolver: yupResolver(schema) })
 
-  // const onSubmit = async ({ email, password }: AuthenticationFormFields) => {
-  //   const auth = firebase.auth()
+  const { push } = useRouter()
 
-  //   console.log(await auth.signInWithEmailAndPassword(email, password))
-  // }
+  const [authErrorMessage, setAuthErrorMessage] = useState<string | null>(null)
 
   const onSignIn = async () => {
-    const { email, password } = getValues()
-    const auth = firebase.auth()
+    try {
+      const { email, password } = getValues()
+      const auth = firebase.auth()
 
-    await auth.signInWithEmailAndPassword(email, password)
+      if (email && password && !Object.values(errors).length) {
+        await auth.signInWithEmailAndPassword(email, password)
+
+        push('/posts')
+      }
+    } catch (err) {
+      setAuthErrorMessage(err.message)
+    }
   }
 
   const onSignUp = async () => {
-    const { email, password } = getValues()
-    const auth = firebase.auth()
+    try {
+      const { email, password } = getValues()
+      const auth = firebase.auth()
 
-    await auth.createUserWithEmailAndPassword(email, password)
+      if (email && password) {
+        await auth.createUserWithEmailAndPassword(email, password)
+
+        push('/posts')
+      }
+    } catch (err) {
+      setAuthErrorMessage(err.message)
+    }
   }
 
   const { email, password } = errors
@@ -55,6 +70,7 @@ export const Index: FC<CustomAppProps> = ({ toggleTheme }) => {
         <StyledHeading data-testid="welcome-heading">
           WELCOME TO <span>TERMO ENGLISH</span>
         </StyledHeading>
+        {authErrorMessage && <FieldError>{authErrorMessage}</FieldError>}
         {email && <FieldError>{email.message}</FieldError>}
         <Input
           placeholder="Email"
