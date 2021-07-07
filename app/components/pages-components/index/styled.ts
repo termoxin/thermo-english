@@ -39,7 +39,7 @@ export const IndexWrapper = styled.div`
   }
 `
 
-export const Container = styled.form`
+export const Form = styled.form`
   position: relative;
   top: 5rem;
   display: flex;
