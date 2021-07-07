@@ -36,9 +36,10 @@ const App = ({ Component, pageProps }: AppProps) => {
     firebase.auth().onAuthStateChanged(() => {
       const user = firebase.auth().currentUser
 
-      if (!user) {
+      if (!user && adminRoutes.includes(router.route)) {
         router.push('/')
       }
+        router.push('/posts')
     })
   }, [])
 
